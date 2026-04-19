@@ -1,0 +1,1079 @@
+/* =============================================
+   SKINT BUT SORTED — Shared Override Stylesheet
+   Mobile-first, light theme, accessible
+   Designed for people on cheap phones in bright daylight
+   ============================================= */
+
+/* FORCE LIGHT THEME VIA CSS VARIABLES */
+:root {
+  --bg: #ffffff !important;
+  --text: #1a1a1a !important;
+  --muted: #555 !important;
+  --card-bg: #f7f8fa !important;
+  --card: #f7f8fa !important;
+  --card2: #eef0f4 !important;
+  --nav: #ffffff !important;
+  --border: #e0e0e0 !important;
+  --primary: #1B4965 !important;
+  --gold: #1B4965 !important;
+  --gold2: #144058 !important;
+  --green: #2D936C !important;
+  --blue: #2563eb !important;
+  --red: #D62828 !important;
+  --r: 12px !important;
+
+  /* Override any dark accent colors */
+  --accent: #1B4965 !important;
+  --purple: #6B21A8 !important;
+  --orange: #C2410C !important;
+  --card-bg: #f7f8fa !important;
+}
+
+/* ===== GLOBAL RESET TO LIGHT ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+}
+
+h1 { font-size: clamp(1.8rem, 5vw, 2.8rem) !important; }
+h2 { font-size: clamp(1.4rem, 4vw, 2.2rem) !important; }
+h3 { font-size: clamp(1.1rem, 3vw, 1.5rem) !important; }
+
+p {
+  color: #333 !important;
+  line-height: 1.7 !important;
+  max-width: 65ch;
+}
+
+a {
+  color: #1B4965 !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: #D62828 !important;
+}
+
+strong, b {
+  color: #1a1a1a !important;
+}
+
+/* ===== NAV ===== */
+nav,
+.nav-inner,
+.topbar,
+.nav {
+  background: #ffffff !important;
+  border-bottom: 2px solid #e0e0e0 !important;
+  backdrop-filter: none !important;
+}
+
+nav a,
+.nav-inner a,
+.topbar a {
+  color: #555 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+nav a:hover,
+.nav-inner a:hover {
+  color: #1B4965 !important;
+  border-bottom-color: #1B4965 !important;
+}
+
+/* ===== HERO SECTIONS ===== */
+.hero,
+.gate,
+[class*="hero"] {
+  background: linear-gradient(135deg, #1B4965 0%, #2D6A8E 100%) !important;
+  border-bottom: none !important;
+  padding: 48px 20px 40px !important;
+  min-height: auto !important;
+}
+
+.hero::before,
+.hero::after,
+.gate::before,
+.gate::after {
+  display: none !important;
+}
+
+.hero h1,
+.gate h1 {
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: clamp(1.8rem, 6vw, 3rem) !important;
+  text-shadow: none !important;
+}
+
+.hero h1 span {
+  color: #7ED4AD !important;
+}
+
+.hero p,
+.hero-sub,
+.gate p,
+.hero-eyebrow,
+.hero-flag,
+.hero-note {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* ===== BUTTONS — Big touch targets ===== */
+.btn,
+.crisis-btn,
+.kofi-btn,
+.triage-btn,
+.back-btn,
+[class*="-btn"],
+a[class*="btn"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 52px !important;
+  padding: 14px 28px !important;
+  border-radius: 10px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: transform 0.1s ease, box-shadow 0.2s ease !important;
+  border: none !important;
+  letter-spacing: 0 !important;
+}
+
+.crisis-btn,
+.btn-gold,
+.triage-btn.btn-zero {
+  background: #D62828 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(214,40,40,0.3) !important;
+}
+
+.crisis-btn:hover,
+.btn-gold:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(214,40,40,0.35) !important;
+}
+
+.kofi-btn,
+.blog-link-btn {
+  background: #D62828 !important;
+  color: #fff !important;
+}
+
+.triage-btn.btn-low {
+  background: #F59E0B !important;
+  color: #000 !important;
+}
+
+.triage-btn.btn-ok {
+  background: #2D936C !important;
+  color: #fff !important;
+}
+
+.btn-outline {
+  background: transparent !important;
+  color: #1B4965 !important;
+  border: 2px solid #1B4965 !important;
+}
+
+/* ===== NEED SECTION (Homepage triage grid) ===== */
+.need-section {
+  background: #f0f4f8 !important;
+  padding: 40px 20px !important;
+  border-bottom: none !important;
+}
+
+.need-section h2 {
+  color: #1a1a1a !important;
+}
+
+.need-section p {
+  color: #555 !important;
+}
+
+.need-grid {
+  gap: 10px !important;
+}
+
+.need-card {
+  background: #ffffff !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 16px 14px !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.need-card:hover {
+  border-color: #1B4965 !important;
+  box-shadow: 0 4px 12px rgba(27,73,101,0.12) !important;
+  transform: none !important;
+}
+
+.need-label {
+  color: #1a1a1a !important;
+  font-size: 15px !important;
+}
+
+.need-desc {
+  color: #666 !important;
+  font-size: 13px !important;
+}
+
+/* ===== CARDS (all types) ===== */
+.guide-card,
+.card,
+.action,
+.step,
+[class*="-card"],
+[class*="card"] {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.guide-card:hover,
+.card:hover,
+[class*="-card"]:hover {
+  border-color: #1B4965 !important;
+  box-shadow: 0 4px 16px rgba(27,73,101,0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+.guide-title,
+.card h3,
+[class*="-card"] h3 {
+  color: #1a1a1a !important;
+}
+
+.guide-desc,
+.card p,
+[class*="-card"] p {
+  color: #555 !important;
+}
+
+.guide-card.new-badge {
+  border-color: rgba(45,147,108,0.4) !important;
+}
+
+.new-tag {
+  background: #2D936C !important;
+  color: #fff !important;
+}
+
+/* ===== SECTIONS ===== */
+.section,
+section {
+  background: transparent !important;
+}
+
+.section-label,
+.section-tag {
+  color: #1B4965 !important;
+  border-color: rgba(27,73,101,0.3) !important;
+}
+
+.section-intro {
+  color: #555 !important;
+}
+
+.divider,
+hr {
+  border-top-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 880px !important;
+  margin: 0 auto !important;
+  padding: 0 16px !important;
+}
+
+/* ===== MISSION BOX ===== */
+.mission {
+  background: #f0f4f8 !important;
+  border: 2px solid #1B4965 !important;
+  border-radius: 16px !important;
+}
+
+.mission h3 {
+  color: #1a1a1a !important;
+}
+
+.mission h3 span {
+  color: #1B4965 !important;
+}
+
+.mission p {
+  color: #555 !important;
+}
+
+/* ===== STATS ===== */
+.stat-row,
+.stats,
+.stat-bar {
+  background: transparent !important;
+}
+
+.stat-num,
+.stat .stat-num,
+.big-num {
+  color: #1B4965 !important;
+}
+
+.stat-label,
+.stat .stat-label {
+  color: #555 !important;
+}
+
+.stat {
+  background: #ffffff !important;
+}
+
+/* ===== KOFI BLOCK ===== */
+.kofi-block {
+  background: #fef3f3 !important;
+  border: 2px solid #D62828 !important;
+  border-radius: 16px !important;
+}
+
+.kofi-block h3 {
+  color: #D62828 !important;
+}
+
+.kofi-block p {
+  color: #555 !important;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #f7f8fa !important;
+  color: #555 !important;
+  border-top: 2px solid #e0e0e0 !important;
+  padding: 32px 20px !important;
+}
+
+footer a {
+  color: #1B4965 !important;
+}
+
+.footer-links a {
+  color: #555 !important;
+}
+
+.footer-links a:hover {
+  color: #1B4965 !important;
+}
+
+/* ===== GUIDE PAGE SPECIFIC ===== */
+
+/* Emergency triage buttons */
+.triage-btns {
+  gap: 12px !important;
+}
+
+.triage-btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: clamp(18px, 5vw, 28px) !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+}
+
+/* Result screens */
+.result {
+  background: #ffffff !important;
+  padding: 32px 16px !important;
+}
+
+.result h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #1a1a1a !important;
+}
+
+.action {
+  padding: 20px !important;
+}
+
+.action .num {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #1B4965 !important;
+}
+
+.action h3 {
+  color: #1a1a1a !important;
+}
+
+.action p {
+  color: #444 !important;
+}
+
+.action .say {
+  background: #f0f4f8 !important;
+  border-left-color: #1B4965 !important;
+  color: #333 !important;
+}
+
+.action a {
+  color: #1B4965 !important;
+}
+
+/* Loan calculator */
+.loan-section,
+.calc-section {
+  background: #f7f8fa !important;
+  border-bottom-color: #1B4965 !important;
+}
+
+.loan-section h2,
+.calc-section h2 {
+  color: #1B4965 !important;
+}
+
+.loan-sub,
+.calc-sub {
+  color: #555 !important;
+}
+
+.loan-row input,
+input,
+select {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 2px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  font-size: 16px !important; /* Prevents zoom on iOS */
+}
+
+input:focus,
+select:focus {
+  border-color: #1B4965 !important;
+  outline: 2px solid rgba(27,73,101,0.3) !important;
+}
+
+.loan-calc-btn {
+  background: #1B4965 !important;
+  color: #fff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+.loan-result {
+  background: #ffffff !important;
+  border: 2px solid #e0e0e0 !important;
+}
+
+.loan-result .verdict {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+.loan-result .num-box {
+  background: #f0f4f8 !important;
+}
+
+.loan-result .num-box .n {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+.loan-result .num-box .l {
+  color: #555 !important;
+}
+
+.loan-result p {
+  color: #444 !important;
+}
+
+.loan-result a {
+  color: #1B4965 !important;
+}
+
+/* Ticker */
+.ticker {
+  background: #1B4965 !important;
+}
+
+.tick-item {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #fff !important;
+}
+
+/* Holidays / Travel */
+.holidays,
+.paypal-trick-section,
+.credit-section {
+  background: #f7f8fa !important;
+}
+
+.holidays h2 {
+  color: #1B4965 !important;
+}
+
+.holidays-sub,
+.credit-sub {
+  color: #555 !important;
+}
+
+.h-card,
+.c-card {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+.h-card .price {
+  color: #1B4965 !important;
+}
+
+.h-card h3,
+.c-card h3 {
+  color: #1a1a1a !important;
+}
+
+.h-card p,
+.c-card p {
+  color: #555 !important;
+}
+
+.h-card a,
+.c-card a {
+  color: #1B4965 !important;
+}
+
+.credit-section h2 {
+  color: #1B4965 !important;
+}
+
+.c-card .label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Trick / Step sections */
+.trick-tag {
+  background: #1B4965 !important;
+}
+
+.trick-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #1a1a1a !important;
+}
+
+.trick-sub {
+  color: #555 !important;
+}
+
+.trick-step,
+.step {
+  background: #f7f8fa !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.step-num {
+  background: #1B4965 !important;
+}
+
+.step h3 {
+  color: #1B4965 !important;
+}
+
+.step p {
+  color: #444 !important;
+}
+
+.step a {
+  color: #1B4965 !important;
+}
+
+/* Warnings */
+.warn-box {
+  border-radius: 10px !important;
+}
+
+.warn-red {
+  background: #fef2f2 !important;
+  border-color: #fca5a5 !important;
+  color: #991b1b !important;
+}
+
+.warn-yellow {
+  background: #fffbeb !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+
+.warn-blue {
+  background: #eff6ff !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
+}
+
+/* Slow-read bars */
+.slow-read-bar {
+  background: #f7f8fa !important;
+  border-left-color: #1B4965 !important;
+}
+
+.slow-read-mid {
+  border-left-color: #F59E0B !important;
+}
+
+.slow-read-bottom {
+  border-left-color: #2D936C !important;
+}
+
+.slow-read-text strong {
+  color: #1a1a1a !important;
+}
+
+.slow-read-text p {
+  color: #555 !important;
+}
+
+.save-btn-inline {
+  background: #1B4965 !important;
+}
+
+/* Checklist */
+.trick-checklist {
+  background: #f7f8fa !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.checklist-title {
+  color: #1a1a1a !important;
+}
+
+.checklist-sub {
+  color: #555 !important;
+}
+
+.checklist-progress-fill {
+  background: #2D936C !important;
+}
+
+.check-item {
+  color: #333 !important;
+}
+
+.checklist-complete {
+  background: #ecfdf5 !important;
+  border-color: #2D936C !important;
+  color: #2D936C !important;
+}
+
+/* Blog link box */
+.blog-link-box {
+  background: #f0f4f8 !important;
+  border-radius: 12px !important;
+}
+
+.blog-link-box p {
+  color: #555 !important;
+}
+
+/* Bookmark bar */
+.bookmark-bar,
+.bookmark-banner {
+  background: #f0f4f8 !important;
+  border-bottom-color: #e0e0e0 !important;
+}
+
+.bookmark-bar p {
+  color: #444 !important;
+}
+
+.bookmark-bar strong {
+  color: #1B4965 !important;
+}
+
+.bm-chip {
+  background: #ffffff !important;
+  border-color: #ddd !important;
+  color: #555 !important;
+}
+
+/* Badges */
+.badge-green { background: #ecfdf5 !important; color: #2D936C !important; }
+.badge-gold { background: #eff6ff !important; color: #1B4965 !important; }
+.badge-blue { background: #eff6ff !important; color: #2563eb !important; }
+.badge-red { background: #fef2f2 !important; color: #D62828 !important; }
+
+/* ===== SHARE BAR ===== */
+.share-strip,
+.share-bar,
+[class*="share"] {
+  background: #f0f4f8 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ===== ALERT BAR ===== */
+.alert-bar {
+  background: #fef3f3 !important;
+  color: #991b1b !important;
+  border-color: #fca5a5 !important;
+}
+
+/* ===== EMAIL SIGNUP ===== */
+.email-section,
+[class*="subscribe"],
+[class*="email"] {
+  background: #f0f4f8 !important;
+}
+
+/* ===== SCROLL HINT ===== */
+.scroll-hint {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* ===== BENEFIT/GRID CARDS ===== */
+.benefit-card,
+.benefits-grid .card,
+.app-card {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.app-name,
+.app-header {
+  color: #1a1a1a !important;
+}
+
+.app-sub,
+.app-body {
+  color: #555 !important;
+}
+
+.app-tag {
+  background: #eef0f4 !important;
+  color: #1B4965 !important;
+}
+
+/* ===== BILL CARDS ===== */
+.bill-card {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.bill-header {
+  background: #f0f4f8 !important;
+}
+
+.bill-name {
+  color: #1a1a1a !important;
+}
+
+/* ===== TABLE OVERRIDES ===== */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+th {
+  background: #f0f4f8 !important;
+  color: #1a1a1a !important;
+  padding: 12px !important;
+  text-align: left !important;
+  border-bottom: 2px solid #ddd !important;
+}
+
+td {
+  padding: 10px 12px !important;
+  border-bottom: 1px solid #eee !important;
+  color: #333 !important;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb !important;
+}
+
+/* ===== MOBILE-SPECIFIC ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px !important;
+  }
+
+  .hero,
+  .gate {
+    padding: 36px 16px 32px !important;
+  }
+
+  .hero h1,
+  .gate h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+  }
+
+  .container {
+    padding: 0 12px !important;
+  }
+
+  .guide-grid,
+  .card-grid,
+  [class*="-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .need-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .stat-row,
+  .stats {
+    gap: 12px !important;
+  }
+
+  .stat-num {
+    font-size: 1.6rem !important;
+  }
+
+  .section {
+    padding: 32px 0 8px !important;
+  }
+
+  /* Bigger touch targets on small screens */
+  .need-card {
+    padding: 14px 12px !important;
+    min-height: 80px !important;
+  }
+
+  .guide-card,
+  .card {
+    padding: 16px !important;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .hero, .gate { background: #f0f0f0 !important; }
+  .hero h1, .gate h1 { color: #000 !important; }
+  nav, .share-strip, .kofi-block, footer { display: none !important; }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid #1B4965 !important;
+  outline-offset: 2px !important;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: #1B4965 !important;
+  color: #fff !important;
+}
+
+/* ===== SKIP LINK (accessibility) ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1B4965;
+  color: #fff;
+  padding: 8px;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* =============================================
+   INLINE STYLE OVERRIDES
+   Many pages use style="background:#111" etc.
+   These attribute selectors catch dark inline
+   backgrounds and light-on-dark text.
+   ============================================= */
+
+/* Dark backgrounds → light */
+[style*="background:#0"],
+[style*="background:#1"],
+[style*="background: #0"],
+[style*="background: #1"],
+[style*="background-color:#0"],
+[style*="background-color:#1"],
+[style*="background-color: #0"],
+[style*="background-color: #1"] {
+  background: #f7f8fa !important;
+}
+
+/* Very dark section backgrounds */
+[style*="background:#2"],
+[style*="background: #2"] {
+  background: #f0f4f8 !important;
+}
+
+/* Light text (designed for dark bg) → dark text */
+[style*="color:#fff"],
+[style*="color: #fff"],
+[style*="color:#FFF"],
+[style*="color: #FFF"],
+[style*="color:white"],
+[style*="color: white"],
+[style*="color:#eee"],
+[style*="color: #eee"],
+[style*="color:#eae"],
+[style*="color: #eae"],
+[style*="color:#ddd"],
+[style*="color: #ddd"],
+[style*="color:#ccc"],
+[style*="color: #ccc"],
+[style*="color:#bbb"],
+[style*="color: #bbb"],
+[style*="color:#aaa"],
+[style*="color: #aaa"],
+[style*="color:#999"],
+[style*="color: #999"],
+[style*="color:#888"],
+[style*="color: #888"],
+[style*="color:#777"],
+[style*="color: #777"] {
+  color: #333 !important;
+}
+
+/* Yellow text (for dark backgrounds) — make it dark blue instead */
+[style*="color:#FFE600"],
+[style*="color: #FFE600"],
+[style*="color:#f5c518"],
+[style*="color: #f5c518"],
+[style*="color:#f5c542"],
+[style*="color: #f5c542"] {
+  color: #1B4965 !important;
+}
+
+/* Light red/pink text → darker red */
+[style*="color:#FF6B6B"],
+[style*="color: #FF6B6B"],
+[style*="color:#FF2D2D"],
+[style*="color: #FF2D2D"] {
+  color: #D62828 !important;
+}
+
+/* Cyan/light blue text → darker blue */
+[style*="color:#4FC3F7"],
+[style*="color: #4FC3F7"],
+[style*="color:#0099FF"],
+[style*="color: #0099FF"] {
+  color: #1B4965 !important;
+}
+
+/* Green text stays green but darken slightly */
+[style*="color:#00C851"],
+[style*="color: #00C851"] {
+  color: #2D936C !important;
+}
+
+/* Dark borders → light borders */
+[style*="border-bottom:1px solid #1"],
+[style*="border-bottom: 1px solid #1"],
+[style*="border:1px solid #2"],
+[style*="border: 1px solid #2"],
+[style*="border:2px solid #FFE600"],
+[style*="border: 2px solid #FFE600"] {
+  border-color: #e0e0e0 !important;
+}
+
+/* Dark border-left accents → themed accents */
+[style*="border-left:4px solid #00C851"],
+[style*="border-left: 4px solid #00C851"] {
+  border-left-color: #2D936C !important;
+}
+
+[style*="border-left:4px solid #0099FF"],
+[style*="border-left: 4px solid #0099FF"] {
+  border-left-color: #1B4965 !important;
+}
+
+[style*="border-left:4px solid #FF2D2D"],
+[style*="border-left: 4px solid #FF2D2D"] {
+  border-left-color: #D62828 !important;
+}
+
+/* Fix inline-styled links */
+a[style*="color:#FFE600"],
+a[style*="color: #FFE600"],
+a[style*="color:#f5c542"],
+a[style*="color: #f5c542"] {
+  color: #1B4965 !important;
+}
+
+a[style*="color:#FF6B6B"],
+a[style*="color: #FF6B6B"] {
+  color: #D62828 !important;
+}
+
+/* Fix inline-styled nav link backgrounds */
+a[style*="background:#1a1a2e"],
+a[style*="background: #1a1a2e"] {
+  background: #f0f4f8 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* Table text on dark bg */
+th[style*="color:#FFE600"],
+th[style*="color: #FFE600"] {
+  color: #1B4965 !important;
+  font-weight: 700 !important;
+}
+
+td[style*="color:#00C851"],
+td[style*="color: #00C851"] {
+  color: #2D936C !important;
+  font-weight: 600 !important;
+}
+
+td[style*="border-bottom:1px solid #1"],
+td[style*="border-bottom: 1px solid #1"],
+th[style*="border-bottom:1px solid #3"],
+th[style*="border-bottom: 1px solid #3"] {
+  border-bottom-color: #e0e0e0 !important;
+}
