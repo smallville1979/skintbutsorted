@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cut Your Bills | Skint But Sorted</title>
+  <meta name="description" content="Cut every household bill — energy, broadband, mobile, insurance, TV licence, water. Social tariffs, switching tricks, haggling scripts. Real savings, right now.">
+  <meta property="og:title" content="Cut Your Bills | Skint But Sorted">
+  <meta property="og:description" content="Energy, broadband, mobile, insurance — how to cut every bill you have. Social tariffs most people don't know about. Real money back in your pocket.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/cut-bills/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --orange: #e67e22;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(150deg, #080814 0%, #1a1a2e 55%, #1a100a 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '✂️';
+      position: absolute;
+      font-size: 220px;
+      opacity: 0.04;
+      top: -20px;
+      right: -10px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .saving-total {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(230,126,34,0.08);
+      border: 1px solid rgba(230,126,34,0.3);
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 15px;
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    h2 { font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 1.1rem; color: white; margin-bottom: 12px; font-weight: bold; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* Bill cards */
+    .bill-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .bill-card:hover { border-color: var(--orange); }
+
+    .bill-header {
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid #2a2a4a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .bill-left { display: flex; align-items: center; gap: 12px; }
+    .bill-icon { font-size: 24px; }
+    .bill-name { font-size: 1.05rem; font-weight: bold; color: white; }
+
+    .saving-badge {
+      font-size: 13px;
+      font-weight: bold;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      background: rgba(46,204,113,0.12);
+      color: var(--green);
+      border: 1px solid rgba(46,204,113,0.3);
+    }
+
+    .bill-body { padding: 18px 24px; }
+    .bill-body p { font-size: 15px; color: #bbb; margin-bottom: 12px; }
+
+    .action-list {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .action-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid #2a2a4a;
+      font-size: 15px;
+      color: #ccc;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .action-list li:last-child { border-bottom: none; }
+    .action-list li::before { content: '→'; color: var(--orange); flex-shrink: 0; margin-top: 1px; }
+    .action-list li strong { color: white; }
+    .action-list li a { color: var(--orange); text-decoration: none; }
+    .action-list li a:hover { text-decoration: underline; }
+
+    .social-tariff-box {
+      background: rgba(46,204,113,0.07);
+      border: 2px solid rgba(46,204,113,0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+
+    .st-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .st-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .st-item {
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .st-provider { color: white; font-weight: bold; margin-bottom: 2px; }
+    .st-price { color: var(--green); font-size: 13px; }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 12px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 4px;
+    }
+
+    /* Script box */
+    .script-box {
+      background: #0d0d1a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin: 14px 0;
+      font-family: Georgia, serif;
+      font-size: 15px;
+      color: #aed6f1;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .script-label {
+      font-family: Arial, sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Gold box */
+    .gold-box {
+      background: rgba(245,197,24,0.05);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .gold-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Savings table */
+    .savings-table {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      overflow: hidden;
+      margin: 24px 0;
+    }
+
+    .st-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid #2a2a4a;
+      font-size: 15px;
+      align-items: center;
+    }
+
+    .st-row:last-child { border-bottom: none; }
+    .st-row .bill-col { color: #ccc; }
+    .st-row .save-col { color: var(--green); font-weight: bold; }
+    .st-row.total-row { background: rgba(46,204,113,0.06); }
+    .st-row.total-row .bill-col { color: white; font-weight: bold; font-size: 16px; }
+    .st-row.total-row .save-col { color: var(--green); font-size: 18px; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .kofi-strip {
+      background: linear-gradient(135deg, #1a0a05, #2a1205);
+      border: 2px solid rgba(230,126,34,0.4);
+      border-radius: 10px;
+      padding: 28px 24px;
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .kofi-strip h3 { color: var(--orange); margin-bottom: 10px; font-size: 1.2rem; }
+    .kofi-strip p { color: #bbb; font-size: 15px; margin-bottom: 18px; }
+
+    .kofi-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .kofi-btn:hover { background: #ca6f1e; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 20px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Attack Every Bill</div>
+  <h1>Cut Your Bills.<br><span>Every Single One.</span></h1>
+  <p class="hero-sub">Energy, broadband, mobile, insurance, water, TV — there's a cheaper version of almost every bill you pay. Social tariffs, switching tricks, haggling scripts. Here's the lot.</p>
+  <div class="saving-total">
+    💰 Most households can save £800–£1,500/year just by doing this page
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Your Potential Saving</div>
+    <h2>What this page is worth to you</h2>
+
+    <div class="savings-table">
+      <div class="st-row"><span class="bill-col">⚡ Energy</span><span class="save-col">£200–£400/year</span></div>
+      <div class="st-row"><span class="bill-col">📡 Broadband</span><span class="save-col">£120–£300/year</span></div>
+      <div class="st-row"><span class="bill-col">📱 Mobile</span><span class="save-col">£100–£250/year</span></div>
+      <div class="st-row"><span class="bill-col">🚗 Car Insurance</span><span class="save-col">£100–£400/year</span></div>
+      <div class="st-row"><span class="bill-col">🏠 Home Insurance</span><span class="save-col">£50–£200/year</span></div>
+      <div class="st-row"><span class="bill-col">💧 Water</span><span class="save-col">£50–£300/year</span></div>
+      <div class="st-row"><span class="bill-col">📺 TV / Streaming</span><span class="save-col">£100–£300/year</span></div>
+      <div class="st-row total-row"><span class="bill-col">Total possible saving</span><span class="save-col">£720–£2,150/year</span></div>
+    </div>
+
+    <p>You won't get every saving on this list. But if you do half of them, properly, that's £400–£1,000 back in your pocket this year. That's real money.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Bill By Bill</div>
+    <h2>What to do and in what order</h2>
+
+    <!-- Energy -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">⚡</div>
+          <div class="bill-name">Energy — Gas & Electric</div>
+        </div>
+        <span class="saving-badge">Save £200–£400/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>Energy is the biggest bill and the most missable savings. Social tariffs, Warm Home Discount, hardship funds — most people on low incomes qualify for at least one thing they're not getting.</p>
+
+        <div class="social-tariff-box">
+          <div class="st-label">🔥 Social Tariffs & Discounts — Check These First</div>
+          <ul class="action-list" style="margin-top:10px;">
+            <li><strong>Warm Home Discount</strong> — £150 off your energy bill. Auto-applied if on Pension Credit. Others can apply. Check gov.uk/the-warm-home-discount-scheme</li>
+            <li><strong>Cold Weather Payment</strong> — £25/week when temps drop below 0°C for 7 days. Auto if on qualifying benefits.</li>
+            <li><strong>Winter Fuel Payment</strong> — £100–£300 for over-66s on pension credit. Check eligibility.</li>
+            <li><strong>Supplier hardship funds</strong> — every major supplier has one. Call and ask: "Do you have a hardship fund I can apply to?"</li>
+          </ul>
+        </div>
+
+        <ul class="action-list">
+          <li>Switch supplier using <a href="https://www.uswitch.com/gas-electricity/" target="_blank" rel="noopener">Uswitch</a> or <a href="https://www.moneysavingexpert.com/utilities/cheap-energy/" target="_blank" rel="noopener">MoneySavingExpert</a> — fixed deals are back</li>
+          <li>Check if you're on a standard variable tariff — almost always the most expensive option</li>
+          <li>Smart meter: free to install, helps you track usage and qualify for some tariffs</li>
+          <li>If you can't pay: <strong>don't ignore it</strong> — call your supplier, set up a payment plan, mention hardship. They legally can't cut you off without offering alternatives in winter.</li>
+        </ul>
+        <div class="tip-line">💡 OVO, Octopus, and British Gas all have hardship funds. Ask directly on the phone — don't assume you have to find it yourself.</div>
+      </div>
+    </div>
+
+    <!-- Broadband -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">📡</div>
+          <div class="bill-name">Broadband</div>
+        </div>
+        <span class="saving-badge">Save £120–£300/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>This is one of the easiest bills to slash — and most people massively overpay. The secret weapon most people miss is the social broadband tariff.</p>
+
+        <div class="social-tariff-box">
+          <div class="st-label">💚 Social Broadband Tariffs — If You're On Benefits, Use These</div>
+          <div class="st-grid">
+            <div class="st-item"><div class="st-provider">BT Essentials</div><div class="st-price">~£15/month</div></div>
+            <div class="st-item"><div class="st-provider">Virgin Essential</div><div class="st-price">~£20/month</div></div>
+            <div class="st-item"><div class="st-provider">Sky Broadband Lite</div><div class="st-price">~£20/month</div></div>
+            <div class="st-item"><div class="st-provider">Vodafone Essentials</div><div class="st-price">~£12/month</div></div>
+            <div class="st-item"><div class="st-provider">Hyperoptic Social</div><div class="st-price">~£15/month</div></div>
+            <div class="st-item"><div class="st-provider">Community Fibre</div><div class="st-price">~£10/month</div></div>
+          </div>
+          <p style="margin-top:10px;font-size:14px;color:#aaa;">Qualifying benefits include UC, ESA, PIP, Pension Credit, and others. Check each provider — eligibility varies slightly.</p>
+        </div>
+
+        <ul class="action-list">
+          <li>If not on benefits: compare deals at <a href="https://www.uswitch.com/broadband/" target="_blank" rel="noopener">Uswitch</a> — new customer deals are always cheaper</li>
+          <li>Out of contract? Ring up and threaten to leave — retention teams have budget for discounts</li>
+          <li>BT Essentials specifically: available to UC, ESA, PIP claimants — full speed broadband, no contract trap</li>
+        </ul>
+
+        <div class="script-box">
+          <div class="script-label">Haggling Script — Call & Say This</div>
+          "Hi, I'm calling because I've seen I can get broadband for £X/month with [competitor]. I've been a customer for [X years] and I'd like to stay, but I need to get my bill down. What can you do for me?"
+        </div>
+        <div class="tip-line">💡 This script works 70% of the time. Worst case: they say no and you switch. Best case: £10–£20/month off your bill, no switching required.</div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">📱</div>
+          <div class="bill-name">Mobile Phone</div>
+        </div>
+        <span class="saving-badge">Save £100–£250/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>Most people pay £30–£50/month for a phone contract. You can get the same data and calls for £6–£15/month on a SIM-only deal — especially if your phone is already paid off.</p>
+        <ul class="action-list">
+          <li><strong>Check if your phone is paid off</strong> — if it is, you should be on SIM-only immediately. Staying on the same contract after your phone is paid for is free money given away.</li>
+          <li><strong>SIM-only deals</strong>: <a href="https://www.smarty.co.uk" target="_blank" rel="noopener">Smarty</a> (£6–£20/month, no contract), VOXI, Lebara, Lyca — massive data, tiny price</li>
+          <li><strong>Social tariff mobile</strong>: O2, EE, and Vodafone all offer discounted plans for UC claimants — call and ask</li>
+          <li>Use <a href="https://www.moneysavingexpert.com/phones/cheap-sim-only-deals/" target="_blank" rel="noopener">MSE SIM comparison</a> to find the current cheapest deal for your usage</li>
+        </ul>
+        <div class="tip-line">💡 Smarty shares unused data as credit. If you're mostly on WiFi, you could pay as little as £6/month and get money back on months you use less.</div>
+      </div>
+    </div>
+
+    <!-- Car Insurance -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">🚗</div>
+          <div class="bill-name">Car Insurance</div>
+        </div>
+        <span class="saving-badge">Save £100–£400/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>Car insurance is the most gameable bill there is. The renewal price is almost always a rip-off. The people who save are the ones who never auto-renew.</p>
+        <ul class="action-list">
+          <li><strong>Never auto-renew</strong> — set a calendar reminder 3 weeks before renewal, compare elsewhere every single time</li>
+          <li>Compare on <a href="https://www.comparethemarket.com" target="_blank" rel="noopener">Compare the Market</a>, <a href="https://www.confused.com" target="_blank" rel="noopener">Confused.com</a>, and <a href="https://www.gocompare.com" target="_blank" rel="noopener">GoCompare</a> — use all three, prices differ</li>
+          <li><strong>Ring your insurer with the cheaper quote</strong> — "I've been quoted £X elsewhere, can you match it?" Works more often than you'd think</li>
+          <li>Pay annually not monthly — monthly adds 20–30% in interest charges</li>
+          <li>Telematics (black box) policies: good for younger drivers — can cut premiums by 30–50%</li>
+          <li>Increase voluntary excess carefully — lowers premium, but make sure you can actually pay the excess if you claim</li>
+        </ul>
+        <div class="tip-line">💡 Cashback sites (TopCashback, Quidco) pay £30–£80 cashback on new insurance policies. Stack with the cheapest comparison site quote.</div>
+      </div>
+    </div>
+
+    <!-- Home Insurance -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">🏠</div>
+          <div class="bill-name">Home Insurance</div>
+        </div>
+        <span class="saving-badge">Save £50–£200/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>Same rules as car insurance — loyalty is penalised, switching is rewarded.</p>
+        <ul class="action-list">
+          <li>Compare buildings and contents separately — sometimes cheaper than combined</li>
+          <li>Same comparison sites as car insurance — <a href="https://www.comparethemarket.com" target="_blank" rel="noopener">CTM</a>, Confused, GoCompare</li>
+          <li>If renting: you only need <strong>contents insurance</strong> — buildings is the landlord's responsibility</li>
+          <li>Check if contents are covered under a bank account (some packaged accounts include it)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Water -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">💧</div>
+          <div class="bill-name">Water</div>
+        </div>
+        <span class="saving-badge">Save £50–£300/yr</span>
+      </div>
+      <div class="bill-body">
+        <p>You can't switch water supplier — but there are several ways to cut the bill most people don't know about.</p>
+        <ul class="action-list">
+          <li><strong>WaterSure scheme</strong> — if you use a lot of water for medical reasons or have 3+ kids, your bill is capped. Free. Apply through your supplier.</li>
+          <li><strong>Water meter</strong> — if you live alone or as a couple, a water meter almost always saves money. Request a free meter from your supplier.</li>
+          <li><strong>Social tariffs</strong> — every water company has them for low-income households. Ask your supplier directly: "Do you have a social tariff?"</li>
+          <li><strong>Debt support</strong> — water companies can't cut off domestic supply. If you're in debt, call them — they legally have to help you set up a payment plan.</li>
+        </ul>
+        <div class="find-links" style="margin-top:14px;">
+          <a href="https://www.ccwater.org.uk/households/financial-support/" target="_blank" rel="noopener" style="color:var(--orange);font-size:14px;text-decoration:none;">Consumer Council for Water — financial support guide →</a>
+        </div>
+        <div class="tip-line">💡 Northumbrian Water (Newcastle area) has the Helping Hand scheme — income-based discount up to 50% off your bill. Apply online.</div>
+      </div>
+    </div>
+
+    <!-- TV Licence -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">📺</div>
+          <div class="bill-name">TV Licence</div>
+        </div>
+        <span class="saving-badge">Free if eligible</span>
+      </div>
+      <div class="bill-body">
+        <p>£169.50/year. Most people just pay it. But a surprising number of people are paying who either don't need to or qualify for it free.</p>
+        <ul class="action-list">
+          <li><strong>Over 75 and on Pension Credit?</strong> — TV licence is free. Apply at tvlicensing.co.uk</li>
+          <li><strong>Blind or severely sight impaired?</strong> — 50% discount available</li>
+          <li><strong>Only watch Netflix/Disney/streaming?</strong> — if you never watch live TV or BBC iPlayer, you don't legally need a TV licence. Cancel it.</li>
+          <li><strong>Student living away from home?</strong> — covered by parents' licence if only watching on a device not plugged into mains</li>
+        </ul>
+        <div class="warning-box" style="margin-top:14px;margin-bottom:0;">
+          <div class="w-title">⚠️ Know The Rules</div>
+          <p>You need a licence to watch ANY live TV on ANY channel, or to watch BBC iPlayer. You don't need one for Netflix, Disney+, ITVX (on-demand only), YouTube, or any other streaming service. Be honest with yourself about what you actually watch before cancelling.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Council Tax -->
+    <div class="bill-card">
+      <div class="bill-header">
+        <div class="bill-left">
+          <div class="bill-icon">🏛️</div>
+          <div class="bill-name">Council Tax</div>
+        </div>
+        <span class="saving-badge">Up to 100% off</span>
+      </div>
+      <div class="bill-body">
+        <p>Council Tax Reduction is one of the most underclaimed discounts in the UK. If you're on a low income you almost certainly qualify for something — possibly everything.</p>
+        <ul class="action-list">
+          <li><strong>Council Tax Reduction</strong> — apply through your council. Based on income. Can be 0–100% off. Apply even if you think you won't qualify.</li>
+          <li><strong>Single person discount</strong> — 25% off if you're the only adult in the property. Automatic — but you have to claim it.</li>
+          <li><strong>Empty properties, carers, students</strong> — various exemptions exist. Check your council's website.</li>
+          <li>Apply at <a href="https://www.gov.uk/apply-council-tax-reduction" target="_blank" rel="noopener">gov.uk/apply-council-tax-reduction</a></li>
+        </ul>
+        <div class="tip-line">💡 If your council tax band might be wrong (common in properties built pre-1991), you can challenge it. The Valuation Office Agency handles this — it's free to challenge.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Nuclear Audit</div>
+    <h2>Do this once a year — every year</h2>
+
+    <div class="gold-box">
+      <div class="g-title">Annual Bills Audit</div>
+      <p>Every January (or whenever you read this): open your bank statements. Write down every direct debit. Check each one — is it the cheapest version available? Have you checked in the last 12 months? If not, you're overpaying. This takes 2 hours and typically saves £400–£800. Do it. Put it in your calendar. Do it every year.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Free Tools</div>
+    <h2>Sites that do the work for you</h2>
+
+    <ul class="action-list">
+      <li><a href="https://www.moneysavingexpert.com" target="_blank" rel="noopener"><strong>MoneySavingExpert</strong></a> — best all-round resource for UK bills, switching, and deals</li>
+      <li><a href="https://www.uswitch.com" target="_blank" rel="noopener"><strong>Uswitch</strong></a> — energy, broadband, mobile comparison</li>
+      <li><a href="https://www.entitledto.co.uk" target="_blank" rel="noopener"><strong>Entitledto</strong></a> — check what benefits and discounts you're missing</li>
+      <li><a href="https://www.turn2us.org.uk" target="_blank" rel="noopener"><strong>Turn2us</strong></a> — grant finder and benefit calculator</li>
+      <li><a href="https://www.topcashback.co.uk/ref/q1979" target="_blank" rel="noopener"><strong>TopCashback</strong></a> — get cashback when switching insurance, broadband, and more</li>
+    </ul>
+  </div>
+
+  <!-- Ko-fi strip -->
+  <div class="kofi-strip">
+    <h3>☕ This site saved you money. Buy Tom a coffee?</h3>
+    <p>Skint But Sorted is free — no ads, no sponsored content, just real info. If this page saved you something, a coffee keeps it going.</p>
+    <a href="https://ko-fi.com/tomgallagher" target="_blank" rel="noopener" class="kofi-btn">☕ Buy Tom a Coffee →</a>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone drowning in bills?</strong><br>Send them this page. Could be worth £1,000 to them this year.</p>
+    <a href="/cut-bills/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">Tariffs and schemes change — always verify current rates before switching. Correct to best of knowledge April 2026.</p>
+</footer>
+
+</body>
+</html>

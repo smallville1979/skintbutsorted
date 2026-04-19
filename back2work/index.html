@@ -1,0 +1,714 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Training & Back to Work Schemes | Skint But Sorted</title>
+  <meta name="description" content="Get paid to train. Government-funded Skills Bootcamps, Back2Work schemes, apprenticeships and free courses that lead directly to jobs. No experience needed.">
+  <meta property="og:title" content="Free Training & Back to Work Schemes | Skint But Sorted">
+  <meta property="og:description" content="Paid training. Guaranteed interviews. Free qualifications. The government schemes most people don't know about — and how to get on them fast.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/back2work/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --blue: #3498db;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(150deg, #080814 0%, #1a1a2e 55%, #0a1020 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🎓';
+      position: absolute;
+      font-size: 240px;
+      opacity: 0.04;
+      top: -20px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: #5dade2; }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      background: rgba(52,152,219,0.1);
+      border: 1px solid rgba(52,152,219,0.3);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 14px;
+      color: #5dade2;
+      font-weight: bold;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #5dade2;
+      margin-bottom: 8px;
+    }
+
+    h2 { font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 1.1rem; color: white; margin-bottom: 12px; font-weight: bold; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* Scheme cards */
+    .scheme-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .scheme-card:hover { border-color: #3498db; }
+
+    .scheme-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #2a2a4a;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .scheme-icon-name { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .scheme-icon { font-size: 22px; }
+    .scheme-name { font-size: 1.1rem; font-weight: bold; color: white; }
+
+    .scheme-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .tag {
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-free { background: rgba(46,204,113,0.12); color: var(--green); border: 1px solid rgba(46,204,113,0.25); }
+    .tag-paid { background: rgba(245,197,24,0.1); color: var(--gold); border: 1px solid rgba(245,197,24,0.25); }
+    .tag-job { background: rgba(52,152,219,0.12); color: #5dade2; border: 1px solid rgba(52,152,219,0.25); }
+    .tag-hot { background: rgba(233,69,96,0.12); color: var(--primary); border: 1px solid rgba(233,69,96,0.25); }
+
+    .scheme-badge {
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 14px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      background: rgba(52,152,219,0.15);
+      color: #5dade2;
+      border: 1px solid rgba(52,152,219,0.3);
+    }
+
+    .scheme-body { padding: 18px 24px; }
+    .scheme-body p { font-size: 15px; color: #bbb; margin-bottom: 12px; }
+
+    .scheme-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    @media (max-width: 480px) { .scheme-detail { grid-template-columns: 1fr; } }
+
+    .detail-item {
+      background: #0d0d1a;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .detail-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .detail-value { font-size: 15px; color: var(--text); font-weight: bold; }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 12px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 4px;
+    }
+
+    .find-links { margin-top: 14px; }
+    .find-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .find-link {
+      font-size: 13px;
+      color: #5dade2;
+      text-decoration: none;
+      background: rgba(52,152,219,0.07);
+      border: 1px solid rgba(52,152,219,0.2);
+      padding: 5px 12px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .find-link:hover { background: rgba(52,152,219,0.15); }
+
+    /* Story box */
+    .story-box {
+      background: rgba(52,152,219,0.06);
+      border-left: 4px solid #3498db;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .story-box .s-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5dade2;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .story-box p { color: var(--text); margin: 0; font-size: 16px; }
+
+    /* Gold box */
+    .gold-box {
+      background: rgba(245,197,24,0.05);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .gold-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: #3498db;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+
+    /* Sector grid */
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .sector-card {
+      background: var(--card-bg);
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+    }
+    .sector-card:hover { border-color: #3498db; }
+    .sector-name { font-size: 15px; font-weight: bold; color: white; margin-bottom: 4px; }
+    .sector-desc { font-size: 13px; color: #999; margin: 0; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .cta-btn.blue {
+      background: #2980b9;
+    }
+    .cta-btn.blue:hover { background: #1f6fa3; }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Get Paid To Train</div>
+  <h1>Free Training.<br><span>Real Jobs At The End.</span></h1>
+  <p class="hero-sub">Government-funded courses, Skills Bootcamps, Back2Work schemes — free qualifications with guaranteed interviews, sometimes a wage while you learn. Most people have no idea these exist.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">💷 Some schemes pay you to attend</span>
+    <span class="hero-pill">🎯 Guaranteed interview on completion</span>
+    <span class="hero-pill">📋 No experience needed</span>
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Real Talk First</div>
+    <h2>This worked during COVID. It still works now.</h2>
+
+    <div class="story-box">
+      <div class="s-title">What Actually Happened</div>
+      <p>During lockdown the government ran 2–3 week paid training courses — customer service, data skills, digital — and people got paid to attend. Some walked straight into apprenticeships before their course even finished. The bright ones who engaged properly got instant job offers. The courses still exist. They're funded differently now but the principle is the same: free training, employer connections, real jobs at the end. If you went on one then — there are equivalents now. If you didn't — this is the page you needed.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Schemes</div>
+    <h2>What's available right now</h2>
+
+    <!-- Skills Bootcamps -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">⚡</div>
+            <div class="scheme-name">Skills Bootcamps</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-free">Free</span>
+            <span class="tag tag-job">Guaranteed Interview</span>
+            <span class="tag tag-hot">🔥 Most Valuable</span>
+          </div>
+        </div>
+        <div class="scheme-badge">DfE Funded</div>
+      </div>
+      <div class="scheme-body">
+        <p>The single best scheme running right now. 12–16 week intensive courses, completely free, funded by the Department for Education. Employers are involved from day one — many guarantee an interview on completion. Sectors include digital, construction, green energy, HGV driving, healthcare, and more.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Cost</div><div class="detail-value">Free to you</div></div>
+          <div class="detail-item"><div class="detail-label">Length</div><div class="detail-value">12–16 weeks typically</div></div>
+          <div class="detail-item"><div class="detail-label">Outcome</div><div class="detail-value">Guaranteed interview + qualification</div></div>
+          <div class="detail-item"><div class="detail-label">Benefits impact</div><div class="detail-value">Usually can still claim UC</div></div>
+        </div>
+        <p>Unlike old-style college courses, Bootcamps are employer-led — the companies who will hire you help design the training. That's why the job conversion rate is high.</p>
+        <div class="find-links">
+          <div class="find-label">Find a Skills Bootcamp</div>
+          <div class="link-row">
+            <a href="https://www.gov.uk/guidance/find-a-skills-bootcamp" target="_blank" rel="noopener" class="find-link">GOV.UK →</a>
+            <a href="https://find-a-skills-bootcamp.service.gov.uk" target="_blank" rel="noopener" class="find-link">Search Bootcamps →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 HGV driving bootcamps are particularly strong right now — massive driver shortage, good wages, employers desperate. Worth serious consideration.</div>
+      </div>
+    </div>
+
+    <!-- Multiply -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">🔢</div>
+            <div class="scheme-name">Multiply — Free Maths & Numeracy</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-free">Free</span>
+            <span class="tag tag-paid">Flexible Hours</span>
+          </div>
+        </div>
+        <div class="scheme-badge">UKSPF Funded</div>
+      </div>
+      <div class="scheme-body">
+        <p>Free maths and numeracy skills courses for adults who don't have a GCSE grade C/4 in maths. Short courses, flexible timing, delivered locally or online. Doesn't sound glamorous — but maths confidence opens doors to better-paid work across every sector.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Cost</div><div class="detail-value">Free</div></div>
+          <div class="detail-item"><div class="detail-label">Who it's for</div><div class="detail-value">Adults without maths GCSE C/4</div></div>
+          <div class="detail-item"><div class="detail-label">Format</div><div class="detail-value">Local courses, online, flexible</div></div>
+          <div class="detail-item"><div class="detail-label">Benefit</div><div class="detail-value">Opens higher-paid job routes</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Find Multiply courses</div>
+          <div class="link-row">
+            <a href="https://www.gov.uk/government/publications/multiply-improving-adult-numeracy/multiply-improving-adult-numeracy" target="_blank" rel="noopener" class="find-link">GOV.UK Multiply →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free Courses for Jobs -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">📋</div>
+            <div class="scheme-name">Free Courses for Jobs</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-free">Free</span>
+            <span class="tag tag-job">Level 3 Qualification</span>
+          </div>
+        </div>
+        <div class="scheme-badge">DfE Funded</div>
+      </div>
+      <div class="scheme-body">
+        <p>If you're 19+ and earning under the National Living Wage, or on certain benefits, you can get a full Level 3 qualification (equivalent to A-levels) completely free. Over 400 courses available — accounting, childcare, construction, digital, healthcare, business admin and more.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Cost</div><div class="detail-value">Free if eligible</div></div>
+          <div class="detail-item"><div class="detail-label">Level</div><div class="detail-value">Level 3 (A-level equivalent)</div></div>
+          <div class="detail-item"><div class="detail-label">Courses available</div><div class="detail-value">400+</div></div>
+          <div class="detail-item"><div class="detail-label">Who qualifies</div><div class="detail-value">19+, low income or on benefits</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Find free Level 3 courses</div>
+          <div class="link-row">
+            <a href="https://www.gov.uk/guidance/free-courses-for-jobs" target="_blank" rel="noopener" class="find-link">GOV.UK →</a>
+            <a href="https://nationalcareers.service.gov.uk/find-a-course" target="_blank" rel="noopener" class="find-link">Find a Course →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 Childcare and healthcare Level 3 courses lead directly to employed roles with training on the job. Fast track into stable work.</div>
+      </div>
+    </div>
+
+    <!-- Apprenticeships -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">🔧</div>
+            <div class="scheme-name">Apprenticeships — Any Age</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-paid">Paid From Day 1</span>
+            <span class="tag tag-job">Employed + Qualified</span>
+            <span class="tag tag-hot">🔥 No Age Limit</span>
+          </div>
+        </div>
+        <div class="scheme-badge">Employer Funded</div>
+      </div>
+      <div class="scheme-body">
+        <p>Apprenticeships are not just for school leavers. Adults in their 30s, 40s, and 50s do them. You are employed from day one — paid a wage, trained on the job, get a qualification. The minimum apprenticeship wage is low but many employers pay National Minimum Wage or above.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Minimum wage</div><div class="detail-value">£6.40/hr (April 2024)</div></div>
+          <div class="detail-item"><div class="detail-label">Many employers pay</div><div class="detail-value">NMW or above</div></div>
+          <div class="detail-item"><div class="detail-label">Training</div><div class="detail-value">On the job + college day release</div></div>
+          <div class="detail-item"><div class="detail-label">Age limit</div><div class="detail-value">None — adults welcome</div></div>
+        </div>
+        <p>The people who got instant apprenticeships during COVID-era bootcamps didn't get lucky — they engaged properly, showed up every day, asked questions, and made themselves impossible to ignore. That's still the move.</p>
+        <div class="find-links">
+          <div class="find-label">Find apprenticeships</div>
+          <div class="link-row">
+            <a href="https://www.findapprenticeship.service.gov.uk" target="_blank" rel="noopener" class="find-link">Find an Apprenticeship →</a>
+            <a href="https://www.apprenticeships.gov.uk" target="_blank" rel="noopener" class="find-link">Apprenticeships.gov.uk →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 Higher and Degree apprenticeships exist in accounting, nursing, engineering, software development — degree-level qualifications, no tuition fees, paid throughout.</div>
+      </div>
+    </div>
+
+    <!-- Restart Scheme -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">🔄</div>
+            <div class="scheme-name">Restart Scheme / Jobcentre Support</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-free">Free</span>
+            <span class="tag tag-paid">Funded Activities</span>
+          </div>
+        </div>
+        <div class="scheme-badge">DWP</div>
+      </div>
+      <div class="scheme-body">
+        <p>If you've been on Universal Credit for 9+ months and are required to look for work, you may be referred to the Restart Scheme. Mandatory for some, but the support is real — CV help, interview coaching, funded training, employer introductions. Don't wait to be referred — ask your work coach directly what's available in your area.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Who gets it</div><div class="detail-value">UC claimants 9+ months</div></div>
+          <div class="detail-item"><div class="detail-label">Duration</div><div class="detail-value">Up to 12 months support</div></div>
+          <div class="detail-item"><div class="detail-label">What's included</div><div class="detail-value">CV, training, employer links</div></div>
+          <div class="detail-item"><div class="detail-label">How to access</div><div class="detail-value">Ask your work coach</div></div>
+        </div>
+        <div class="tip-line">💡 Ask your Jobcentre work coach specifically: "What Skills Bootcamps or funded training can I access right now?" — they don't always volunteer this information.</div>
+      </div>
+    </div>
+
+    <!-- NHS / Care sector entry -->
+    <div class="scheme-card">
+      <div class="scheme-header">
+        <div>
+          <div class="scheme-icon-name">
+            <div class="scheme-icon">🏥</div>
+            <div class="scheme-name">NHS & Care Sector Fast-Track Entry</div>
+          </div>
+          <div class="scheme-tags">
+            <span class="tag tag-free">Training Provided</span>
+            <span class="tag tag-job">Immediate Vacancies</span>
+            <span class="tag tag-hot">🔥 Massive Shortage</span>
+          </div>
+        </div>
+        <div class="scheme-badge">NHS / Social Care</div>
+      </div>
+      <div class="scheme-body">
+        <p>Healthcare and social care have a chronic staffing shortage. Entry-level roles — healthcare assistant, support worker, bank staff — require no qualifications upfront. Training is provided on the job. The NHS bank (temporary staffing pool) is particularly useful — work when you want, immediate need, good hourly rates.</p>
+        <div class="scheme-detail">
+          <div class="detail-item"><div class="detail-label">Entry requirement</div><div class="detail-value">None — training provided</div></div>
+          <div class="detail-item"><div class="detail-label">NHS bank rate</div><div class="detail-value">£12–£15/hr entry level</div></div>
+          <div class="detail-item"><div class="detail-label">DBS check</div><div class="detail-value">Required — NHS organises it</div></div>
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Flexible — bank work, pick your shifts</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Find NHS and care roles</div>
+          <div class="link-row">
+            <a href="https://www.jobs.nhs.uk" target="_blank" rel="noopener" class="find-link">NHS Jobs →</a>
+            <a href="https://www.skillsforcare.org.uk/Careers-in-care/Career-pathways.aspx" target="_blank" rel="noopener" class="find-link">Skills for Care →</a>
+            <a href="https://www.indeed.co.uk/jobs?q=healthcare+assistant+bank" target="_blank" rel="noopener" class="find-link">Indeed →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 NHS bank staff can sometimes pick up extra shifts worth £400–£600 extra a month on top of a main job. Worth joining the bank even if you have other work.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Best Sectors Right Now</div>
+    <h2>Where the jobs actually are in 2025–26</h2>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="sector-name">🚛 HGV Driving</div>
+        <p class="sector-desc">Massive shortage. Bootcamp funding available. £35–£50k once qualified.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">💻 Digital & IT</div>
+        <p class="sector-desc">Cyber security, data, cloud. Bootcamps everywhere. High demand.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">🏥 Healthcare</div>
+        <p class="sector-desc">HCA, support worker, NHS bank. No qualifications needed to start.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">🌿 Green Energy</div>
+        <p class="sector-desc">Heat pumps, solar, EV. Growing fast. Bootcamp funded. Good money.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">🏗️ Construction</div>
+        <p class="sector-desc">CSCS card + bootcamp = employed within weeks. Always hiring.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">👶 Childcare</div>
+        <p class="sector-desc">Level 3 free. Nurseries desperate. Apprenticeships available.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">📊 Business Admin</div>
+        <p class="sector-desc">Free Level 3 available. Apprenticeships everywhere. Stable work.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-name">🔌 Electrician</div>
+        <p class="sector-desc">Apprenticeship route. 4 years but ends at £40k+. Long game worth it.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Insider Move</div>
+    <h2>How to get the most out of any scheme</h2>
+
+    <div class="steps-block">
+      <h3>The formula that gets you hired before the course ends</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Show up. Every single day.</strong> Attendance is the first filter. The people who get offers are always the ones who showed up when others didn't.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Engage properly.</strong> Ask questions. Volunteer for demos. Make yourself visible to the tutors and any employer visitors.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Talk to every employer who visits.</strong> They're there to scout. Introduce yourself. Ask about their team. Follow up with an email the same day.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Don't wait for the course to finish.</strong> If an employer shows interest, push for a conversation now. The people who got apprenticeships mid-course didn't wait — they moved fast.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Get the reference before you leave.</strong> Ask your tutor on week one who gives references and what you need to do to get a strong one. Then do those things.</div>
+      </div>
+    </div>
+
+    <div class="gold-box">
+      <div class="g-title">The Advanced Database Lesson</div>
+      <p>A bad teacher and a broken computer means nothing if you're the one making connections. The qualification matters less than the relationships and the reference. Engage with the people, not just the content — that's what gets you hired.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Benefits while training</div>
+      <p>Most free government training does not affect Universal Credit. But always check with your work coach before starting. Some schemes count as "work-related activity" and satisfy your UC conditions. Others may need to be declared. Don't assume — ask first.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Start Today</div>
+    <h2>Three links. That's all you need.</h2>
+
+    <a href="https://find-a-skills-bootcamp.service.gov.uk" target="_blank" rel="noopener" class="cta-btn blue">Find a Skills Bootcamp near you →</a>
+    <a href="https://nationalcareers.service.gov.uk/find-a-course" target="_blank" rel="noopener" class="cta-btn blue">Find free Level 3 courses →</a>
+    <a href="https://www.findapprenticeship.service.gov.uk" target="_blank" rel="noopener" class="cta-btn blue">Find an Apprenticeship →</a>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone stuck in a dead-end job or on benefits who wants out?</strong><br>This page might be the ladder they've been looking for. Send it.</p>
+    <a href="/back2work/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">Scheme eligibility and funding changes — always verify on GOV.UK before applying. Correct to best of knowledge April 2026.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kill Your Subscriptions | Skint But Sorted</title>
+  <meta name="description" content="Stop paying for Spotify, YouTube Premium, Netflix and more. Free alternatives that actually work — SmartTube, Mutify, NetFly and how to kill every subscription draining your bank.">
+  <meta property="og:title" content="Kill Your Subscriptions | Skint But Sorted">
+  <meta property="og:description" content="SmartTube, Mutify, NetFly — free alternatives to every subscription bleeding you dry. Kill them all.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/kill-subscriptions/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a0a18 0%, #1a1a2e 60%, #16213e 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '✂';
+      position: absolute;
+      font-size: 280px;
+      color: rgba(233,69,96,0.04);
+      top: -40px;
+      right: -30px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+
+    .saving-bar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .saving-pill {
+      background: rgba(46,204,113,0.12);
+      border: 1px solid rgba(46,204,113,0.35);
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-size: 14px;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+
+    .read-time strong { color: var(--primary); }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #2a2a4a;
+      margin: 10px 0 30px;
+    }
+
+    /* Sub killer cards */
+    .sub-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .sub-card:hover { border-color: var(--primary); }
+
+    .sub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      border-bottom: 1px solid #2a2a4a;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sub-title-block { display: flex; align-items: center; gap: 12px; }
+
+    .sub-icon { font-size: 24px; }
+
+    .sub-name {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .sub-cost {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .kill-badge {
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .killed { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.4); }
+    .hackable { background: rgba(245,197,24,0.12); color: var(--gold); border: 1px solid rgba(245,197,24,0.35); }
+    .dump { background: rgba(233,69,96,0.12); color: var(--primary); border: 1px solid rgba(233,69,96,0.35); }
+
+    .sub-body { padding: 18px 22px; }
+
+    .sub-body p { font-size: 15px; color: #bbb; margin-bottom: 10px; }
+
+    .free-alt {
+      background: rgba(46,204,113,0.07);
+      border: 1px solid rgba(46,204,113,0.2);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 10px;
+    }
+
+    .free-alt-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .free-alt p {
+      font-size: 15px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    .free-alt a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .free-alt a:hover { text-decoration: underline; }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 10px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 12px;
+    }
+
+    /* Total savings box */
+    .savings-box {
+      background: linear-gradient(135deg, rgba(46,204,113,0.08), rgba(46,204,113,0.03));
+      border: 2px solid rgba(46,204,113,0.3);
+      border-radius: 10px;
+      padding: 28px 28px;
+      margin: 28px 0;
+      text-align: center;
+    }
+
+    .savings-box .big-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .savings-box p {
+      color: #aaa;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* Rule box */
+    .rule-box {
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .rule-box .rule-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .rule-box p { color: var(--text); margin: 0; font-size: 16px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .steps-block h3 {
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Stop The Bleed</div>
+  <h1>Kill Your<br><span>Subscriptions.</span></h1>
+  <p class="hero-sub">Spotify. YouTube Premium. Netflix. Prime. They're draining you every single month. Here's how to get the same thing for free — right now.</p>
+  <div class="saving-bar">
+    <span class="saving-pill">💚 YouTube = Free</span>
+    <span class="saving-pill">💚 Spotify = Free</span>
+    <span class="saving-pill">💚 Netflix = Free</span>
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">The Damage</div>
+    <h2>What you're actually spending</h2>
+
+    <div class="savings-box">
+      <div class="big-num">£1,200+</div>
+      <p>What a household spends on subscriptions every year without noticing.<br>Most of it is replaceable for free. Today.</p>
+    </div>
+
+    <p>Netflix, Spotify, YouTube Premium, Prime Video, Amazon Music, Disney+, Apple TV — each one feels small. Together they're a phone bill. This page kills them one by one.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Kill Them</div>
+    <h2>Sub by sub — what to do</h2>
+
+    <!-- YouTube Premium -->
+    <div class="sub-card">
+      <div class="sub-header">
+        <div class="sub-title-block">
+          <div class="sub-icon">▶️</div>
+          <div>
+            <div class="sub-name">YouTube Premium</div>
+            <div class="sub-cost">~£13.99/month</div>
+          </div>
+        </div>
+        <span class="kill-badge killed">✓ KILLED — Free Fix</span>
+      </div>
+      <div class="sub-body">
+        <p>You're paying £14/month to remove ads. You don't need to. There are two routes depending on your device.</p>
+        <div class="free-alt">
+          <div class="free-alt-label">🔥 FireStick / FireCube</div>
+          <p><strong>SmartTube</strong> — YouTube with zero ads, background play, 4K, sponsored segment skip. Free. Works on any Fire device.<br>Search "SmartTube" in Downloader app on your FireStick. Takes 5 minutes.</p>
+        </div>
+        <div class="free-alt" style="margin-top:10px;">
+          <div class="free-alt-label">💻 PC / Laptop</div>
+          <p><strong>uBlock Origin</strong> (browser extension) — kills all YouTube ads instantly. Chrome, Firefox, Edge. Free forever.<br>
+          Get it at: <a href="https://ublockorigin.com" target="_blank" rel="noopener">ublockorigin.com</a></p>
+        </div>
+        <div class="free-alt" style="margin-top:10px;">
+          <div class="free-alt-label">📱 Android Phone</div>
+          <p><strong>YouTube ReVanced</strong> — patched YouTube app, no ads, background play. Slightly more technical to install but free.<br>Search "YouTube ReVanced install guide" for your device.</p>
+        </div>
+        <div class="tip-line">💡 Cancel Premium today. Watch £168/year stay in your pocket.</div>
+      </div>
+    </div>
+
+    <!-- Spotify -->
+    <div class="sub-card">
+      <div class="sub-header">
+        <div class="sub-title-block">
+          <div class="sub-icon">🎵</div>
+          <div>
+            <div class="sub-name">Spotify Premium</div>
+            <div class="sub-cost">~£11.99/month individual / £17.99 family</div>
+          </div>
+        </div>
+        <span class="kill-badge hackable">⚠ Hackable</span>
+      </div>
+      <div class="sub-body">
+        <p>Free Spotify with ads is genuinely useable — especially on desktop where you can skip freely. On mobile the restrictions are tighter but there are workarounds.</p>
+        <div class="free-alt">
+          <div class="free-alt-label">📱 Phone — Block The Ads</div>
+          <p><strong>Mutify</strong> — mutes Spotify ads automatically on your phone. Free app. Not perfect but helps. Search "Mutify" in your app store.</p>
+        </div>
+        <div class="free-alt" style="margin-top:10px;">
+          <div class="free-alt-label">💻 Desktop — Just Use It Free</div>
+          <p>Spotify Free on desktop lets you skip tracks and use it much more freely. Use <strong>uBlock Origin</strong> in browser to block ads on the web player at <a href="https://open.spotify.com" target="_blank" rel="noopener">open.spotify.com</a>.</p>
+        </div>
+        <div class="free-alt" style="margin-top:10px;">
+          <div class="free-alt-label">🆓 Alternatives</div>
+          <p><strong>YouTube Music</strong> (free tier) — same library, works fine.<br>
+          <strong>BBC Sounds</strong> — free, huge catalogue, no ads.<br>
+          <strong>Deezer Free</strong> — another solid free option.</p>
+        </div>
+        <div class="tip-line">💡 Family plan? Check if your kids actually use it or just have it running. Cancel individual plans first — try free for a month.</div>
+      </div>
+    </div>
+
+    <!-- Netflix -->
+    <div class="sub-card">
+      <div class="sub-header">
+        <div class="sub-title-block">
+          <div class="sub-icon">🎬</div>
+          <div>
+            <div class="sub-name">Netflix</div>
+            <div class="sub-cost">£4.99–£17.99/month</div>
+          </div>
+        </div>
+        <span class="kill-badge dump">DUMP IT</span>
+      </div>
+      <div class="sub-body">
+        <p>Netflix is the easiest one to kill. Why pay when there are free alternatives with massive libraries?</p>
+        <div class="free-alt">
+          <div class="free-alt-label">🔥 FireStick / FireCube</div>
+          <p><strong>NetFly</strong> — free Netflix-style app for Fire devices. Huge catalogue, no subscription. Install via Downloader app on your FireStick.<br>Also check: <strong>Cinema HD</strong>, <strong>Stremio</strong> (with Real-Debrid for best quality).</p>
+        </div>
+        <div class="free-alt" style="margin-top:10px;">
+          <div class="free-alt-label">📺 Totally Free Legit Options</div>
+          <p><strong>BBC iPlayer</strong> — massive free catalogue, needs TV licence.<br>
+          <strong>ITVX</strong> — free with ads, good shows.<br>
+          <strong>Channel 4 streaming</strong> — free, film collection included.<br>
+          <strong>Pluto TV</strong> — free, no account needed, loads of content.<br>
+          <strong>Tubi</strong> — free, huge US film catalogue, available in UK.</p>
+        </div>
+        <div class="tip-line">💡 Cancel Netflix. Use iPlayer + ITVX + Tubi. You'll have more to watch than you have time for — free.</div>
+      </div>
+    </div>
+
+    <!-- Amazon Prime Video -->
+    <div class="sub-card">
+      <div class="sub-header">
+        <div class="sub-title-block">
+          <div class="sub-icon">📦</div>
+          <div>
+            <div class="sub-name">Amazon Prime Video (Ad-Free)</div>
+            <div class="sub-cost">+£2.99/month on top of Prime</div>
+          </div>
+        </div>
+        <span class="kill-badge dump">DUMP IT</span>
+      </div>
+      <div class="sub-body">
+        <p>Amazon added an ads tier without asking. The ad-free add-on is a scam on top of a subscription. Cancel the ad-free tier — watch with ads or use FireStick alternatives instead.</p>
+        <div class="tip-line">💡 If you need Prime for delivery, keep the base subscription. Kill the ad-free add-on immediately.</div>
+      </div>
+    </div>
+
+    <!-- Disney+ -->
+    <div class="sub-card">
+      <div class="sub-header">
+        <div class="sub-title-block">
+          <div class="sub-icon">✨</div>
+          <div>
+            <div class="sub-name">Disney+ / Apple TV / Paramount+</div>
+            <div class="sub-cost">£4.99–£13.99/month each</div>
+          </div>
+        </div>
+        <span class="kill-badge dump">AUDIT THESE</span>
+      </div>
+      <div class="sub-body">
+        <p>These stack up fast. When did you last actually watch something on each one? Be honest.</p>
+        <div class="free-alt">
+          <div class="free-alt-label">The Churn Method</div>
+          <p>Subscribe for 1 month → binge what you want → cancel → wait 6 months → repeat. Never pay for more than one at a time. Many offer retention discounts when you try to cancel — always say you want to leave.</p>
+        </div>
+        <div class="tip-line">💡 Go to your bank app right now. Search "subscription". You'll find ones you forgot existed.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Nuclear Option</div>
+    <h2>Cancel everything in 10 minutes</h2>
+
+    <div class="steps-block">
+      <h3>The subscription audit — do this now</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Open your bank app.</strong> Search "subscription" or look at regular monthly payments. List everything you find.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Check your email</strong> for receipts from Netflix, Spotify, Apple, Amazon, Google, Adobe, etc.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Cancel anything you haven't used in 30 days.</strong> Not "might use." Haven't used. Cancel it.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Set up the free alternatives</strong> from this page before you cancel so you're not left with nothing.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Check for retention offers.</strong> When you go to cancel, they often offer 1–3 months free or 50% off. Take it, set a reminder, cancel when it ends.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">For Kids</div>
+    <h2>Stop kids wasting money on premium tiers</h2>
+
+    <div class="rule-box">
+      <div class="rule-title">The Honest Truth</div>
+      <p>Kids don't need YouTube Premium or Spotify Premium. They need YouTube and Spotify. The ads are annoying — that's it. SmartTube on the FireStick solves YouTube. Spotify free on desktop solves music. They won't notice the difference within a week.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">Check family plans carefully</div>
+      <p>Spotify Family plan sounds like a deal at £17.99/month for 6 accounts. But if 4 of those 6 people can use the free tier instead, you're paying £10+ for nothing. Audit who actually needs premium vs who just has it because it's there.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Quick Win</div>
+    <h2>Newspaper paywalls — already sorted</h2>
+    <p>uBlock Origin kills most newspaper paywalls on desktop as a side effect. The Times, Telegraph, Sun — blocked. Install it once, forget about it.</p>
+    <p>On mobile: use <strong>reader mode</strong> in your browser, or search the headline + "archive.ph" to find free cached versions.</p>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone paying for stuff they don't need to?</strong><br>Send them this. Saves them money today.</p>
+    <a href="/kill-subscriptions/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this page →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">App availability changes — always verify before cancelling paid subscriptions.</p>
+</footer>
+
+</body>
+</html>

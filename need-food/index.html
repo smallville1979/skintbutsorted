@@ -1,0 +1,738 @@
+﻿successfully downloaded text file (SHA: 8c0f3d11fa562e464a9c1dcac4368048b2bbb710)<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Need Food? | Skint But Sorted</title>
+  <meta name="description" content="Need food today? Food banks, OLIO, Too Good To Go, Freecycle, community fridges, free school meals — every way to get food when you have no money.">
+  <meta property="og:title" content="Need Food? Free Food Near You | Skint But Sorted">
+  <meta property="og:description" content="Food banks, OLIO, Too Good To Go, Freecycle, community fridges — every way to get free or cheap food right now. No money needed.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/need-food/">
+  <script src="/kit/kit.js?v=3" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(150deg, #080814 0%, #1a1a2e 55%, #0a1a0a 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--green);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🍞';
+      position: absolute;
+      font-size: 260px;
+      opacity: 0.04;
+      top: -30px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--green); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .crisis-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .crisis-pill {
+      background: rgba(46,204,113,0.1);
+      border: 1px solid rgba(46,204,113,0.35);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 15px;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    h2 { font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 1.1rem; color: white; margin-bottom: 10px; font-weight: bold; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* App cards */
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      margin-bottom: 18px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .app-card:hover { border-color: var(--green); }
+
+    .app-header {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid #2a2a4a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .app-left { display: flex; align-items: center; gap: 12px; }
+    .app-icon { font-size: 26px; }
+    .app-name { font-size: 1.05rem; font-weight: bold; color: white; }
+    .app-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .app-tag {
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .tag-free { background: rgba(46,204,113,0.12); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+    .tag-cheap { background: rgba(245,197,24,0.1); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+    .tag-best { background: rgba(233,69,96,0.1); color: var(--primary); border: 1px solid rgba(233,69,96,0.3); }
+
+    .app-body { padding: 18px 22px; }
+    .app-body p { font-size: 15px; color: #bbb; margin-bottom: 10px; }
+
+    .app-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+    .app-link {
+      font-size: 13px;
+      color: var(--green);
+      text-decoration: none;
+      background: rgba(46,204,113,0.07);
+      border: 1px solid rgba(46,204,113,0.2);
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .app-link:hover { background: rgba(46,204,113,0.15); }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 10px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 10px;
+    }
+
+    /* Food bank steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--green);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+    .step-text a { color: var(--green); text-decoration: none; }
+    .step-text a:hover { text-decoration: underline; }
+
+    /* Green box */
+    .green-box {
+      background: rgba(46,204,113,0.06);
+      border: 2px solid rgba(46,204,113,0.25);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .green-box .g-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .green-box p { color: var(--text); margin: 0; font-size: 16px; }
+
+    /* Gold box */
+    .gold-box {
+      background: rgba(245,197,24,0.05);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .gold-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Rule box */
+    .rule-box {
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .rule-box .r-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .rule-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Quick grid */
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .quick-card {
+      background: var(--card-bg);
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s;
+    }
+    .quick-card:hover { border-color: var(--green); }
+    .quick-icon { font-size: 22px; margin-bottom: 6px; }
+    .quick-name { font-size: 14px; font-weight: bold; color: white; margin-bottom: 3px; }
+    .quick-desc { font-size: 13px; color: #888; margin: 0; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Free Food — Right Now</div>
+  <h1>Need Food.<br><span>Here's How To Get It.</span></h1>
+  <p class="hero-sub">Food banks, free apps, community fridges, delivery schemes — every way to get food when money's gone. No shame. No judgement. Just food.</p>
+  <div class="crisis-row">
+    <span class="crisis-pill">🍞 Food banks</span>
+    <span class="crisis-pill">📱 Free apps</span>
+    <span class="crisis-pill">🚚 Delivery options</span>
+    <span class="crisis-pill">🥡 Cheap surplus</span>
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <!-- CRISIS FIRST -->
+  <div class="section">
+    <div class="section-label">Need Food Today</div>
+    <h2>No money. Need food. Do this now.</h2>
+
+    <div class="steps-block">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Find your nearest food bank:</strong> <a href="https://www.trusselltrust.org/get-help/find-a-foodbank/" target="_blank" rel="noopener">trusselltrust.org</a> — search by postcode. Most need a referral (from GP, school, council, JobCentre). Some are self-referral now.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>No referral? Try a community fridge or pantry</strong> — no referral needed, walk in. Find one at <a href="https://www.hubbub.org.uk/community-fridge-network" target="_blank" rel="noopener">hubbub.org.uk/community-fridge-network</a></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Download OLIO right now</strong> — free food from neighbours and local shops. Available in most areas. Takes 5 minutes to set up.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>No car? Ask your food bank about delivery.</strong> Many Trussell Trust and independent food banks now offer home delivery — especially if you're disabled, isolated, or can't travel. Just ask when you call.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Ring your council.</strong> Every council has a Household Support Fund for emergency food vouchers. Call your local council today and say: "I need emergency food support."</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FREE APPS -->
+  <div class="section">
+    <div class="section-label">Free Apps</div>
+    <h2>Get food from your phone — right now</h2>
+    <p>These apps put free or nearly-free food in your hands. Most people have never heard of them. Download all of them today.</p>
+
+    <!-- OLIO -->
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🟢</div>
+          <div>
+            <div class="app-name">OLIO</div>
+            <div class="app-sub">Free food and stuff from neighbours</div>
+          </div>
+        </div>
+        <span class="app-tag tag-free">100% Free</span>
+      </div>
+      <div class="app-body">
+        <p>OLIO is a sharing app where neighbours and local shops post food they'd otherwise throw away — completely free. Bread, veg, tins, cooked food, snacks. You request it, you collect it. Some areas are busier than others but it's worth having on your phone.</p>
+        <p>Local shops and supermarkets also post surplus stock through OLIO Food Waste Heroes — this is how Tom got loads of food from his local area, including enough to give some away.</p>
+        <div class="app-links">
+          <a href="https://olioapp.com" target="_blank" rel="noopener" class="app-link">olioapp.com →</a>
+          <a href="https://apps.apple.com/gb/app/olio/id1089548849" target="_blank" rel="noopener" class="app-link">App Store →</a>
+          <a href="https://play.google.com/store/apps/details?id=com.olioex.android" target="_blank" rel="noopener" class="app-link">Google Play →</a>
+        </div>
+        <div class="tip-line">💡 Got food you're not going to use? Post it on OLIO too — what goes around comes around, and your neighbours will remember you.</div>
+      </div>
+    </div>
+
+    <!-- Too Good To Go -->
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🥡</div>
+          <div>
+            <div class="app-name">Too Good To Go</div>
+            <div class="app-sub">Restaurant and cafe surplus — £2–£5 a bag</div>
+          </div>
+        </div>
+        <span class="app-tag tag-cheap">From £2</span>
+      </div>
+      <div class="app-body">
+        <p>Restaurants, cafes, bakeries, supermarkets sell their end-of-day surplus in "magic bags" for £2–£5. You pick up at a set time (usually closing). A £3 bag from Greggs, Pret, or a local restaurant can easily be worth £10–£15 of food.</p>
+        <p>Not 100% free — but genuinely cheap. A family can eat well for £5–£10 using this app regularly. Brilliant if you have even a small budget.</p>
+        <div class="app-links">
+          <a href="https://toogoodtogo.com/en-gb" target="_blank" rel="noopener" class="app-link">toogoodtogo.com →</a>
+          <a href="https://apps.apple.com/gb/app/too-good-to-go/id1060683933" target="_blank" rel="noopener" class="app-link">App Store →</a>
+          <a href="https://play.google.com/store/apps/details?id=com.app.tgtg" target="_blank" rel="noopener" class="app-link">Google Play →</a>
+        </div>
+        <div class="tip-line">💡 Set notifications for your favourite spots — bags go fast. Bakeries at end of day are the best value. Greggs bags are legendary.</div>
+      </div>
+    </div>
+
+    <!-- Freecycle / Freegle -->
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">♻️</div>
+          <div>
+            <div class="app-name">Freecycle / Freegle</div>
+            <div class="app-sub">Free stuff from locals — including food</div>
+          </div>
+        </div>
+        <span class="app-tag tag-free">100% Free</span>
+      </div>
+      <div class="app-body">
+        <p>Freecycle and Freegle are community groups where people give away things they don't need — completely free. Food comes up regularly (tinned goods, pantry clearouts, bulk buys people can't finish). Also great for household items, furniture, clothes.</p>
+        <div class="app-links">
+          <a href="https://www.freecycle.org" target="_blank" rel="noopener" class="app-link">freecycle.org →</a>
+          <a href="https://www.ilovefreegle.org" target="_blank" rel="noopener" class="app-link">ilovefreegle.org →</a>
+        </div>
+        <div class="tip-line">💡 Join your local Facebook group too — "Free Stuff [Your Town]" — people post food and household items constantly.</div>
+      </div>
+    </div>
+
+    <!-- Karma -->
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🌱</div>
+          <div>
+            <div class="app-name">Karma</div>
+            <div class="app-sub">Surplus meals from restaurants — up to 50% off</div>
+          </div>
+        </div>
+        <span class="app-tag tag-cheap">Up to 50% off</span>
+      </div>
+      <div class="app-body">
+        <p>Similar to Too Good To Go — restaurants sell surplus meals at up to 50% off through Karma. More restaurant-focused, good in cities. Worth having alongside TGTG as some businesses are on one but not the other.</p>
+        <div class="app-links">
+          <a href="https://karma.life/en-gb" target="_blank" rel="noopener" class="app-link">karma.life →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oddbox / Wonky veg -->
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🥕</div>
+          <div>
+            <div class="app-name">Wonky Veg Boxes</div>
+            <div class="app-sub">Imperfect veg — fraction of supermarket price</div>
+          </div>
+        </div>
+        <span class="app-tag tag-cheap">Cheap</span>
+      </div>
+      <div class="app-body">
+        <p>Oddbox, Wonky Veg, and similar services deliver imperfect (but perfectly edible) fruit and veg rejected by supermarkets. Boxes from £10–£15 deliver a week's worth of fresh veg. Much cheaper than supermarket prices.</p>
+        <div class="app-links">
+          <a href="https://www.oddbox.co.uk" target="_blank" rel="noopener" class="app-link">Oddbox →</a>
+          <a href="https://www.riversideorganic.co.uk" target="_blank" rel="noopener" class="app-link">Riverside Organic →</a>
+        </div>
+        <div class="tip-line">💡 Check for first box discount codes — most services offer 50% off your first delivery.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOOD BANKS -->
+  <div class="section">
+    <div class="section-label">Food Banks</div>
+    <h2>Food banks — what you need to know</h2>
+
+    <div class="green-box">
+      <div class="g-title">No shame. That's what they're there for.</div>
+      <p>Food banks exist because the system fails people. Using one isn't a failure — it's using a resource that's specifically there for moments like this. Millions of people use them. You're not alone and you don't need to be embarrassed.</p>
+    </div>
+
+    <div class="quick-grid">
+      <a href="https://www.trusselltrust.org/get-help/find-a-foodbank/" target="_blank" rel="noopener" class="quick-card">
+        <div class="quick-icon">🏪</div>
+        <div class="quick-name">Trussell Trust</div>
+        <div class="quick-desc">Largest network. Find by postcode.</div>
+      </a>
+      <a href="https://www.foodaidnetwork.org.uk/independent-food-banks" target="_blank" rel="noopener" class="quick-card">
+        <div class="quick-icon">🤝</div>
+        <div class="quick-name">Independent Food Banks</div>
+        <div class="quick-desc">Not on Trussell? These often need no referral.</div>
+      </a>
+      <a href="https://www.hubbub.org.uk/community-fridge-network" target="_blank" rel="noopener" class="quick-card">
+        <div class="quick-icon">🧊</div>
+        <div class="quick-name">Community Fridges</div>
+        <div class="quick-desc">Walk in, no referral needed. Take what you need.</div>
+      </a>
+      <a href="https://www.gov.uk/apply-for-council-tax-reduction" target="_blank" rel="noopener" class="quick-card">
+        <div class="quick-icon">🏛️</div>
+        <div class="quick-name">Council Emergency Fund</div>
+        <div class="quick-desc">Household Support Fund — food vouchers, call today.</div>
+      </a>
+    </div>
+
+    <div class="gold-box">
+      <div class="g-title">Food Bank Delivery — Ask For It</div>
+      <p>Can't get to a food bank? No car, disability, kids, anxiety? <strong>Ask if they deliver.</strong> Many Trussell Trust banks and independent banks now offer home delivery — especially post-COVID. It's not always advertised. Ring the number on their page and ask directly: "Do you offer home delivery?"</p>
+    </div>
+
+    <div class="rule-box">
+      <div class="r-title">Getting a Referral Fast</div>
+      <p>GP, school, JobCentre, Citizens Advice, council — any of these can give you a food bank referral. If you're struggling to get one quickly, call Citizens Advice: <strong>0800 144 8848</strong> (free). They can arrange a referral same day in most areas.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FREE SCHOOL MEALS + HOLIDAY -->
+  <div class="section">
+    <div class="section-label">Kids</div>
+    <h2>Free school meals and holiday food</h2>
+
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🏫</div>
+          <div>
+            <div class="app-name">Free School Meals</div>
+            <div class="app-sub">Universal (Reception–Y2) + means-tested (Y3+)</div>
+          </div>
+        </div>
+        <span class="app-tag tag-free">Free</span>
+      </div>
+      <div class="app-body">
+        <p>All children in Reception, Year 1, and Year 2 get free school meals automatically. From Year 3, it's means-tested — you qualify if you're on UC with income under £7,400, or certain other benefits.</p>
+        <p>Apply through your council. It's fast, free, and most people who qualify don't bother applying.</p>
+        <div class="app-links">
+          <a href="https://www.gov.uk/apply-free-school-meals" target="_blank" rel="noopener" class="app-link">Apply on GOV.UK →</a>
+        </div>
+        <div class="tip-line">💡 Holiday hunger schemes — many councils run free meals for kids during school holidays. Search "[your council] holiday hunger scheme" or ask your child's school.</div>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-left">
+          <div class="app-icon">🥛</div>
+          <div>
+            <div class="app-name">Healthy Start Vouchers</div>
+            <div class="app-sub">Pregnant or have a child under 4?</div>
+          </div>
+        </div>
+        <span class="app-tag tag-free">£442/year</span>
+      </div>
+      <div class="app-body">
+        <p>If you're at least 10 weeks pregnant or have a child under 4, and you're on UC, Income Support, or Child Tax Credit — you qualify for Healthy Start. £4.25/week in vouchers for milk, fruit, veg, and infant formula.</p>
+        <div class="app-links">
+          <a href="https://www.healthystart.nhs.uk" target="_blank" rel="noopener" class="app-link">healthystart.nhs.uk →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHEAP FOOD HACKS -->
+  <div class="section">
+    <div class="section-label">Make Money Go Further</div>
+    <h2>When you have a little — make it go far</h2>
+
+    <div class="quick-grid">
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">🕐</div>
+        <div class="quick-name">Yellow Sticker Time</div>
+        <div class="quick-desc">Supermarkets mark down near end of day. 6–8pm in most stores. Arrive then.</div>
+      </div>
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">🛒</div>
+        <div class="quick-name">Aldi / Lidl</div>
+        <div class="quick-desc">Consistently 30–40% cheaper than major supermarkets. Same quality.</div>
+      </div>
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">❄️</div>
+        <div class="quick-name">Frozen Over Fresh</div>
+        <div class="quick-desc">Frozen veg and meat is identical nutrition, fraction of the price. Use it.</div>
+      </div>
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">📦</div>
+        <div class="quick-name">Own Brand Always</div>
+        <div class="quick-desc">Supermarket own-brand is often made in the same factory as branded. Buy it.</div>
+      </div>
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">🤳</div>
+        <div class="quick-name">Approved Food</div>
+        <div class="quick-desc">Short-dated food sold cheap. approvedfood.co.uk — massive savings on tins, snacks, drinks.</div>
+      </div>
+      <div class="quick-card" style="cursor:default;">
+        <div class="quick-icon">🍳</div>
+        <div class="quick-name">Batch Cook</div>
+        <div class="quick-desc">Cook once, eat 4 times. Soups, stews, curries — cheap ingredients, zero waste.</div>
+      </div>
+    </div>
+
+    <div class="gold-box">
+      <div class="g-title">The Lazy Hack That Actually Works</div>
+      <p>OLIO + Too Good To Go + yellow sticker shopping = most of your food sorted for almost nothing. Not every day, not perfect — but consistent. Put all three on your phone. Check OLIO daily. Set TGTG alerts. Shop at 7pm. That's the system.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Got Too Much?</div>
+    <h2>Got food you're not going to use?</h2>
+    <p>Got a food bank delivery and have more than you need? Got TGTG bags stacking up? <strong>Post it on OLIO.</strong> Give it to a neighbour. Drop it at a community fridge. What goes around comes around — and someone near you needs it right now.</p>
+    <p>That's the whole point of this network. You learn it. You use it. You tell others. Then when you're sorted, you help someone else get sorted too.</p>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone who's hungry and doesn't know where to turn?</strong><br>Send them this page. Right now. It might be the most important thing you do today.</p>
+    <a href="/need-food/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this page →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="/skint-but-sorted/">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">App availability and schemes change — always verify before travelling. Food bank availability varies by area.</p>
+</footer>
+
+
+<!-- SBS_FP_TGTG_BLOCK -->
+<div class="step">
+<h3>TOO GOOD TO GO — 50-80% OFF FOOD FROM LOCAL SHOPS AND CAFES</h3>
+<p>Too Good To Go is a free app where local cafes, supermarkets, and restaurants sell surplus food at the end of the day for £2–£5 a bag. You'd normally pay £10–£20 for the same food. Works in most UK towns and cities. No subscription, no catch — just cheap food that would otherwise be binned.</p>
+<a href="https://toogoodtogo.com/en-gb">Download Too Good To Go →</a>
+<p>Also worth checking: Olio app — free food and stuff from neighbours. Literally free.</p>
+</div>
+
+
+<div class="step">
+  <h3>&#x1F6D2; SOCIAL SUPERMARKETS &amp; COMMUNITY PANTRIES — FREE OR NEARLY FREE FOOD</h3>
+  <p>Social supermarkets let you shop like normal but pay almost nothing — typically £3&ndash;£5 membership gets you a trolley of food worth £20&ndash;£30+. Community pantries work the same way. They run on supermarket surplus, donations, and food waste redistribution. Most people don't know they exist in their area.</p>
+  <p><strong>How to find one near you:</strong></p>
+  <ul>
+    <li>Search <strong>"social supermarket [your town]"</strong> or <strong>"community pantry [your city]"</strong> on Google</li>
+    <li>Ask at your local food bank — they'll know every food resource in the area</li>
+    <li>Check with your council — many fund or host them</li>
+    <li>Look up <a href="https://www.hubbub.org.uk/community-fridge-network" target="_blank" rel="noopener">Community Fridge Network &rarr;</a> — free food, no membership, no questions</li>
+  </ul>
+  <p><strong>Examples:</strong> Borderlands (Newcastle area), Fare Share community shops, FareShare Go outlets, Your Local Pantry network across UK.</p>
+  <a href="https://yourlocalpantry.co.uk" target="_blank" rel="noopener">Find Your Local Pantry &rarr;</a>
+</div>
+<div class="step">
+  <h3>&#x1F914; ASK AI TO FIND FREE FOOD NEAR YOU — USE GEMINI</h3>
+  <p>Google's AI (Gemini) is free and genuinely good at finding local resources that don't rank well on normal search. Open it and ask:</p>
+  <p style="background:#111;padding:12px;border-left:3px solid #4CAF50;margin:8px 0;font-style:italic;">"Free food near me in [your town] — food banks, community pantries, social supermarkets, OLIO pickup points, surplus food this week"</p>
+  <p>It pulls from multiple sources including local news, council pages and community sites that Google's main results bury. ChatGPT (also free) works the same way. Use both. The AI finds the stuff no one else knows to search for.</p>
+  <a href="https://gemini.google.com" target="_blank" rel="noopener">Ask Gemini Free &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://chat.openai.com" target="_blank" rel="noopener">Ask ChatGPT Free &rarr;</a>
+</div>
+<!-- SBS_FP_HEALTHY_START_BLOCK -->
+<div class="step">
+<h3>HEALTHY START — FREE FOOD VOUCHERS IF YOU'RE PREGNANT</h3>
+<p>If you're pregnant or have a child under 4 and you're on certain benefits (UC, Child Tax Credit, Income Support), you qualify for Healthy Start vouchers. You get a prepaid card loaded with money to spend on milk, fruit, veg, and vitamins at most supermarkets.</p>
+<a href="https://www.healthystart.nhs.uk/how-to-apply/">Apply for Healthy Start →</a>
+<p>Worth £4.25–£8.50/week depending on your situation. Most people who qualify don't claim it.</p>
+</div>
+
+
+<div class="step">
+  <h3>HEALTHY START — FREE FOOD VOUCHERS IF YOU ARE PREGNANT</h3>
+  <p>Pregnant or have a child under 4 on UC, Child Tax Credit or Income Support? You get a prepaid card for milk, fruit, veg and vitamins at most supermarkets. Worth £4.25–£8.50 per week. Most people who qualify never claim it.</p>
+  <a href="https://www.healthystart.nhs.uk/how-to-apply/">Apply for Healthy Start →</a>
+</div>
+
+<div class="step">
+  <h3>TOO GOOD TO GO — 50-80% OFF FOOD FROM LOCAL SHOPS AND CAFES</h3>
+  <p>Free app. Local cafes, supermarkets and restaurants sell surplus food for £2–£5 a bag at end of day. Normally £10–£20 worth. Works in most UK towns. Also check Olio — free food from neighbours.</p>
+  <a href="https://toogoodtogo.com/en-gb">Download Too Good To Go →</a>
+</div>
+<div class="step" style="background:#1a0000;border-left:4px solid #FF5722;">
+  <h3 style="color:#FF7043;">&#x26A0;&#xFE0F; BEFORE YOU USE PAYPAL CREDIT — CHECK IF IT'S RIGHT FOR YOU</h3>
+  <p><strong>This is only free if you repay the full balance before your statement date.</strong> Carry a balance = ~23.9% APR. That's expensive debt.</p>
+  <p><strong style="color:#4CAF50;">&#x2705; Use it if:</strong> Income is coming in, you can repay within a few weeks, no existing balance.</p>
+  <p><strong style="color:#FF5722;">&#x274C; Skip it if:</strong> You're already in debt, can't repay in full, or you'd spend it on takeaways you can't afford.</p>
+  <p>Already struggling with debt? <a href="/break-the-cycle/">Break the Cycle &rarr;</a> or <a href="/no-loans/">No Loans &rarr;</a></p>
+</div>
+<div class="step">
+  <h3>&#x1F35F; THE FREE FOOD SYSTEM — PAYPAL CREDIT + REVOLUT + TOO GOOD TO GO</h3>
+  <p>No money for food right now? Here's the 3-step free short-term food loan. Zero interest if you repay on time. Works this week.</p>
+  <p><strong>Step 1 &mdash; Get PayPal Credit:</strong> Apply at <a href="https://py.pl/1erctY" target="_blank" rel="noopener">PayPal Credit</a> online — instant decision, 5 mins. It's a credit line, not a card. Interest-free if you pay before statement date.</p>
+  <p><strong>Step 2 &mdash; Move cash via Revolut:</strong> Send money from PayPal to your <a href="https://revolut.com/referral/?referral-code=tomfd6a!MAR1-26-VR-GB&amp;geo-redirect" target="_blank" rel="noopener">Revolut account</a> using "send to a friend". Withdraw to your bank instantly.</p>
+  <p><strong>Step 3 &mdash; Spend on Too Good To Go:</strong> Download <a href="https://toogoodtogo.com/en-gb" target="_blank" rel="noopener">Too Good To Go</a>. Pick up a magic bag from a local cafe or supermarket for £2&ndash;£5 — normally £10&ndash;£20 worth of food. Eat well this week for almost nothing.</p>
+  <p><strong>Repay PayPal before statement date = zero interest.</strong> Free food. Free loan. <a href="/credit-guide/">Full guide &rarr;</a></p>
+  <a href="https://py.pl/1erctY" target="_blank" rel="noopener">Get PayPal Credit &rarr;</a>
+  &nbsp;&nbsp;
+  <a href="https://toogoodtogo.com/en-gb" target="_blank" rel="noopener">Too Good To Go &rarr;</a>
+</div>
+</body>
+</html>

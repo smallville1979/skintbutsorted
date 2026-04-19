@@ -1,0 +1,919 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skint But Sorted — Full Glossary & Guide Index</title>
+<meta name="description" content="Every guide, tool, app, and trick on Skint But Sorted explained in one place. Plain English. No fluff.">
+<script src="/kit/kit.js" defer></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #0d0d0d; color: #ddd; font-size: 16px; line-height: 1.8; }
+
+/* ===== LAYOUT ===== */
+.page-wrap { display: flex; max-width: 1100px; margin: 0 auto; padding: 0 0 80px; }
+
+/* ===== SIDEBAR ===== */
+#sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  padding: 24px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #1e1e1e;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+#sidebar h2 {
+  color: #f5c518;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 18px 0 6px;
+  font-family: Arial, sans-serif;
+}
+#sidebar h2:first-child { margin-top: 0; }
+#sidebar ul { list-style: none; padding: 0; }
+#sidebar ul li a {
+  color: #888;
+  text-decoration: none;
+  display: block;
+  padding: 3px 0;
+  line-height: 1.4;
+}
+#sidebar ul li a:hover { color: #f5c518; }
+#sidebar .toc-search {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ddd;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  font-family: Arial, sans-serif;
+}
+#sidebar .toc-search:focus { outline: none; border-color: #f5c518; }
+
+/* ===== MAIN CONTENT ===== */
+#main {
+  flex: 1;
+  padding: 32px 36px 40px;
+  min-width: 0;
+}
+
+.page-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #f5c518;
+  border-bottom: 2px solid #f5c518;
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+  font-family: Arial, sans-serif;
+}
+.page-intro { color: #888; font-size: 14px; margin-bottom: 40px; font-family: Arial, sans-serif; }
+
+/* ===== CATEGORY HEADER ===== */
+.cat-header {
+  background: #1a1a1a;
+  border-left: 4px solid #f5c518;
+  padding: 10px 16px;
+  margin: 52px 0 20px;
+  font-family: Arial, sans-serif;
+}
+.cat-header h2 {
+  color: #f5c518;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.cat-header p { color: #666; font-size: 13px; margin: 3px 0 0; }
+
+/* ===== ENTRY ===== */
+.entry {
+  padding: 22px 0 22px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.entry:last-child { border-bottom: none; }
+
+.entry-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 6px;
+  scroll-margin-top: 20px;
+}
+.entry-title .entry-tag {
+  display: inline-block;
+  background: #1e1e1e;
+  color: #888;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.entry-tag.free { color: #00e676; border: 1px solid #00e676; background: transparent; }
+.entry-tag.paid { color: #f5c518; border: 1px solid #f5c518; background: transparent; }
+.entry-tag.guide { color: #00acc1; border: 1px solid #00acc1; background: transparent; }
+.entry-tag.app { color: #7c5cbf; border: 1px solid #7c5cbf; background: transparent; }
+
+.entry-body { color: #aaa; font-size: 15px; line-height: 1.8; }
+.entry-body strong { color: #ddd; }
+.entry-body a { color: #f5c518; text-decoration: none; }
+.entry-body a:hover { text-decoration: underline; }
+
+.entry-dl { margin: 12px 0 0; }
+.entry-dl dt {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #f5c518;
+  font-weight: bold;
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+}
+.entry-dl dd { color: #999; font-size: 14px; padding-left: 12px; margin-top: 2px; line-height: 1.7; }
+.entry-dl dd a { color: #f5c518; }
+
+.entry-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.entry-link {
+  display: inline-block;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ddd;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.entry-link:hover { border-color: #f5c518; color: #f5c518; }
+.entry-link.primary { background: #f5c518; color: #000; border-color: #f5c518; font-weight: bold; }
+.entry-link.primary:hover { background: #e0b010; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+  .page-wrap { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #1e1e1e; }
+  #main { padding: 24px 16px; }
+}
+
+/* ===== SCROLLBAR ===== */
+#sidebar::-webkit-scrollbar { width: 4px; }
+#sidebar::-webkit-scrollbar-track { background: #0d0d0d; }
+#sidebar::-webkit-scrollbar-thumb { background: #333; }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+<!-- ===== SIDEBAR ===== -->
+<aside id="sidebar">
+  <input class="toc-search" type="text" id="toc-search" placeholder="Filter glossary…" oninput="filterTOC(this.value)">
+
+  <h2>&#x1F4CB; Guides</h2>
+  <ul id="toc-guides">
+    <li><a href="#addiction">Addiction &amp; Recovery</a></li>
+    <li><a href="#amazon-reviews">Amazon Review Schemes</a></li>
+    <li><a href="#back2work">Back to Work &amp; Training</a></li>
+    <li><a href="#bank-of-dad">Bank of Mum &amp; Dad</a></li>
+    <li><a href="#benefits-guide">Benefits Guide</a></li>
+    <li><a href="#break-the-cycle">Break the Cycle</a></li>
+    <li><a href="#broke-britain">Broke Britain</a></li>
+    <li><a href="#complaints-guide">Complaints &amp; Compensation</a></li>
+    <li><a href="#credit-guide">Credit File Guide</a></li>
+    <li><a href="#cut-bills">Cut Your Bills</a></li>
+    <li><a href="#disability-guide">Disability Guide</a></li>
+    <li><a href="#eatcheap">Eat Cheap</a></li>
+    <li><a href="#emergency">Emergency Help</a></li>
+    <li><a href="#escape-uk">Escape the UK</a></li>
+    <li><a href="#free-ai-tools">Free AI Tools</a></li>
+    <li><a href="#free-streaming">Free Streaming</a></li>
+    <li><a href="#free-stuff">Free Stuff</a></li>
+    <li><a href="#free-travel">Free Travel</a></li>
+    <li><a href="#health-fitness">Health &amp; Fitness Cheap</a></li>
+    <li><a href="#help-now">Help Now</a></li>
+    <li><a href="#insurance-guide">Insurance Guide</a></li>
+    <li><a href="#jobs-abroad">Jobs Abroad</a></li>
+    <li><a href="#live-in-jobs">Live-In Jobs</a></li>
+    <li><a href="#loan-scam">Loan Scam Alert</a></li>
+    <li><a href="#matched-betting">Matched Betting</a></li>
+    <li><a href="#mental-health">Mental Health Help</a></li>
+    <li><a href="#moving-house">Moving House</a></li>
+    <li><a href="#need-food">Need Food</a></li>
+    <li><a href="#no-loans">No Loans</a></li>
+    <li><a href="#paypal-trick">PayPal Float Trick</a></li>
+    <li><a href="#payrise">Ask For A Pay Rise</a></li>
+    <li><a href="#renting-uc">Renting on Universal Credit</a></li>
+    <li><a href="#side-hustles">Side Hustles UK</a></li>
+    <li><a href="#smart-broke">Smart Broke</a></li>
+    <li><a href="#social-tariffs">Social Tariffs</a></li>
+    <li><a href="#young-people">Young People &amp; Students</a></li>
+  </ul>
+
+  <h2>&#x1F4B3; Apps &amp; Tools</h2>
+  <ul id="toc-tools">
+    <li><a href="#asda-delivery">ASDA Delivery Pass</a></li>
+    <li><a href="#camelcamelcamel">CamelCamelCamel</a></li>
+    <li><a href="#complete-savings">Complete Savings</a></li>
+    <li><a href="#curve-card">Curve Card</a></li>
+    <li><a href="#honey">Honey</a></li>
+    <li><a href="#libby">Libby (Free Books)</a></li>
+    <li><a href="#olio">Olio</a></li>
+    <li><a href="#paypal-credit">PayPal Credit</a></li>
+    <li><a href="#plum">Plum</a></li>
+    <li><a href="#revolut">Revolut</a></li>
+    <li><a href="#temu">Temu</a></li>
+    <li><a href="#too-good-to-go">Too Good To Go</a></li>
+    <li><a href="#topcashback">TopCashback</a></li>
+  </ul>
+
+  <h2>&#x1F4A1; Concepts</h2>
+  <ul id="toc-concepts">
+    <li><a href="#48-hour-rule">48 Hour Rule</a></li>
+    <li><a href="#affordability">Affordability Checks</a></li>
+    <li><a href="#foodbank">Food Bank — How It Works</a></li>
+    <li><a href="#guarantor">Guarantor</a></li>
+    <li><a href="#lha">Local Housing Allowance (LHA)</a></li>
+    <li><a href="#referral-links">Referral Links Explained</a></li>
+    <li><a href="#yellow-sticker">Yellow Sticker Shopping</a></li>
+  </ul>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main id="main">
+
+<h1 class="page-title">&#x1F4D6; Skint But Sorted — Full Glossary</h1>
+<p class="page-intro">Every guide, app, tool, trick and concept on this network explained in full. One document. Use the sidebar to jump to any entry, or scroll through. Plain English only.</p>
+
+<!-- ============================================================ -->
+<div class="cat-header"><h2>&#x1F4CB; The Guides — What Each One Covers</h2><p>Every page on the Skint But Sorted network, explained in detail.</p></div>
+
+<div class="entry">
+  <h3 class="entry-title" id="addiction">Addiction &amp; Recovery <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Drugs, alcohol, gambling, and other addictions — free UK help, no judgement, no waiting list required. This guide lists the real options that exist for free including NHS pathways, charity helplines, online communities, and drop-in services.</p>
+    <dl class="entry-dl">
+      <dt>Who it's for</dt><dd>Anyone dealing with addiction personally or supporting someone who is. Also covers what to do when someone close to you won't accept help.</dd>
+      <dt>Key content</dt><dd>Frank helpline, Alcoholics Anonymous, Narcotics Anonymous, NHS IAPT referral, gambling addiction (Gamcare), debt linked to addiction, how to get a GP referral without shame.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/addiction/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="amazon-reviews">Amazon Review Schemes <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to get free or heavily discounted Amazon products by joining legitimate product testing and review programmes. Sellers give products away or heavily discount them in exchange for honest reviews. This guide covers which schemes are real, how to sign up, and how to avoid the fake ones.</p>
+    <dl class="entry-dl">
+      <dt>Is it legal?</dt><dd>Yes — as long as you leave an honest review and disclose it was a discounted/free product. Amazon's terms require disclosure. This guide walks you through doing it correctly.</dd>
+      <dt>Key sites covered</dt><dd>Vine, Snagshout, Rebaid, and others. What each pays, how quickly, what you have to do.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/amazon-reviews/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="back2work">Back to Work &amp; Training <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Free and funded courses, retraining, and routes back into employment after a gap. Covers everything from short online certificates to full funded apprenticeships for adults.</p>
+    <dl class="entry-dl">
+      <dt>Who it's for</dt><dd>Anyone out of work, wanting to change career, or needing qualifications to move forward. Especially useful for people who left education early or who have been out of work for a while.</dd>
+      <dt>Key content</dt><dd>Free Level 3 courses, Skills Bootcamps, apprenticeships for adults, local council training schemes, REED courses, LinkedIn Learning free access via library cards.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/back2work/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="bank-of-dad">Bank of Mum &amp; Dad <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to have the honest money conversation with family — asking for help, borrowing properly, and making sure it doesn't damage the relationship. Covers how to ask, how to document it, what to do when family can't help, and how to make sure you don't stay dependent.</p>
+    <dl class="entry-dl">
+      <dt>Who it's for</dt><dd>Anyone who needs to approach family for financial help and wants to do it the right way — with dignity, clarity, and a plan to repay.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/bank-of-dad/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="benefits-guide">Benefits Guide <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The main UK benefits guide — what you can claim, how to claim it, what you might be missing. Universal Credit, PIP, Council Tax Reduction, Free School Meals, Healthy Start, and more. Many people on benefits are underclaiming by hundreds of pounds a month.</p>
+    <dl class="entry-dl">
+      <dt>Key tool</dt><dd>Entitledto and Turn2Us benefit calculators — enter your details and see exactly what you should be receiving. Free, anonymous, takes 10 minutes.</dd>
+      <dt>Common missed benefits</dt><dd>Carer's Allowance, Pension Credit, Healthy Start vouchers, Free Prescriptions, Council Tax Reduction. Read the full guide before assuming you are on everything you're entitled to.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/benefits-guide/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="break-the-cycle">Break the Cycle <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The long-term plan for getting off benefits and out of poverty for good. Not motivational nonsense — a structured, realistic set of steps. Covers building emergency savings, improving your credit file, getting better work, stopping debt, and moving forward over 12–24 months.</p>
+    <dl class="entry-dl">
+      <dt>Who it's for</dt><dd>Anyone who is stable but stuck — not in crisis, but not moving forward. This is the next step after the emergency guides.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/break-the-cycle/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="broke-britain">Broke Britain <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The context guide — why so many people in the UK are broke, what the structural causes are, and why it is not your fault. Covers the housing crisis, wage stagnation, cost of living, and why conventional advice ("just spend less on coffee") is useless. Helps people understand the system they are navigating.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/broke-britain/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="complaints-guide">Complaints &amp; Compensation <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to complain and actually win — flight delays, faulty goods, broadband issues, energy billing errors, bank complaints. Many people are owed money they never claim. This guide explains the ombudsman system, template letters, and the magic phrases that work.</p>
+    <dl class="entry-dl">
+      <dt>Key content</dt><dd>Flight delay compensation (EC261), Section 75 credit card protection, energy ombudsman, broadband automatic compensation, Resolver tool.</dd>
+      <dt>The magic words</dt><dd>The exact phrases that escalate a complaint faster — "I would like to make a formal complaint," "I am prepared to refer this to the ombudsman," and what they legally require to do when you use them.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/complaints-guide/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="credit-guide">Fix Your Credit File <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to repair a bad credit score — step by step, no costs involved. Covers what credit scores actually are, how to check yours for free, what damages them, and the proven steps to rebuild. Electoral register, rent reporting, credit builder cards, closing old accounts — all explained.</p>
+    <dl class="entry-dl">
+      <dt>Free tools covered</dt><dd>Experian free, Clearscore, Credit Karma. How they differ and which to use.</dd>
+      <dt>Why it matters</dt><dd>Bad credit costs money — higher insurance premiums, rejected rental applications, worse loan rates. Fixing it saves money every year.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/credit-guide/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="cut-bills">Cut Your Bills <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Practical ways to reduce every regular outgoing — energy, broadband, mobile, water, council tax, TV licence, subscriptions. Most people are paying over the odds on at least 3–4 bills. This guide covers how to switch, negotiate, cancel, and check for discounts you are entitled to.</p>
+    <dl class="entry-dl">
+      <dt>Quick wins</dt><dd>Ring your broadband provider and say you are thinking of leaving — they will often offer a 20–40% discount immediately. Same with mobile and TV packages.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/cut-bills/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="disability-guide">Disability Guide <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Benefits, discounts, and help specifically for disabled people and carers. PIP explained, Blue Badge, Motability, Access to Work, disabled bus passes, cinema and leisure discounts, energy rebates. Much of this is unclaimed.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/disability-guide/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="eatcheap">Eat Cheap <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to eat well on very little money. Meal planning, batch cooking, yellow sticker shopping strategy, the best cheap meals (rice and beans, slow cooker recipes, air fryer basics), supermarket own-brand comparisons, and how to stock a pantry that keeps your food costs down long-term.</p>
+    <dl class="entry-dl">
+      <dt>Tom's tips</dt><dd>ASDA Sundays for yellow stickers — loads of reduced items. Too Good To Go bags. Plan meals before you shop. Always have rice, potatoes, and tinned soup in. ASDA branded soup is fine — ASDA Smartprice soup is not.</dd>
+      <dt>Air fryer</dt><dd>Cheap to run, faster than an oven, easier to clean. Good for everything except a full roast. Tom only uses his oven for pizza. Slow cookers and casserole pots are great for bulk cheap meals — often free on Olio.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/eatcheap/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="emergency">Emergency Help <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Immediate help for crises — food, shelter, fuel, mental health emergencies. What to do right now if you have no food, no heating, no money, and nowhere to turn. Covers Sundays and bank holidays when most services are closed.</p>
+    <dl class="entry-dl">
+      <dt>Sunday emergency tip</dt><dd>Use AI (Gemini or ChatGPT) and ask: "I need free food and emergency help in [your town] today, Sunday." It will pull up real local options. Tom used this to find food bank and free meal options for a woman in Bradford on a Sunday afternoon in under 2 minutes.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/emergency/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="escape-uk">Escape the UK <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>If life in the UK is not working — how to explore actually leaving. Working holidays, EU citizenship routes, digital nomad visas, teaching English abroad, and countries where your money goes much further. Not a fantasy — a practical guide to what is actually available and who qualifies.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/escape-uk/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="free-ai-tools">Free AI Tools <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The free AI tools that can save you real money and solve real problems. Not tech hype — practical uses: finding local help, writing complaint letters, calculating benefits, finding cheaper alternatives, drafting CVs. Covers ChatGPT, Gemini, Microsoft Copilot — all free.</p>
+    <dl class="entry-dl">
+      <dt>The emergency use case</dt><dd>Ask Gemini: "I am in [town], it's Sunday, I need food urgently." It finds local food banks, community kitchens, and emergency services open right now. This works.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/free-ai-tools/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="free-streaming">Free Streaming <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to watch films, TV, and sports for free legally in the UK. BBC iPlayer, ITVX, Channel 4, Pluto TV, Tubi, YouTube, Plex, BritBox trials, and how to cancel before being charged. No illegal streaming required — there is more free content than most people realise.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/free-streaming/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="free-stuff">Free Stuff <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Legitimate ways to get free stuff in the UK — product testing, freecycle, Olio, sampling sites, library services, council giveaways, and more. Properly free, no strings.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/free-stuff/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="free-travel">Free Travel <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Free and heavily discounted travel for people who qualify — disabled bus passes, child travel, 16–17 Saver, railcards, Jobcentre travel vouchers, and how to get the cheapest fares on everything else. Also covers how to travel for near-zero cost when you need an interview.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/free-travel/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="health-fitness">Health &amp; Fitness Cheap <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to stay healthy when you can't afford a gym or organic food. Free gyms (council leisure centres for UC claimants in some areas), cheap high-protein food, NHS exercise referrals, free couch-to-5K, mental health through physical activity.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/health-fitness/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="help-now">Help Now <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The immediate action guide — not for reading later, for using right now. If you are in crisis today, this is the page. Short, direct links to emergency food, housing, crisis lines, fuel, and same-day support.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/help-now/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="insurance-guide">Insurance Guide <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Insurance for people on low incomes — what you actually need, what you can skip, and how to get it cheapest. Contents insurance (many broke people don't have it and lose everything to one burglary), phone insurance, pet insurance, car insurance. Also covers bank accounts with built-in insurance (Nationwide FlexPlus etc).</p>
+    <dl class="entry-dl">
+      <dt>The magic claim words</dt><dd>When making an insurance claim that was initially declined, the right words can change the outcome. Covered in full in the guide — what to say, how to escalate, when to mention the ombudsman.</dd>
+      <dt>TopCashback for insurance</dt><dd>Always buy new insurance through <a href="https://www.topcashback.co.uk/ref/q1979" target="_blank">TopCashback</a> — cashback on car, home, pet, and travel insurance is often £20–80. See <a href="#topcashback">TopCashback entry</a>.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/insurance-guide/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="jobs-abroad">Jobs Abroad <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Real jobs overseas — seasonal work, au pair, hospitality, TEFL teaching, working holidays. Countries with working holiday visas for UK passport holders, and how to apply. Not a holiday — actual paid work abroad.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/jobs-abroad/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="live-in-jobs">Live-In Jobs <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Jobs that come with accommodation included — care work, pub work, holiday parks, estate management. If you need both a job and somewhere to live at the same time, a live-in role solves both in one. Covers where to find them, what to expect, and which sectors are most accessible.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/live-in-jobs/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="loan-scam">Loan Scam Alert <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to spot loan scams before they take your money. Advance fee fraud, clone firms, social media loan sharks. Specific red flags, real examples, and what to do if you've already been targeted.</p>
+    <dl class="entry-dl">
+      <dt>The biggest red flag</dt><dd>Any legitimate lender will NEVER ask you to pay a fee upfront before receiving a loan. Full stop. That is always a scam.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/loan-scam-graphic/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="matched-betting">Matched Betting <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to make guaranteed profit from bookmaker free bet offers using matched betting. Not gambling — a mathematical technique where you cover both outcomes to lock in the free bet value as profit. Detailed step-by-step including which sites to use and how much you can realistically make.</p>
+    <dl class="entry-dl">
+      <dt>Is it safe?</dt><dd>For people who can follow instructions carefully, yes. It is not gambling — you are using maths to extract the value of free bets. The guide covers common mistakes and how to avoid them.</dd>
+      <dt>How much can you make?</dt><dd>Most beginners make £500–1,500 from UK bookmaker signup offers. Ongoing profits are smaller. It requires careful record-keeping.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/matched-betting/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="mental-health">Mental Health Help <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Free mental health support in the UK — without waiting lists, without money, without a GP referral in some cases. Crisis lines, online therapy, peer support communities, self-referral to IAPT (now NHS Talking Therapies), and what to do when you need help right now.</p>
+    <dl class="entry-dl">
+      <dt>Right now</dt><dd>Samaritans: 116 123 (free, 24/7, no referral needed). Shout: text SHOUT to 85258 (free, 24/7 text-based crisis support).</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/mental-health/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="moving-house">Moving House on a Budget <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to furnish a new place with little or no money. Council household support funds (up to £200 no questions asked in many areas), charity white goods, Facebook Marketplace, Gumtree, Olio, food bank freezers, cheap second-hand furniture. Tom moved into an unfurnished flat and kitted it out properly — all the routes he used are in here.</p>
+    <dl class="entry-dl">
+      <dt>Council household fund</dt><dd>Many councils have a discretionary fund of around £200 available to help people setting up a new home. Ask your local council — "household support fund" or "discretionary welfare fund." Often no questions asked.</dd>
+      <dt>White goods</dt><dd>Food banks often have white goods — Tom got a free freezer with free delivery from a food bank. Charities like British Heart Foundation and YMCA also donate white goods. Always ask before buying.</dd>
+      <dt>Gumtree tip</dt><dd>CT Furniture on Gumtree and Facebook — good second-hand furniture, cheap delivery. Look for local delivery options.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/moving-house/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="need-food">Need Food <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Where to get food right now — food banks, community fridges, free meals, emergency parcels. Also covers how to get a food bank voucher (you do not need to be on benefits — a GP, social worker, teacher, or Citizens Advice can all issue one). Working people can qualify.</p>
+    <dl class="entry-dl">
+      <dt>No referral options</dt><dd>Many independent food banks and community kitchens do not require a voucher — walk-in only. Community fridges (Olio app, local Facebook groups) are free to use for everyone.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/need-food/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="no-loans">No Loans <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Alternatives to borrowing money when you are short — grants, charity funds, council emergency payments, employer advances, credit unions, and schemes that are not loans. Many people take out high-interest debt when there were better options available. This guide covers those options first.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/no-loans/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="paypal-trick">PayPal Float Trick <span class="entry-tag guide">Guide</span> <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>How to create an instant, interest-free short-term loan using PayPal Credit and Revolut. Get PayPal Credit approved (2 minutes), link Revolut as a bank account in PayPal, transfer the credit balance to Revolut, spend on food or essentials, repay PayPal Credit in full before the interest date = zero cost. Bridge loan you arrange yourself in 10 minutes.</p>
+    <dl class="entry-dl">
+      <dt>The critical rule</dt><dd>You must repay the full PayPal Credit balance before the interest-free period ends. Pay only the minimum and you start being charged 23.9% APR. This is a bridge, not a spending boost.</dd>
+      <dt>Curve Card extension</dt><dd>Tom believes using Curve Card (backed by PayPal Credit) may add a further billing cycle delay. Not confirmed — read the guide for the full caveat and how to test it safely.</dd>
+      <dt>Who should skip this</dt><dd>Anyone already in debt, anyone who cannot guarantee repayment before the due date, anyone who would use it for non-essentials.</dd>
+    </dl>
+    <div class="entry-links">
+      <a class="entry-link primary" href="/paypal-trick/" target="_blank">Full Step-by-Step →</a>
+      <a class="entry-link" href="#paypal-credit">PayPal Credit explained ↓</a>
+      <a class="entry-link" href="#revolut">Revolut explained ↓</a>
+      <a class="entry-link" href="#curve-card">Curve Card explained ↓</a>
+    </div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="payrise">Ask For A Pay Rise <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to ask for more money at work — the right timing, what to say, how to research what you should be earning, and what to do if they say no. Many people are significantly underpaid and have never asked. This guide removes the awkwardness with a repeatable, non-confrontational script.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/payrise/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="renting-uc">Renting on Universal Credit <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>How to actually get a private rental when you are on Universal Credit. Blanket "no benefit claimants" policies are unlawful but still common. This guide covers what your rights are, how to build an application that gets accepted, the exact phrases to use on the phone, how a guarantor changes everything, and what to do if you are facing homelessness.</p>
+    <dl class="entry-dl">
+      <dt>The legal position</dt><dd>Blanket refusals of UC claimants were ruled indirectly discriminatory in 2020. Agents still do it constantly. Screenshot everything and report to Shelter (0808 800 4444) and the Property Ombudsman.</dd>
+      <dt>What actually works</dt><dd>Have your proof pack ready (UC letter, bank statements, landlord reference, ID). Call before emailing. Get a guarantor if you can. Target cheap one-beds, independent agents, and private Facebook/Gumtree landlords. Some areas are much easier than others.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/renting-uc/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="side-hustles">Side Hustles UK <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Real UK side hustles that actually work — ones you can start for free, fit around a job or benefits, and actually make money from. Not MLM, not drop-shipping hype. Covers matched betting, mystery shopping, selling on Vinted/eBay, gig economy, tutoring, content creation, and more.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/side-hustles/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="smart-broke">Smart Broke <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>The mindset and habits guide — how to be smart with money when you have very little. Prioritisation, the 48-hour rule, batch cooking, buying second-hand first, using comparison sites, negotiating bills. The small habits that compound into big savings over a year.</p>
+    <div class="entry-links"><a class="entry-link primary" href="/smart-broke/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="social-tariffs">Social Tariffs <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Cheaper broadband and mobile deals for people on benefits — social tariffs are a legal requirement for major UK providers but they do not advertise them. If you are on UC or other qualifying benefits, you may be entitled to broadband from £15/month or less. This guide lists all the current deals by provider.</p>
+    <dl class="entry-dl">
+      <dt>How to get it</dt><dd>Ring your current broadband provider and ask for their social tariff. If they don't have one, switch to a provider that does. BT, Sky, Virgin, Plusnet, EE, Vodafone, Hyperoptic, and more all have them.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/social-tariffs/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="young-people">Young People &amp; Students <span class="entry-tag guide">Guide</span></h3>
+  <div class="entry-body">
+    <p>Specifically for people under 25 — benefits young people can claim, student finance, how to get help if you are estranged from parents, free bus passes, 16–25 railcard, mental health support, housing rights for under-18s, and how to stay safe when stranded or broke.</p>
+    <dl class="entry-dl">
+      <dt>Always keep a charged phone</dt><dd>Keep a spare charger in your bag. If you are ever stranded — from a night out, a shift that runs late, anywhere — your phone is how you get help. Call a family member, call a friend. Your dad will get out of bed at midnight. Always have two ways to make a call.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="/young-people/" target="_blank">Open Guide →</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<div class="cat-header"><h2>&#x1F4B3; Apps &amp; Tools — What Each One Is</h2><p>Every app, platform, and tool mentioned across the network, explained fully.</p></div>
+
+<div class="entry">
+  <h3 class="entry-title" id="asda-delivery">ASDA Delivery Pass <span class="entry-tag paid">Paid</span></h3>
+  <div class="entry-body">
+    <p>A monthly or annual subscription that gives you unlimited ASDA grocery deliveries for a flat fee. Tom does 3 ASDA shops a month — the annual pass works out much cheaper per delivery than paying each time. Buying yearly is cheaper than monthly if you shop online regularly.</p>
+    <dl class="entry-dl">
+      <dt>How much does it save?</dt><dd>Each delivery is otherwise £3–5. If you do 3 shops a month that is £9–15/month on delivery alone. The monthly pass costs less. The annual pass costs even less again per delivery.</dd>
+      <dt>Complete Savings tip</dt><dd>Tom uses <a href="#complete-savings">Complete Savings</a> to get 10% cashback on ASDA. See that entry.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://groceries.asda.com/delivery-pass" target="_blank">ASDA Delivery Pass →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="camelcamelcamel">CamelCamelCamel <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A free website that shows you the full price history of any Amazon product. Paste an Amazon product URL into it and see a graph of what that item has cost over the past months or years. Reveals whether a "deal" is real or whether the price was already that low six months ago.</p>
+    <dl class="entry-dl">
+      <dt>Price alerts</dt><dd>Set the price you want to pay — it emails you automatically when it drops that low. Free to use, no reason not to have it.</dd>
+      <dt>Rule</dt><dd>Never buy anything on Amazon without checking CamelCamelCamel first. Amazon changes prices hundreds of times a day and "sale" prices are often fake.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://camelcamelcamel.com" target="_blank">CamelCamelCamel →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="complete-savings">Complete Savings <span class="entry-tag paid">Paid — read carefully</span></h3>
+  <div class="entry-body">
+    <p>A cashback membership scheme that gives 10% back on spending at ASDA, eBay, Uber, Just Eat, and other retailers. Tom uses it and gets 10% back on his ASDA shops and eBay purchases.</p>
+    <dl class="entry-dl">
+      <dt>The catch</dt><dd>It charges a monthly membership fee (~£15/month). You need to spend enough to cover that fee through cashback. If you shop at ASDA and eBay regularly, it easily pays for itself. If you barely use it, cancel it — it quietly continues billing.</dd>
+      <dt>How to sign up / cancel</dt><dd>Often offered at checkout when buying online from partner retailers. You can cancel any time. Keep a note of what you joined and when.</dd>
+      <dt>Works with</dt><dd>ASDA, eBay, Uber, Just Eat, and many more retailers. Check the current partner list before joining.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://www.completesavings.co.uk" target="_blank">Complete Savings →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="curve-card">Curve Card <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A card that sits on top of all your other bank cards. You carry one Curve card, and choose in the app which underlying card gets charged when you pay. Effectively gives you one card that works like all your cards.</p>
+    <dl class="entry-dl">
+      <dt>Why use it</dt><dd><strong>Backup card:</strong> If your main bank card is cancelled or lost, Curve gives you instant access to a different account. Always have two cards — never get stranded because of one card problem.<br><strong>Go Back in Time:</strong> Paid with the wrong card? Curve lets you switch which card was charged, up to 30 days after purchase.<br><strong>Travel:</strong> No foreign transaction fees abroad on the free plan.<br><strong>1% cashback:</strong> Sign up with Tom's link and get 1% cashback on all spending for the first 30 days.</dd>
+      <dt>The PayPal trick extension</dt><dd>Tom thinks using Curve (backed by PayPal Credit) may add a further billing cycle before PayPal Credit needs repaying. This is unconfirmed — test it carefully with a small amount before relying on it.</dd>
+    </dl>
+    <div class="entry-links">
+      <a class="entry-link primary" href="https://www.curve.com/join#N7279G9E" target="_blank">Get Curve Free + 1% cashback →</a>
+      <a class="entry-link" href="#paypal-trick">PayPal Trick guide ↑</a>
+    </div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="honey">Honey <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A free browser extension that automatically finds and applies discount codes at checkout when you are shopping online. Install it once, forget about it — it activates automatically when you are about to pay and tries every working code it knows.</p>
+    <dl class="entry-dl">
+      <dt>Does it work?</dt><dd>Not every checkout has a code, but when it does it saves real money — often £5–20. Zero downside to having it installed. Works on Amazon, ASOS, booking sites, and hundreds of UK retailers.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://www.joinhoney.com/gb" target="_blank">Get Honey →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="libby">Libby — Free Books &amp; Audiobooks <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>An app that lets you borrow eBooks and audiobooks from your local library. Free with a library card. Thousands of titles. No cost whatsoever.</p>
+    <dl class="entry-dl">
+      <dt>Getting a library card</dt><dd>Free at any local library — usually just need ID and proof of address. Takes 5 minutes. Once you have the card number, everything in Libby is free.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://libbyapp.com" target="_blank">Libby App →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="olio">Olio <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A community sharing app where people give away food and household items for free. Neighbours post what they are getting rid of — excess food, appliances, furniture, clothes — and you collect it free. Tom regularly finds free slow cookers, air fryers, and food on Olio.</p>
+    <dl class="entry-dl">
+      <dt>How to use it</dt><dd>Download the app, set your location, browse listings near you. Message the poster to arrange collection. That is it. Free.</dd>
+      <dt>What you find</dt><dd>Food from neighbours and local supermarkets (co-op, Tesco), household items, furniture, clothing, plants, books. Quality varies but often genuinely good items.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://olioapp.com" target="_blank">Olio →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="paypal-credit">PayPal Credit <span class="entry-tag free">Free to get</span></h3>
+  <div class="entry-body">
+    <p>A revolving credit line built into your PayPal account. Apply inside the PayPal app — usually approved in minutes. Gives you a credit limit you can spend at any merchant that accepts PayPal. Used in the <a href="#paypal-trick">PayPal Float Trick</a> to transfer funds into Revolut as instant spendable cash.</p>
+    <dl class="entry-dl">
+      <dt>Interest-free period</dt><dd>PayPal Credit charges 0% interest if you repay the full balance within the statement period (up to ~56 days). Pay the minimum and you are charged 23.9% APR on the remaining balance. Full repayment = free. Minimum payment = debt spiral.</dd>
+      <dt>Credit score requirement</dt><dd>PayPal is more lenient than most banks. If declined, work on your credit file first — see the <a href="#credit-guide">Credit Guide</a>.</dd>
+    </dl>
+    <div class="entry-links">
+      <a class="entry-link primary" href="https://py.pl/1erctY" target="_blank">Get PayPal Credit →</a>
+      <a class="entry-link" href="#paypal-trick">Full trick guide ↑</a>
+    </div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="plum">Plum <span class="entry-tag app">App</span></h3>
+  <div class="entry-body">
+    <p>An app that connects to your bank via Open Banking, analyses your income and spending, and automatically moves small amounts into pots for different purposes — rent, food, bills, savings. Does the budgeting work for you without you having to think about it.</p>
+    <dl class="entry-dl">
+      <dt>Is it safe?</dt><dd>Yes. Uses Open Banking — a regulated, read-only connection. Cannot make payments without your explicit instruction. FCA regulated.</dd>
+      <dt>Cost</dt><dd>Free tier covers the basics. Paid tiers add interest on savings and extra features. The free version is enough to start.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://withplum.com" target="_blank">Plum →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="revolut">Revolut <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A free digital bank account — sign up in 5 minutes, get a UK sort code and account number, order a free debit card. Accepts bank transfers, used for the <a href="#paypal-trick">PayPal Float Trick</a>. Also useful for budgeting (separate pots), travel (no foreign transaction fees on standard), and as a second account.</p>
+    <dl class="entry-dl">
+      <dt>Free plan includes</dt><dd>UK bank account, Mastercard debit card, instant spend notifications, budgeting pots, fee-free foreign spending up to a monthly limit.</dd>
+      <dt>Why use it alongside your main bank?</dt><dd>A second account that is separate from your main money is useful for budgeting, for receiving transfers you want to keep separate, and as a backup if your main card is blocked.</dd>
+    </dl>
+    <div class="entry-links">
+      <a class="entry-link primary" href="https://revolut.com/referral/?referral-code=tomfd6a!MAR1-26-VR-GB&amp;geo-redirect" target="_blank">Get Revolut Free →</a>
+    </div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="temu">Temu <span class="entry-tag app">App / Website</span></h3>
+  <div class="entry-body">
+    <p>A Chinese marketplace selling products at very low prices — phone accessories, storage, kitchen items, tools, gadgets. Real bargains exist for the right things. Quality is inconsistent.</p>
+    <dl class="entry-dl">
+      <dt>What to buy</dt><dd>Phone cases, cables, storage boxes, kitchen gadgets, small tools — usually fine quality at very low prices. Always read the product reviews before ordering.</dd>
+      <dt>What to avoid</dt><dd>Clothing and shoes — sizes are inconsistent, quality varies wildly, and returns can be awkward. Electronics with safety implications — buy from a reputable UK seller instead.</dd>
+      <dt>Delivery</dt><dd>Usually 1–2 weeks. Some items ship from UK warehouses faster — check the listing.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://www.temu.com" target="_blank">Temu →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="too-good-to-go">Too Good To Go <span class="entry-tag app">App</span></h3>
+  <div class="entry-body">
+    <p>An app where restaurants, cafes, and supermarkets sell their surplus food at end of day for £2–5 instead of throwing it away. You get a "magic bag" — you do not choose the contents but it is always worth significantly more than you paid. Sushi, hot meals, baked goods, sandwiches, groceries.</p>
+    <dl class="entry-dl">
+      <dt>How to use it</dt><dd>Download the app, set your location, check it daily — usually bags appear from mid-afternoon onwards. Reserve, pay in app, collect at the listed time. No waste, real savings.</dd>
+      <dt>ASDA tip</dt><dd>ASDA on Sundays often has the best Too Good To Go bags. Tom also goes past Tesco on Sundays — last time got a whole chicken and veg half price. Time it with your yellow sticker run.</dd>
+    </dl>
+    <div class="entry-links"><a class="entry-link primary" href="https://toogoodtogo.com/en-gb" target="_blank">Too Good To Go →</a></div>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="topcashback">TopCashback <span class="entry-tag free">Free</span></h3>
+  <div class="entry-body">
+    <p>A cashback website that pays you a percentage of your purchase back in cash when you buy through their links. Free to join. Works with thousands of UK retailers — Amazon, insurance companies, supermarkets, travel, broadband, and more. You are essentially getting paid for purchases you would make anyway.</p>
+    <dl class="entry-dl">
+      <dt>How to use it</dt><dd>Before buying anything online, go to <a href="https://www.topcashback.co.uk/ref/q1979" target="_blank">TopCashback</a>, search for the shop, click through to it from TopCashback, then buy as normal. Cashback tracks automatically.</dd>
+      <dt>Best uses</dt><dd>Insurance (often £20–80 cashback per policy), broadband switching, hotel bookings, Amazon, ASDA, eBay. Always check TopCashback before any large online purchase.</dd>
+      <dt>When do you get paid?</dt><dd>Cashback becomes payable after 30–90 days (retailer confirms purchase was not returned). Pay out to your bank, PayPal, or as a gift card.</dd>
+      <dt>Tom's tip</dt><dd>Tom gets 10% cashback on ASDA through <a href="#complete-savings">Complete Savings</a> and also uses TopCashback for insurance. Stack both where you can.</dd>
+    </dl>
+    <div class="entry-links">
+      <a class="entry-link primary" href="https://www.topcashback.co.uk/ref/q1979" target="_blank">Join TopCashback (referral) →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<div class="cat-header"><h2>&#x1F4A1; Concepts — Terms and Ideas Explained</h2><p>Concepts, tricks, and terms used across the guides.</p></div>
+
+<div class="entry">
+  <h3 class="entry-title" id="48-hour-rule">48 Hour Rule</h3>
+  <div class="entry-body">
+    <p>When you want to buy something non-essential, wait 48 hours before buying it. Screenshot it or put it on a wishlist and walk away. If you still want it in two days, buy it — but find it cheaper first using Google Shopping and TopCashback.</p>
+    <dl class="entry-dl">
+      <dt>Why it works</dt><dd>Most impulse purchases are driven by a dopamine spike that fades within hours. 80% of the time, after 48 hours, you will have forgotten you wanted it. The other 20% of the time you get it cheaper.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="affordability">Affordability Checks</h3>
+  <div class="entry-body">
+    <p>When renting, landlords and agents assess whether you can afford the rent. Standard rule: your income should be 2.5× the annual rent or more. Universal Credit counts as income for this purpose — it is a government-guaranteed payment.</p>
+    <dl class="entry-dl">
+      <dt>What to have ready</dt><dd>UC award letter showing monthly amount, 3–6 months of bank statements showing regular UC credits, and a landlord reference letter. Having these prepared as PDFs on your phone makes the conversation much faster and more credible.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="foodbank">Food Bank — How It Works</h3>
+  <div class="entry-body">
+    <p>Food banks provide emergency food parcels — usually a 3-day supply. Most Trussell Trust food banks require a referral voucher. Many independent food banks and community kitchens do not.</p>
+    <dl class="entry-dl">
+      <dt>Who can issue a voucher</dt><dd>GP, social worker, health visitor, Citizens Advice, Jobcentre, teacher, housing officer, support worker — and in many places, anyone with a professional role. You do not have to be on benefits.</dd>
+      <dt>Working people can use food banks</dt><dd>If your disposable income after rent and bills is not covering food, you qualify. Working status does not disqualify you. Food banks focus on whether you can afford food — not whether you have a job.</dd>
+      <dt>Sundays</dt><dd>Most food banks are closed on Sundays. Use the AI tip in the <a href="#emergency">Emergency guide</a> to find what is open near you today.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="guarantor">Guarantor</h3>
+  <div class="entry-body">
+    <p>A guarantor is someone who agrees to cover your rent if you cannot pay it. Having a guarantor is often the single biggest thing that turns a "no" into a "yes" when renting on Universal Credit or with a limited credit history.</p>
+    <dl class="entry-dl">
+      <dt>Who can be a guarantor</dt><dd>Usually needs to be a UK homeowner or employed person with good credit — often a parent or older family member. Some landlords accept employed friends.</dd>
+      <dt>No one to be a guarantor?</dt><dd>Professional guarantor services exist — <strong>Housing Hand</strong> and <strong>Rent Guarantor</strong> charge a fee (usually 1 month's rent equivalent or a percentage) but act as a professional guarantor. Can be worth it to secure a home.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="lha">Local Housing Allowance (LHA)</h3>
+  <div class="entry-body">
+    <p>The maximum housing element Universal Credit will pay towards your rent in a given area. Set by the government based on the local rental market. If your rent is at or below the LHA rate, Universal Credit covers the full housing cost.</p>
+    <dl class="entry-dl">
+      <dt>Finding your LHA rate</dt><dd>Search "LHA rate [your council name]" or ask your local council. Rates are set by property size — 1-bed, 2-bed, shared accommodation etc.</dd>
+      <dt>Why it matters when renting</dt><dd>If you target properties at or under the LHA rate, the full rent may be covered by UC. Some landlords specifically rent at LHA rates and are experienced with UC tenants — they are worth targeting.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="referral-links">Referral Links Explained</h3>
+  <div class="entry-body">
+    <p>Some links on this site are referral links — when you sign up through them, Tom earns a small commission from the company. You pay the same price either way. The commission keeps this site free and funded.</p>
+    <dl class="entry-dl">
+      <dt>Policy</dt><dd>Only services Tom actually uses and believes in are promoted here. No products are recommended just because they pay commission. Referral links are always labelled.</dd>
+      <dt>Examples</dt><dd>TopCashback, Revolut, PayPal Credit, Curve Card — all services Tom personally uses. The referral earns him something; the service is genuine.</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="entry">
+  <h3 class="entry-title" id="yellow-sticker">Yellow Sticker Shopping</h3>
+  <div class="entry-body">
+    <p>Supermarkets reduce fresh food that is approaching its use-by date with yellow stickers — sometimes down to 10–20p. Meat, veg, bread, ready meals, fish, dairy. If you time it right you can do a week's worth of proper food shopping for almost nothing.</p>
+    <dl class="entry-dl">
+      <dt>Best times</dt><dd>Most supermarkets reduce at 6–8pm on weekdays. Sundays are often best — they do not want stock sitting over the weekend. ASDA on Sunday evenings is particularly good. Times vary by store — visit a few times at different times to learn the pattern for your local one.</dd>
+      <dt>What to do with it</dt><dd>Freeze anything you won't eat before the use-by date. Almost everything freezes — meat, bread, cooked food, most veg. A joint of meat reduced to £2 can feed you for three days.</dd>
+      <dt>Tom's tip</dt><dd>Tom was passing a Tesco on a Sunday and grabbed a whole chicken and veg for half price — made a proper roast. The savings are real if you build the habit.</dd>
+    </dl>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+// Filter TOC sidebar
+function filterTOC(val) {
+  var v = val.toLowerCase();
+  var all = document.querySelectorAll('#sidebar ul li');
+  all.forEach(function(li) {
+    var text = li.textContent.toLowerCase();
+    li.style.display = text.indexOf(v) > -1 ? '' : 'none';
+  });
+}
+// Highlight active anchor on scroll
+var entries = document.querySelectorAll('.entry');
+var sideLinks = document.querySelectorAll('#sidebar a');
+window.addEventListener('scroll', function() {
+  var scrollY = window.scrollY + 60;
+  var current = '';
+  entries.forEach(function(e) {
+    var h = e.querySelector('.entry-title');
+    if (h && h.id && e.getBoundingClientRect().top + window.scrollY <= scrollY) {
+      current = h.id;
+    }
+  });
+  sideLinks.forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (href === '#' + current) {
+      a.style.color = '#f5c518';
+    } else {
+      a.style.color = '';
+    }
+  });
+}, {passive: true});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/emergency/">
+  <meta property="og:title" content="Emergency Money Help In The Uk">
+  <meta property="og:description" content="Emergency money help in the UK — right now">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emergency Money Help In The Uk">
+  <meta name="twitter:description" content="Emergency money help in the UK — right now">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Help UK — Free Food, Money, Travel Right Now</title>
+<meta name="description" content="How much money do you have right now? One question. Instant answer. Free food, emergency money, free travel. No forms. No bullshit.">
+<link rel="canonical" href="/emergency/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"I have no money and need food right now in the UK","acceptedAnswer":{"@type":"Answer","text":"Download the Olio app immediately. It shows free food from neighbours within walking distance. Zero cost. No forms. Just open it."}},
+{"@type":"Question","name":"My electric meter is about to run out and I have no money","acceptedAnswer":{"@type":"Answer","text":"Call your energy supplier right now and say these exact words: I am on a prepayment meter and I need emergency credit. They add credit instantly. You pay it back slowly when you next top up. Every major UK supplier must do this by law."}},
+{"@type":"Question","name":"I need emergency money in the UK today","acceptedAnswer":{"@type":"Answer","text":"Call your local council and ask for the Household Support Fund or Local Welfare Provision. It is a grant — you do not pay it back. Also call Citizens Advice free on 0800 144 8848. If you are on Universal Credit ask for a hardship payment through your UC journal today."}}
+]}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#000;color:#fff;font-family:'Nunito',sans-serif;min-height:100vh;}
+
+/* TRIAGE GATE */
+.gate{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:#000;}
+.gate h1{font-family:'Bebas Neue',cursive;font-size:clamp(48px,12vw,96px);line-height:0.9;margin-bottom:16px;}
+.gate p{font-size:clamp(16px,4vw,22px);font-weight:900;color:rgba(255,255,255,0.7);margin-bottom:36px;}
+.triage-btns{display:flex;flex-direction:column;gap:14px;width:100%;max-width:420px;}
+.triage-btn{font-family:'Bebas Neue',cursive;font-size:clamp(24px,6vw,40px);padding:22px 20px;border-radius:10px;border:none;cursor:pointer;letter-spacing:1px;transition:transform 0.1s;}
+.triage-btn:active{transform:scale(0.97);}
+.btn-zero{background:#FF1744;color:#fff;box-shadow:0 0 30px rgba(255,23,68,0.4);}
+.btn-low{background:#FFD600;color:#000;box-shadow:0 0 30px rgba(255,214,0,0.3);}
+.btn-ok{background:#00E676;color:#000;box-shadow:0 0 30px rgba(0,230,118,0.3);}
+
+/* RESULT SCREENS */
+.result{display:none;min-height:100vh;padding:40px 20px;flex-direction:column;align-items:center;}
+.result.show{display:flex;}
+.result h2{font-family:'Bebas Neue',cursive;font-size:clamp(36px,9vw,72px);line-height:0.95;text-align:center;margin-bottom:20px;}
+.action-cards{display:flex;flex-direction:column;gap:14px;width:100%;max-width:560px;margin:0 auto;}
+.action{border-radius:12px;padding:22px;text-align:left;border:2px solid rgba(255,255,255,0.1);}
+.action .num{font-family:'Bebas Neue',cursive;font-size:48px;line-height:1;margin-bottom:6px;}
+.action h3{font-size:18px;font-weight:900;margin-bottom:8px;}
+.action p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:10px;}
+.action .say{background:rgba(255,255,255,0.06);border-left:3px solid;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;font-style:italic;margin-bottom:10px;}
+.action a{font-weight:900;font-size:14px;text-decoration:none;}
+.back-btn{background:#1a1a1a;color:rgba(255,255,255,0.5);font-family:'Bebas Neue',cursive;font-size:20px;padding:12px 30px;border-radius:8px;border:1px solid #333;cursor:pointer;margin-top:20px;letter-spacing:1px;}
+
+/* LOAN CALCULATOR */
+.loan-section{background:#111;padding:40px 20px;width:100%;}
+.loan-section h2{font-family:'Bebas Neue',cursive;font-size:clamp(28px,7vw,52px);color:#FFD600;text-align:center;margin-bottom:8px;}
+.loan-sub{text-align:center;color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:24px;font-style:italic;}
+.loan-form{max-width:480px;margin:0 auto;}
+.loan-row{margin-bottom:14px;}
+.loan-row label{display:block;font-size:13px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+.loan-row input{width:100%;background:#1a1a1a;border:2px solid #333;color:#fff;padding:14px;border-radius:8px;font-size:18px;font-family:'Nunito',sans-serif;font-weight:900;}
+.loan-row input:focus{outline:none;border-color:#FFD600;}
+.loan-calc-btn{background:#FF1744;color:#fff;font-family:'Bebas Neue',cursive;font-size:28px;padding:16px;border-radius:8px;border:none;cursor:pointer;width:100%;letter-spacing:1px;margin-top:8px;}
+.loan-result{display:none;background:#000;border:3px solid;border-radius:12px;padding:24px;margin-top:16px;text-align:center;}
+.loan-result.show{display:block;}
+.loan-result .verdict{font-family:'Bebas Neue',cursive;font-size:clamp(28px,7vw,52px);line-height:1;margin-bottom:12px;}
+.loan-result .numbers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0;}
+.loan-result .num-box{background:#111;border-radius:8px;padding:14px;}
+.loan-result .num-box .n{font-family:'Bebas Neue',cursive;font-size:clamp(22px,5vw,36px);line-height:1;}
+.loan-result .num-box .l{font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.loan-result p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6;}
+.loan-result a{color:#FFD600;font-weight:900;}
+
+/* CHEAP HOLIDAYS */
+.holidays{background:#0a0a0a;padding:40px 20px;}
+.holidays h2{font-family:'Bebas Neue',cursive;font-size:clamp(28px,7vw,52px);color:#4FC3F7;text-align:center;margin-bottom:8px;}
+.holidays-sub{text-align:center;color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:24px;font-style:italic;}
+.h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:900px;margin:0 auto;}
+.h-card{background:#111;border:1px solid #222;border-radius:12px;padding:20px;transition:border-color 0.2s;}
+.h-card:hover{border-color:#444;}
+.h-card .price{font-family:'Bebas Neue',cursive;font-size:36px;color:#4FC3F7;line-height:1;margin-bottom:6px;}
+.h-card h3{font-size:16px;font-weight:900;margin-bottom:6px;}
+.h-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;margin-bottom:8px;}
+.h-card a{color:#4FC3F7;font-size:13px;font-weight:900;text-decoration:none;}
+
+/* CREDIT SECTION */
+.credit-section{background:#111;padding:40px 20px;}
+.credit-section h2{font-family:'Bebas Neue',cursive;font-size:clamp(28px,7vw,52px);color:#CE93D8;text-align:center;margin-bottom:8px;}
+.credit-sub{text-align:center;color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:24px;font-style:italic;}
+.credit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:900px;margin:0 auto;}
+.c-card{background:#0a0a0a;border:1px solid #2a2a2a;border-radius:12px;padding:20px;transition:border-color 0.2s;}
+.c-card:hover{border-color:#555;}
+.c-card .label{font-family:'Bebas Neue',cursive;font-size:28px;line-height:1;margin-bottom:6px;}
+.c-card h3{font-size:15px;font-weight:900;margin-bottom:6px;}
+.c-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;margin-bottom:8px;}
+.c-card a{font-size:13px;font-weight:900;text-decoration:none;}
+.c-card .warning{font-size:11px;color:rgba(255,100,100,0.7);margin-top:6px;font-style:italic;}
+
+/* PAYPAL TRICK */
+.paypal-trick-section{background:#0a0a0a;padding:60px 20px;}
+.trick-wrapper{max-width:680px;margin:0 auto;}
+.slow-read-bar{background:#111;border-left:4px solid #FF1744;border-radius:0 10px 10px 0;padding:18px 20px;margin:32px 0;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+.slow-read-mid{border-left-color:#FF9800;}
+.slow-read-bottom{border-left-color:#00BCD4;}
+.slow-read-icon{font-size:28px;flex-shrink:0;}
+.slow-read-text{flex:1;min-width:200px;}
+.slow-read-text strong{display:block;font-size:18px;color:#fff;margin-bottom:4px;}
+.slow-read-text p{font-size:14px;color:rgba(255,255,255,0.7);margin:0;}
+.save-btn-inline{background:#FF1744;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:900;white-space:nowrap;align-self:center;}
+.trick-tag{background:#FF1744;color:#fff;font-size:11px;font-weight:900;padding:4px 10px;border-radius:4px;letter-spacing:2px;text-transform:uppercase;}
+.trick-title{font-family:'Bebas Neue',cursive;font-size:clamp(36px,8vw,64px);line-height:1;color:#fff;margin:16px 0 8px;}
+.trick-sub{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:32px;line-height:1.6;}
+.trick-steps{margin:32px 0;}
+.trick-step{display:flex;gap:16px;margin-bottom:24px;background:#111;border-radius:10px;padding:20px;}
+.step-num{background:#FF1744;color:#fff;font-family:'Bebas Neue',cursive;font-size:24px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body strong{display:block;font-size:16px;color:#fff;margin-bottom:6px;}
+.step-body p{font-size:14px;color:rgba(255,255,255,0.7);margin:0;line-height:1.6;}
+.trick-warnings{margin:32px 0;display:flex;flex-direction:column;gap:12px;}
+.warn-box{padding:14px 18px;border-radius:8px;font-size:14px;line-height:1.6;}
+.warn-red{background:rgba(255,23,68,0.15);border:1px solid rgba(255,23,68,0.4);color:#fff;}
+.warn-yellow{background:rgba(255,152,0,0.15);border:1px solid rgba(255,152,0,0.4);color:#fff;}
+.warn-blue{background:rgba(0,188,212,0.15);border:1px solid rgba(0,188,212,0.4);color:#fff;}
+.trick-checklist{background:#111;border-radius:12px;padding:28px;margin:32px 0;}
+.checklist-title{font-size:20px;color:#fff;margin:0 0 6px;}
+.checklist-sub{font-size:13px;color:rgba(255,255,255,0.5);margin:0 0 16px;}
+.checklist-progress-bar{background:rgba(255,255,255,0.1);border-radius:100px;height:6px;margin-bottom:20px;overflow:hidden;}
+.checklist-progress-fill{height:100%;background:#4CAF50;border-radius:100px;width:0;transition:width 0.4s ease;}
+.checklist-items{display:flex;flex-direction:column;gap:12px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,0.85);cursor:pointer;line-height:1.5;}
+.check-item input{margin-top:3px;accent-color:#4CAF50;width:18px;height:18px;flex-shrink:0;}
+.checklist-complete{background:rgba(76,175,80,0.2);border:1px solid #4CAF50;border-radius:8px;padding:14px 18px;margin-top:16px;color:#4CAF50;font-weight:900;font-size:15px;}
+.save-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;width:100%;}
+.save-opt-btn{background:#222;color:#fff;border:1px solid #333;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:700;}
+.save-opt-btn:hover{background:#333;}
+.blog-link-box{background:#111;border-radius:10px;padding:24px;text-align:center;margin-top:32px;}
+.blog-link-box p{color:rgba(255,255,255,0.7);margin:0 0 14px;font-size:15px;}
+.blog-link-btn{background:#FF1744;color:#fff;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:900;font-size:16px;display:inline-block;}
+.blog-link-btn:hover{background:#d50000;}
+
+/* EXTRA BLOCKS */
+.step{background:#111;border-radius:12px;padding:24px;margin:16px auto;max-width:680px;}
+.step h3{font-family:'Bebas Neue',cursive;font-size:24px;color:#FFD600;margin-bottom:10px;}
+.step p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:8px;}
+.step a{color:#FFD600;font-weight:900;font-size:14px;}
+</style>
+</head>
+<body>
+
+
+<!-- TRIAGE GATE -->
+<div class="gate" id="gate">
+  <h1 style="color:#FF1744;">HOW MUCH<br>YA GOT?</h1>
+  <p>one question. instant answer.<br>no bullshit. no reading.</p>
+  <div class="triage-btns">
+    <button class="triage-btn btn-zero" onclick="triage('zero')">💀 £0 — NOTHING</button>
+    <button class="triage-btn btn-low" onclick="triage('low')">😬 UNDER A FIVER</button>
+    <button class="triage-btn btn-ok" onclick="triage('ok')">🤏 £5 OR MORE</button>
+  </div>
+</div>
+
+<!-- ASK GEMINI SECTION -->
+<div style="background:#0a1628;border:3px solid #FFD600;border-radius:12px;padding:28px 22px;max-width:680px;margin:20px auto 30px;font-family:sans-serif;">
+  <div style="font-size:0.75rem;color:#FFD600;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">&#x1F4A1; BEFORE ANYTHING ELSE</div>
+  <h2 style="color:#FFD600;font-size:clamp(1.4rem,4vw,2rem);margin:0 0 12px;line-height:1.2;">Stop. Ask Gemini First.<br><span style="color:#fff;font-size:0.6em;font-weight:normal;">It knows your area. It knows today.</span></h2>
+  <p style="color:#ccc;font-size:0.95rem;line-height:1.6;margin-bottom:16px;">A guy I knew moaned at me all Sunday. Broke. Starving. Going nowhere. <strong style="color:#fff;">In two minutes of asking Gemini</strong> I had him a food bank open that afternoon, a hot meal at 3pm, and a number to call for emergency support &#x2014; all in his city, all that day. He didn't know any of it existed. He just hadn't asked.</p>
+  
+  <div style="background:#111;border-radius:8px;padding:16px 18px;margin-bottom:18px;">
+    <div style="font-size:0.72rem;color:#FFD600;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">&#x1F4CB; Copy one of these into Gemini now</div>
+    <div style="background:#1a1a1a;border-left:3px solid #FFD600;padding:10px 14px;margin-bottom:8px;border-radius:4px;">
+      <div style="color:#aaa;font-size:0.72rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">FREE FOOD TODAY</div>
+      <div style="color:#fff;font-size:0.88rem;font-style:italic;line-height:1.6;">&#x201C;It is [today's date and day]. I am in [your town/city]. I need free food today. What food banks, community kitchens or hot meal services are open right now? Include phone numbers and addresses.&#x201D;</div>
+    </div>
+    <div style="background:#1a1a1a;border-left:3px solid #FFD600;padding:10px 14px;margin-bottom:8px;border-radius:4px;">
+      <div style="color:#aaa;font-size:0.72rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">MENTAL HEALTH SUPPORT</div>
+      <div style="color:#fff;font-size:0.88rem;font-style:italic;line-height:1.6;">&#x201C;I am struggling mentally and financially in [your town]. What free counselling, mental health support or crisis services are available to me today? I cannot afford to pay.&#x201D;</div>
+    </div>
+    <div style="background:#1a1a1a;border-left:3px solid #FFD600;padding:10px 14px;margin-bottom:8px;border-radius:4px;">
+      <div style="color:#aaa;font-size:0.72rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">EMERGENCY HELP SUNDAY</div>
+      <div style="color:#fff;font-size:0.88rem;font-style:italic;line-height:1.6;">&#x201C;It is Sunday in [your town]. I have no money and no food. What emergency help is open today &#x2014; food banks, charities, council services, hot meals &#x2014; right now?&#x201D;</div>
+    </div>
+    <div style="background:#1a1a1a;border-left:3px solid #FFD600;padding:10px 14px;border-radius:4px;">
+      <div style="color:#aaa;font-size:0.72rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">WORKING BUT SKINT</div>
+      <div style="color:#fff;font-size:0.88rem;font-style:italic;line-height:1.6;">&#x201C;I work but cannot afford food this week. I am in [your town]. What support am I entitled to &#x2014; food banks, social supermarkets, council help &#x2014; even though I am employed?&#x201D;</div>
+    </div>
+  </div>
+  
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="https://gemini.google.com" target="_blank" rel="noopener" style="background:#FFD600;color:#000;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:900;font-size:0.95rem;flex:1;text-align:center;min-width:140px;">&#x1F916; Open Gemini &#x2192;</a>
+    <a href="https://chat.openai.com" target="_blank" rel="noopener" style="background:#333;color:#fff;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:900;font-size:0.95rem;flex:1;text-align:center;min-width:140px;">ChatGPT works too &#x2192;</a>
+  </div>
+  <p style="color:#666;font-size:0.78rem;margin-top:12px;margin-bottom:0;">Both free. Both work on any phone. Just copy the prompt above, paste it in, add your town. Job done.</p>
+</div>
+
+<!-- RESULT: £0 -->
+<div class="result" id="result-zero" style="background:#0a0000;">
+<div class="slow-read-bar">
+  <span class="slow-read-icon">⛔</span>
+  <div class="slow-read-text">
+    <strong>Stop. Read This Properly.</strong>
+    <p>People who rush this mess it up. This takes 3 minutes to read. Save it first.</p>
+  </div>
+  <button class="save-btn-inline" onclick="bookmarkPrompt()">📌 Save This</button>
+</div>
+  <h2 style="color:#FF1744;">RIGHT NOW.<br>FREE. TODAY. 💀</h2>
+  <div class="action-cards">
+    <div class="action" style="background:#1a0000;border-color:rgba(255,23,68,0.3);">
+      <div class="num" style="color:#FF1744;">1</div>
+      <h3>FREE FOOD — RIGHT NOW</h3>
+      <p>Download Olio. Free food from neighbours within walking distance. Zero cost. No forms. Just open it.</p>
+      <a href="https://olioapp.com" target="_blank" style="color:#FF1744;">GET FREE FOOD ON OLIO →</a>
+    </div>
+    <div class="action" style="background:#1a0000;border-color:rgba(255,23,68,0.3);">
+      <div class="num" style="color:#FF1744;">2</div>
+      <h3>ELECTRIC RUNNING OUT?</h3>
+      <p>Call ya energy supplier right now. Say exactly this:</p>
+      <div class="say" style="border-color:#FF1744;color:#FF1744;">"I am on a prepayment meter and I need emergency credit please"</div>
+      <p>They add it instantly. Pay back slow. Never go cold.</p>
+    </div>
+    <div class="action" style="background:#1a0000;border-color:rgba(255,23,68,0.3);">
+      <div class="num" style="color:#FF1744;">3</div>
+      <h3>FREE MONEY FROM YA COUNCIL</h3>
+      <p>Ring ya local council right now. Ask for the <strong>Household Support Fund</strong>. It's a grant. Ya don't pay it back. They can also give travel vouchers for hospital/nursery runs.</p>
+      <a href="https://www.gov.uk/cost-of-living" target="_blank" style="color:#FF1744;">Find ya council →</a>
+    </div>
+    <div class="action" style="background:#1a0000;border-color:rgba(255,23,68,0.3);">
+      <div class="num" style="color:#FF1744;">4</div>
+      <h3>UC ADVANCE PAYMENT — GET PAID NOW</h3>
+      <p>On Universal Credit and waiting for your first payment? You can get an advance of your full first payment immediately. Log into your UC account and request an advance, or tell your work coach at your first appointment. Paid back slowly over 24 months. Zero interest. You are entitled to this.</p>
+      <a href="https://www.gov.uk/universal-credit/get-an-advance-first-payment" target="_blank" style="color:#FF1744;">Request UC advance →</a>
+    </div>
+    <div class="action" style="background:#1a0000;border-color:rgba(255,23,68,0.3);">
+      <div class="num" style="color:#FF1744;">5</div>
+      <h3>FREE HELP. ONE CALL.</h3>
+      <p>Citizens Advice. Free. <a href="tel:08001448848" style="color:#FF1744;font-weight:900;">0800 144 8848</a>. Tell them ya situation. They know every trick. On ya side. Always.</p>
+    </div>
+  </div>
+  <button class="back-btn" onclick="goBack()">← BACK</button>
+</div>
+
+
+
+<!-- RESULT: UNDER £5 -->
+<div class="result" id="result-low" style="background:#0a0a00;">
+<div class="slow-read-bar">
+  <span class="slow-read-icon">⛔</span>
+  <div class="slow-read-text">
+    <strong>Stop. Read This Properly.</strong>
+    <p>People who rush this mess it up. This takes 3 minutes to read. Save it first.</p>
+  </div>
+  <button class="save-btn-inline" onclick="bookmarkPrompt()">📌 Save This</button>
+</div>
+  <h2 style="color:#FFD600;">MAKE IT<br>STRETCH. 💰</h2>
+  <div class="action-cards">
+    <div class="action" style="background:#1a1500;border-color:rgba(255,214,0,0.3);">
+      <div class="num" style="color:#FFD600;">1</div>
+      <h3>TOO GOOD TO GO — £2.50</h3>
+      <p>Magic bag from Greggs, Tesco, Costa. £10 of food for £2.50. Download the app and find one near ya right now.</p>
+      <a href="https://www.toogoodtogo.com" target="_blank" style="color:#FFD600;">GET £10 FOOD FOR £2.50 →</a>
+    </div>
+    <div class="action" style="background:#1a1500;border-color:rgba(255,214,0,0.3);">
+      <div class="num" style="color:#FFD600;">2</div>
+      <h3>SIGNUP BONUSES — BOLT + OLA</h3>
+      <p>Download Bolt and Ola right now. Between them ya get up to £20 in first-ride credits. No cash needed.</p>
+      <a href="https://bolt.eu/en-gb" target="_blank" style="color:#FFD600;">Bolt →</a> &nbsp;
+      <a href="https://olacabs.com" target="_blank" style="color:#FFD600;">Ola →</a> &nbsp;
+      <a href="https://referrals.uber.com/refer?id=p9kkymrfx11k" target="_blank" style="color:#FFD600;">Uber 50% off →</a>
+    </div>
+    <div class="action" style="background:#1a1500;border-color:rgba(255,214,0,0.3);">
+      <div class="num" style="color:#FFD600;">3</div>
+      <h3>ZILCH — SPREAD THE COST</h3>
+      <p>Zilch lets ya spread any purchase over 6 weeks interest free. No credit card needed. Good for food shops, travel, essentials.</p>
+      <a href="https://zilch.com" target="_blank" style="color:#FFD600;">Get Zilch →</a>
+    </div>
+    <div class="action" style="background:#1a1500;border-color:rgba(255,214,0,0.3);">
+      <div class="num" style="color:#FFD600;">4</div>
+      <h3>CHECK WHAT YA OWED</h3>
+      <p>If ya not already claiming everything — ya leaving money on the table every single week.</p>
+      <a href="https://www.entitledto.co.uk" target="_blank" style="color:#FFD600;">Check at entitledto.co.uk →</a>
+    </div>
+  </div>
+  <button class="back-btn" onclick="goBack()">← BACK</button>
+</div>
+
+<!-- RESULT: £5+ -->
+<div class="result" id="result-ok" style="background:#000a00;">
+<div class="slow-read-bar">
+  <span class="slow-read-icon">⛔</span>
+  <div class="slow-read-text">
+    <strong>Stop. Read This Properly.</strong>
+    <p>People who rush this mess it up. This takes 3 minutes to read. Save it first.</p>
+  </div>
+  <button class="save-btn-inline" onclick="bookmarkPrompt()">📌 Save This</button>
+</div>
+  <h2 style="color:#00E676;">YA SORTED.<br>STAY SORTED. 💪</h2>
+  <div class="action-cards">
+    <div class="action" style="background:#001a08;border-color:rgba(0,230,118,0.3);">
+      <div class="num" style="color:#00E676;">1</div>
+      <h3>MAKE IT GO FURTHER</h3>
+      <p>Aldi first. Yellow sticker aisle Sunday evenings. Batch cook. Never shop hungry. That £5 can last 2 days done right.</p>
+      <a href="/" style="color:#00E676;">Full survival guide →</a>
+    </div>
+    <div class="action" style="background:#001a08;border-color:rgba(0,230,118,0.3);">
+      <div class="num" style="color:#00E676;">2</div>
+      <h3>FREE MONEY YA PROBABLY OWED</h3>
+      <p>£19 billion in benefits goes unclaimed every year. Most people on low incomes are owed more than they think.</p>
+      <a href="https://www.entitledto.co.uk" target="_blank" style="color:#00E676;">Check what ya owed →</a>
+    </div>
+    <div class="action" style="background:#001a08;border-color:rgba(0,230,118,0.3);">
+      <div class="num" style="color:#00E676;">3</div>
+      <h3>FREE BANK MONEY</h3>
+      <p>Lloyds pays £200 to switch accounts. PayPal gives ya both £10. Revolut pays £70 referral. Stack them all.</p>
+      <a href="/free-banking-dollars/" style="color:#00E676;">Get free bank money →</a>
+    </div>
+  </div>
+  <button class="back-btn" onclick="goBack()">← BACK</button>
+</div>
+
+<!-- LOAN CALCULATOR -->
+
+<div class="loan-section" id="loan">
+  <h2>LOAN CALCULATOR 🏦</h2>
+  <p class="loan-sub">thinking about a loan? check the real cost first. most people don't.</p>
+  <div class="loan-form">
+    <div class="loan-row">
+      <label>How much ya borrowing (£)</label>
+      <input type="number" id="loan-amount" placeholder="100" min="0">
+    </div>
+    <div class="loan-row">
+      <label>Interest rate % (payday loan = 1500%, credit card = 30%, friend = 50%)</label>
+      <input type="number" id="loan-rate" placeholder="50" min="0">
+    </div>
+    <div class="loan-row">
+      <label>Weeks to pay back</label>
+      <input type="number" id="loan-weeks" placeholder="3" min="1">
+    </div>
+    <button class="loan-calc-btn" onclick="calcLoan()">SHOW ME THE REAL COST 💀</button>
+    <div class="loan-result" id="loan-result">
+      <p class="verdict" id="loan-verdict"></p>
+      <div class="numbers">
+        <div class="num-box">
+          <div class="n" id="ln-borrow" style="color:#4FC3F7;">£0</div>
+          <div class="l">Ya Borrow</div>
+        </div>
+        <div class="num-box">
+          <div class="n" id="ln-payback" style="color:#FF1744;">£0</div>
+          <div class="l">Ya Pay Back</div>
+        </div>
+        <div class="num-box">
+          <div class="n" id="ln-extra" style="color:#FF4081;">£0</div>
+          <div class="l">Extra Cost</div>
+        </div>
+      </div>
+      <p id="loan-advice"></p>
+    </div>
+  </div>
+</div>
+
+<!-- CHEAP HOLIDAYS -->
+<div class="holidays" id="holidays">
+  <h2>CHEAP HOLIDAYS 🏖️</h2>
+  <p class="holidays-sub">dave's genius — coach tours cheaper than the train. booking.com. real deals.</p>
+  <div class="h-grid">
+    <div class="h-card">
+      <div class="price">£1</div>
+      <h3>Megabus — Coaches from £1</h3>
+      <p>London to Edinburgh from £5. Manchester to London from £1. Book early. Cheaper than any train.</p>
+      <a href="https://uk.megabus.com" target="_blank">Book at megabus.com →</a>
+    </div>
+    <div class="h-card">
+      <div class="price">£249</div>
+      <h3>Shearings Coach Holidays</h3>
+      <p>Full week. Hotel included. Meals included. Pick up from ya door. Often cheaper than the train alone. Dave's hack.</p>
+      <a href="https://www.shearings.com" target="_blank">See deals →</a>
+    </div>
+    <div class="h-card">
+      <div class="price">🏨</div>
+      <h3>Booking.com — Cheap Hotels</h3>
+      <p>Filter by price. Sort by lowest first. Genius loyalty gives discounts. Free cancellation on most. Always check.</p>
+      <a href="https://www.booking.com" target="_blank">Find cheap hotels →</a>
+    </div>
+    <div class="h-card">
+      <div class="price">🏕️</div>
+      <h3>Pitchup — Cheap Camping</h3>
+      <p>Campsites from £10 a night. UK wide. Some have hot showers, cafes, the lot. Cheapest UK holiday option.</p>
+      <a href="https://www.pitchup.com" target="_blank">Find campsites →</a>
+    </div>
+    <div class="h-card">
+      <div class="price">✈️</div>
+      <h3>Skyscanner — Cheapest Flights</h3>
+      <p>Search "everywhere" from ya nearest airport. Find the cheapest destination for ya dates. Actually works.</p>
+      <a href="https://www.skyscanner.net" target="_blank">Search everywhere →</a>
+    </div>
+    <div class="h-card">
+      <div class="price">🌍</div>
+      <h3>Leger — European Coach Tours</h3>
+      <p>Paris, Amsterdam, Swiss Alps by coach. All inclusive packages cheaper than DIY travel. Coach picks ya up.</p>
+      <a href="https://www.leger.co.uk" target="_blank">See tours →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CREDIT EXPLAINER -->
+<div class="credit-section" id="credit">
+  <h2>CREDIT 101 💳</h2>
+  <p class="credit-sub">nobody taught us this. here it is. simple. no jargon.</p>
+  <div class="credit-grid">
+    <div class="c-card">
+      <div class="label" style="color:#CE93D8;">ZILCH</div>
+      <h3>Buy now. Pay in 6 weeks. 0% interest.</h3>
+      <p>Split any purchase into 4 payments over 6 weeks. No credit card needed. No interest ever. Good for emergencies when ya skint but ya know money is coming.</p>
+      <a href="https://zilch.com" target="_blank" style="color:#CE93D8;">Get Zilch →</a>
+      <p class="warning">⚠️ Only use if ya KNOW ya can pay it back. Don't stack up buy-now-pay-later debt.</p>
+    </div>
+    <div class="c-card">
+      <div class="label" style="color:#4FC3F7;">OVERDRAFT</div>
+      <h3>Bank lets ya go below zero.</h3>
+      <p>Ya spend more than ya have. Bank covers it — but usually charges interest (around 39%). If ya going overdrawn call ya bank first and ask about a fee-free buffer. Most offer one.</p>
+      <div class="say" style="border-left:3px solid #4FC3F7;padding:10px 14px;background:rgba(79,195,247,0.06);color:#4FC3F7;font-size:13px;font-style:italic;border-radius:0 8px 8px 0;margin:8px 0;">"Do you have a fee-free overdraft buffer for hardship?"</div>
+      <p class="warning">⚠️ Overdraft interest is brutal. Emergency only.</p>
+    </div>
+    <div class="c-card">
+      <div class="label" style="color:#FFD600;">CREDIT CARD</div>
+      <h3>Buy now. Pay end of month. 0% if ya clear it.</h3>
+      <p>Used right — pay the FULL balance every month — a credit card costs ya nothing and builds ya credit score. Used wrong — minimum payments only — the debt doubles in 3 years.</p>
+      <a href="https://www.moneysavingexpert.com/credit-cards" target="_blank" style="color:#FFD600;">Find best 0% cards →</a>
+      <p class="warning">⚠️ Golden rule: only spend what ya already have in ya bank.</p>
+    </div>
+    <div class="c-card">
+      <div class="label" style="color:#FF1744;">PAYDAY LOAN</div>
+      <h3>AVOID. 1,500% APR. Debt trap.</h3>
+      <p>Payday lenders charge up to 1,500% APR. £100 borrowed can become £200+ in weeks. They are designed to trap ya. Use Citizens Advice instead. Always.</p>
+      <a href="tel:08001448848" style="color:#FF1744;">Call Citizens Advice free: 0800 144 8848 →</a>
+      <p class="warning">⚠️ Never. Under any circumstances.</p>
+    </div>
+    <div class="c-card">
+      <div class="label" style="color:#00E676;">CREDIT UNION</div>
+      <h3>Cheap ethical loans for low incomes.</h3>
+      <p>Credit unions offer fair loans at low interest specifically for people on low incomes. Much better than payday lenders. Find ya local one at findyourcreditunion.co.uk</p>
+      <a href="https://www.findyourcreditunion.co.uk" target="_blank" style="color:#00E676;">Find ya credit union →</a>
+      <p class="warning">✅ The ethical alternative to payday loans.</p>
+    </div>
+    <div class="c-card">
+      <div class="label" style="color:#FF4081;">PLUM</div>
+      <h3>AI saves money while ya sleep.</h3>
+      <p>Connects to ya bank. Automatically moves tiny amounts ya won't miss into savings. Even £2 a week adds up. Free to use. Withdraw anytime.</p>
+      <a href="https://friends.withplum.com/r/aZRs2YNDqZ" target="_blank" style="color:#FF4081;">Get Plum free →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAYPAL REVOLUT TRICK SECTION -->
+<section class="paypal-trick-section">
+  <div class="trick-wrapper">
+    <div class="trick-header">
+      <span class="trick-tag">💳 FREE MONEY TRICK</span>
+      <h2 class="trick-title">PayPal Credit → Revolut<br>Free Days Trick</h2>
+      <p class="trick-sub">Link your PayPal Credit to Revolut and get an instant interest-free float. Pay it back before the due date and it costs you nothing.</p>
+    </div>
+    <div class="trick-steps">
+      <div class="trick-step">
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <strong>Get PayPal Credit approved</strong>
+          <p>If you don't already have it, apply inside PayPal. Takes 2 minutes. You need a PayPal account and a UK address. Most people get approved instantly.</p>
+        </div>
+      </div>
+      <div class="trick-step">
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <strong>Add Revolut as your PayPal payout account</strong>
+          <p>Open Revolut → get your account number and sort code → go into PayPal → Wallet → Link a Bank Account → enter your Revolut details.</p>
+        </div>
+      </div>
+      <div class="trick-step">
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <strong>Send money to yourself via PayPal Credit</strong>
+          <p>In PayPal, send money to a friend or family member using PayPal Credit as the funding source. They send it straight back. Now that money is in your PayPal balance.</p>
+        </div>
+      </div>
+      <div class="trick-step">
+        <span class="step-num">4</span>
+        <div class="step-body">
+          <strong>Withdraw to your Revolut</strong>
+          <p>Transfer your PayPal balance to your linked Revolut account. It arrives within 1–3 business days. Now you have cash to spend — on PayPal's tab.</p>
+        </div>
+      </div>
+      <div class="trick-step">
+        <span class="step-num">5</span>
+        <div class="step-body">
+          <strong>Pay it back before the due date</strong>
+          <p>Log into PayPal Credit and check your statement date. Pay the full amount back before then and you pay zero interest. This is your free float window.</p>
+        </div>
+      </div>
+    </div>
+    <div class="trick-warnings">
+      <div class="warn-box warn-red">⚠️ <strong>Late = fees.</strong> If you miss the repayment date, PayPal Credit charges interest. Set a phone reminder NOW before you do anything else.</div>
+      <div class="warn-box warn-yellow">📋 <strong>Minimum payments.</strong> Always check your minimum payment — missing it hits your credit file even if the full balance isn't due yet.</div>
+      <div class="warn-box warn-blue">💡 <strong>Existing balance?</strong> If you already owe on PayPal Credit, this trick adds to that balance. Only do this if you can afford to pay it all back.</div>
+    </div>
+    <div class="slow-read-bar slow-read-mid">
+      <span class="slow-read-icon">👀</span>
+      <div class="slow-read-text">
+        <strong>Still with me? Good.</strong>
+        <p>Most people who mess this up didn't read the warnings above. You just did. You're already ahead.</p>
+      </div>
+    </div>
+    <div class="trick-checklist" id="trickChecklist">
+      <h3 class="checklist-title">✅ Before You Start — Tick Everything</h3>
+      <p class="checklist-sub">Don't skip this. It's short.</p>
+      <div class="checklist-progress-bar"><div class="checklist-progress-fill" id="checkProgress"></div></div>
+      <div class="checklist-items">
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I have an active PayPal Credit account (or I'm about to apply)</label>
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I have a Revolut account with my sort code and account number ready</label>
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I have set a phone reminder for my PayPal Credit repayment date</label>
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I understand I must pay the full amount back before the due date</label>
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I have saved or bookmarked this page</label>
+        <label class="check-item"><input type="checkbox" onchange="updateProgress()"> I have read all three warning boxes above</label>
+      </div>
+      <div class="checklist-complete" id="checkComplete" style="display:none">
+        <span>🟢 You're ready. Go do it. Come back if you get stuck.</span>
+      </div>
+    </div>
+    <div class="slow-read-bar slow-read-bottom">
+      <span class="slow-read-icon">💾</span>
+      <div class="slow-read-text">
+        <strong>Save this page before you leave.</strong>
+        <p>You'll want to refer back to the steps. Phone: screenshot it. Desktop: Ctrl+D to bookmark.</p>
+      </div>
+      <div class="save-options">
+        <button class="save-opt-btn" onclick="bookmarkPrompt()">🔖 Bookmark</button>
+        <button class="save-opt-btn" onclick="shareWhatsApp()">📲 WhatsApp</button>
+        <button class="save-opt-btn" onclick="screenshotReminder()">📸 Screenshot</button>
+      </div>
+    </div>
+    <div class="blog-link-box">
+      <p>Want the full breakdown with every edge case, fee table, and what to do if PayPal rejects you?</p>
+      <a href="#" class="blog-link-btn">📖 Read the Full Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGETING LOAN -->
+<div class="step">
+  <h3>BUDGETING LOAN — INTEREST-FREE CASH FROM DWP</h3>
+  <p>On Income Support, Pension Credit, income-based JSA or income-related ESA for 6+ months? Get up to £812 interest-free, repaid from your benefits over 2 years. No credit check. On UC? Apply for a Budgeting Advance instead.</p>
+  <a href="https://www.gov.uk/budgeting-loan">Apply on GOV.UK →</a>
+</div>
+
+<!-- BREATHING SPACE -->
+<div class="step">
+  <h3>BREATHING SPACE — STOP DEBT COLLECTORS FOR 60 DAYS</h3>
+  <p>The Breathing Space scheme freezes interest, stops charges, and prevents creditors contacting you for 60 days. A free debt adviser applies on your behalf — no solicitor needed.</p>
+  <a href="https://www.gov.uk/guidance/debt-respite-breathing-space-scheme-creditors-responsibilities-to-debtors">Check Breathing Space on GOV.UK →</a>
+  <p>Apply free via StepChange: <a href="https://www.stepchange.org/debt-info/breathing-space.aspx">stepchange.org</a></p>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<section id="get-the-kit" style="background:#111;border:2px solid #f5c842;border-radius:6px;padding:32px 24px;margin:40px auto;max-width:520px;font-family:sans-serif;">
+  <h2 style="color:#f5c842;margin:0 0 8px;font-size:22px;">Get the 2am Crisis Kit — Free</h2>
+  <p style="color:#ccc;margin:0 0 20px;font-size:15px;">Real UK bonuses you can claim today. No loans. No bullshit.</p>
+  <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" id="crisis-form">
+    <input type="hidden" name="_subject" value="New crisis kit signup" />
+    <input type="text" name="name" placeholder="First name" required style="display:block;width:100%;padding:12px;margin-bottom:10px;background:#1a1a1a;border:1px solid #333;color:#fff;border-radius:4px;font-size:15px;box-sizing:border-box;" />
+    <input type="email" name="email" placeholder="Your email" required style="display:block;width:100%;padding:12px;margin-bottom:14px;background:#1a1a1a;border:1px solid #333;color:#fff;border-radius:4px;font-size:15px;box-sizing:border-box;" />
+    <button type="submit" style="width:100%;padding:14px;background:#f5c842;color:#000;border:none;border-radius:4px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:1px;">SEND ME THE KIT</button>
+  </form>
+  <p id="form-thanks" style="display:none;color:#4ade80;margin-top:16px;text-align:center;font-size:15px;">✅ On its way. Check your email in 2 mins.</p>
+  <script>
+    document.getElementById('crisis-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r) {
+        if (r.ok) {
+          document.getElementById('crisis-form').style.display = 'none';
+          document.getElementById('form-thanks').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</section>
+
+<div style="text-align:center;padding:40px 20px;">
+  <p style="font-family:'Bebas Neue',cursive;font-size:18px;color:rgba(255,255,255,0.3);">troll us. thank us. whatever. <a href="mailto:tomthevampireslayer@gmail.com" style="color:#FFD600;">tomthevampireslayer@gmail.com</a></p>
+</div>
+
+<script src="/kit/kit.js"></script>
+
+<script>
+function triage(status) {
+  document.getElementById('gate').style.display = 'none';
+  document.querySelectorAll('.result').forEach(r => r.classList.remove('show'));
+  document.getElementById('result-' + status).classList.add('show');
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
+function goBack() {
+  document.querySelectorAll('.result').forEach(r => r.classList.remove('show'));
+  document.getElementById('gate').style.display = 'flex';
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
+function calcLoan() {
+  var amount = parseFloat(document.getElementById('loan-amount').value) || 0;
+  var rate = parseFloat(document.getElementById('loan-rate').value) || 0;
+  var weeks = parseFloat(document.getElementById('loan-weeks').value) || 1;
+  var interest = amount * (rate / 100) * (weeks / 52);
+  var payback = amount + interest;
+  var extra = interest;
+  document.getElementById('ln-borrow').textContent = '£' + amount.toFixed(0);
+  document.getElementById('ln-payback').textContent = '£' + payback.toFixed(0);
+  document.getElementById('ln-extra').textContent = '£' + extra.toFixed(0);
+  var verdict, advice, color;
+  if (rate >= 500) {
+    verdict = 'DEBT TRAP. RUN. 💀';
+    color = '#FF1744';
+    advice = 'That\'s a payday loan rate. Ya\'ll pay back £' + payback.toFixed(0) + ' for £' + amount.toFixed(0) + ' borrowed. Call Citizens Advice instead: 0800 144 8848. Free. Right now.';
+  } else if (rate >= 100) {
+    verdict = 'TAKING THE PISS. 😤';
+    color = '#FF4081';
+    advice = 'Whoever offered ya this is rinsing ya. Try ya credit union instead — findyourcreditunion.co.uk — much fairer rates.';
+  } else if (rate >= 30) {
+    verdict = 'EXPENSIVE. THINK TWICE.';
+    color = '#FFD600';
+    advice = 'Credit card rates. Only worth it if ya pay the full amount back before the interest kicks in. Otherwise it spirals.';
+  } else if (rate > 0) {
+    verdict = 'MANAGEABLE. JUST ABOUT.';
+    color = '#00E676';
+    advice = 'Low rate but ya still paying extra. Only borrow if there\'s genuinely no free alternative. Check entitledto.co.uk first.';
+  } else {
+    verdict = 'FREE MONEY! 🎉';
+    color = '#00E676';
+    advice = '0% interest. If someone\'s offering ya 0% — take it. Just make sure ya can pay it back on time.';
+  }
+  var res = document.getElementById('loan-result');
+  res.style.borderColor = color;
+  document.getElementById('loan-verdict').textContent = verdict;
+  document.getElementById('loan-verdict').style.color = color;
+  document.getElementById('loan-advice').textContent = advice;
+  res.classList.add('show');
+}
+function updateProgress(){
+  const boxes=document.querySelectorAll('#trickChecklist input[type=checkbox]');
+  const checked=[...boxes].filter(b=>b.checked).length;
+  const pct=Math.round((checked/boxes.length)*100);
+  document.getElementById('checkProgress').style.width=pct+'%';
+  if(checked===boxes.length){document.getElementById('checkComplete').style.display='block';}
+  else{document.getElementById('checkComplete').style.display='none';}
+}
+function bookmarkPrompt(){
+  alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page. On mobile, tap the share icon then Save to bookmarks.');
+}
+function shareWhatsApp(){
+  window.open('https://wa.me/?text=Emergency+money+help+%E2%80%94+PayPal+Revolut+trick+%26+more%3A+'+encodeURIComponent(window.location.href),'_blank');
+}
+function screenshotReminder(){
+  alert('On iPhone: press Side button + Volume Up. On Android: press Power + Volume Down. Screenshot the steps section so you have them offline.');
+}
+</script>
+</body>
+</html>

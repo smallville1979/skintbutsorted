@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/loan-scam-graphic/">
+  <meta property="og:title" content="Warning">
+  <meta property="og:description" content="Warning — loan scams targeting broke people in the UK">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Warning">
+  <meta name="twitter:description" content="Warning — loan scams targeting broke people in the UK">
+<title>Scam Alert Graphics Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Barlow:wght@400;600;700;900&display=swap');
+
+  body {
+    background: #0a0a0a;
+    color: #f5f5f0;
+    font-family: 'Barlow', sans-serif;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 { color: #FFE600; font-family: 'Black Han Sans', sans-serif; font-size: 2rem; margin-bottom: 0.25rem; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #888;
+    transition: all 0.15s;
+  }
+
+  .tab.active { background: #FFE600; color: #000; border-color: #FFE600; }
+
+  canvas {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 40px rgba(255,230,0,0.1);
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-yellow { background: #FFE600; color: #000; }
+  .btn-red { background: #FF2D2D; color: #fff; }
+  .btn-grey { background: #2a2a2a; color: #fff; border: 1px solid #444; }
+
+  .caption-box {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #FFE600;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .caption-box h3 { font-size: 0.8rem; color: #FFE600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .caption-box p { font-size: 0.9rem; color: #ccc; margin: 0; line-height: 1.6; }
+  .caption-box .copy-btn { margin-top: 0.75rem; padding: 0.4rem 0.9rem; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 5px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+</style>
+</head>
+<body>
+<style>.slow-read-bar{background:#111;border-left:5px solid #FF1744;padding:18px 20px;margin:0 0 24px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;font-family:sans-serif;}.slow-read-icon{font-size:28px;flex-shrink:0;}.slow-read-text{flex:1;min-width:200px;}.slow-read-text strong{display:block;font-size:18px;color:#fff;margin-bottom:4px;}.slow-read-text p{font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.5;}.slow-read-save-btn{background:#FF1744;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:900;white-space:nowrap;align-self:center;}</style>
+<div class="slow-read-bar"><span class="slow-read-icon">⛔</span><div class="slow-read-text"><strong>Stop. Read This Properly.</strong><p>People who rush this mess it up. This takes 3 minutes to read. Save it first.</p></div><button class="slow-read-save-btn" onclick="alert('Press Ctrl+D (Mac: Cmd+D) to bookmark. On mobile tap Share then Save.')">📌 Save This</button></div>
+
+
+<h1>⚠️ SCAM ALERT GRAPHIC GENERATOR</h1>
+<p class="subtitle">Shareable infographics. Bots can't read them. Humans save them to their phone. URL baked in the corner.</p>
+
+<div class="tabs" id="tabs"></div>
+
+<canvas id="canvas" width="1080" height="1080"></canvas>
+
+<div class="actions">
+  <button class="btn btn-yellow" onclick="downloadGraphic()">⬇ Download for Reddit/Facebook</button>
+  <button class="btn btn-grey" onclick="downloadStory()">⬇ Download Story (9:16)</button>
+</div>
+
+<div class="caption-box" id="captionBox">
+  <h3>📋 Copy this caption</h3>
+  <p id="captionText"></p>
+  <button class="copy-btn" onclick="copyCaption()">Copy Caption</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const graphics = [
+  {
+    id: "loan-scam",
+    label: "Loan Scam Alert",
+    emoji: "🚨",
+    headline: "LOAN SCAM",
+    subhead: "HITTING THIS GROUP RIGHT NOW",
+    color: "#FF2D2D",
+    points: [
+      "Asks for upfront fee before lending",
+      "No credit check needed (red flag)",
+      "Pressures you to decide RIGHT NOW",
+      "Asks for bank login details",
+      "Profile created this week"
+    ],
+    warning: "REAL LENDERS NEVER ASK FOR MONEY UPFRONT",
+    url: "/no-loans/",
+    caption: "⚠️ Loan scam doing the rounds in this group right now. Made this so people know the signs. Save it to your phone — share it if you know someone who needs it. Full free alternatives at smallville1979 (dot) github (dot) io / no-loans 🙏"
+  },
+  {
+    id: "food-help",
+    label: "Free Food — UK",
+    emoji: "🥫",
+    headline: "NEED FOOD?",
+    subhead: "FREE OPTIONS RIGHT NOW. NO DEBT.",
+    color: "#00C851",
+    points: [
+      "OLIO app — free food from neighbours",
+      "Trussell Trust — free food bank near you",
+      "Too Good To Go — £10 food for £2.50",
+      "Council Household Support Fund — grant",
+      "Community fridge — free, no questions"
+    ],
+    warning: "DON'T BORROW MONEY FOR FOOD. IT'S A TRAP.",
+    url: "/need-food/",
+    caption: "Made this for anyone struggling right now 🥫 Free food options that actually work — no debt, no forms, no bullshit. Share it if you know someone who needs it. Full guide at smallville1979 (dot) github (dot) io / need-food"
+  },
+  {
+    id: "petrol-help",
+    label: "No Petrol Money",
+    emoji: "⛽",
+    headline: "£0 AND NEED",
+    subhead: "PETROL TOMORROW?",
+    color: "#FF6B00",
+    points: [
+      "Ring employer — ask for salary advance",
+      "Ask a colleague for a lift (it works)",
+      "Council emergency travel fund — free",
+      "Citizens Advice: 0800 144 8848",
+      "Credit union — fair emergency loan"
+    ],
+    warning: "DON'T BORROW FROM STRANGERS ON REDDIT",
+    url: "/petrol-hacks/",
+    caption: "⛽ If you're stuck with no petrol money — these are your real options. No loans needed. Save this and share it. Full guide at smallville1979 (dot) github (dot) io / petrol-hacks"
+  },
+  {
+    id: "benefits-check",
+    label: "Free Benefits Check",
+    emoji: "💸",
+    headline: "£19 BILLION",
+    subhead: "UNCLAIMED IN THE UK EVERY YEAR",
+    color: "#FFE600",
+    points: [
+      "Universal Credit — most people qualify",
+      "Warm Home Discount — £150 off bills",
+      "Council Tax Reduction — up to 100% off",
+      "Free school meals — if on UC, apply now",
+      "PIP / disability — most people underclaim"
+    ],
+    warning: "CHECK ENTITLEDTO.CO.UK — TAKES 10 MINS",
+    url: "/skintbutsorted/",
+    caption: "💸 £19 billion in benefits goes unclaimed in the UK every year. Most people on low incomes are owed more than they think. Share this so people know. Full free checker at smallville1979 (dot) github (dot) io / skintbutsorted"
+  },
+  {
+    id: "emergency",
+    label: "Emergency Help Now",
+    emoji: "🆘",
+    headline: "EMERGENCY?",
+    subhead: "FREE HELP. RIGHT NOW. NO BULLSHIT.",
+    color: "#FF2D2D",
+    points: [
+      "£0? Energy running out? → Emergency credit",
+      "No food? → OLIO app or Trussell Trust",
+      "Need money? → Household Support Fund",
+      "Debt crisis? → StepChange, free, 24/7",
+      "Mental health? → Samaritans 116 123"
+    ],
+    warning: "SAVE THIS. SHARE THIS. SOMEONE NEEDS IT.",
+    url: "/emergency/",
+    caption: "🆘 For anyone in a genuine emergency right now — here's every free option. No loans. No debt. Real help. Save this to your phone and share it if someone you know is struggling 🙏 Full guide at smallville1979 (dot) github (dot) io / emergency"
+  },
+  {
+    id: "free-banking",
+    label: "Free Bank Cash",
+    emoji: "🏦",
+    headline: "BANKS ARE",
+    subhead: "PAYING YOU TO SWITCH",
+    color: "#FFE600",
+    points: [
+      "Lloyds — £200 to switch accounts",
+      "Chase — 1% cashback on everything",
+      "Revolut — up to £70 referral bonus",
+      "PayPal — £10 free (both get it)",
+      "TopCashback — free money on shopping"
+    ],
+    warning: "STACK THEM ALL. TAKES 30 MINS. FREE MONEY.",
+    url: "/free-banking-dollars/",
+    caption: "🏦 Banks are literally paying people to switch accounts right now. Stack them all — takes about 30 mins. Free money, no catch. Full loot table at smallville1979 (dot) github (dot) io / free-banking-dollars"
+  }
+];
+
+let currentGraphic = graphics[0];
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// Build tabs
+const tabsEl = document.getElementById("tabs");
+graphics.forEach((g, i) => {
+  const tab = document.createElement("div");
+  tab.className = "tab" + (i === 0 ? " active" : "");
+  tab.textContent = g.label;
+  tab.onclick = () => {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    currentGraphic = g;
+    drawGraphic(g);
+    updateCaption(g);
+  };
+  tabsEl.appendChild(tab);
+});
+
+function drawGraphic(g) {
+  const W = 1080, H = 1080;
+  ctx.clearRect(0, 0, W, H);
+
+  // Background
+  ctx.fillStyle = "#0a0a0a";
+  ctx.fillRect(0, 0, W, H);
+
+  // Top accent
+  ctx.fillStyle = g.color;
+  ctx.fillRect(0, 0, W, 8);
+
+  // Side accent
+  ctx.fillStyle = g.color;
+  ctx.fillRect(0, 0, 8, H);
+
+  // Subtle grid pattern
+  ctx.strokeStyle = "rgba(255,255,255,0.03)";
+  ctx.lineWidth = 1;
+  for (let x = 0; x < W; x += 60) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y < H; y += 60) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Emoji big
+  ctx.font = "130px serif";
+  ctx.fillText(g.emoji, 50, 185);
+
+  // Headline
+  ctx.fillStyle = g.color;
+  ctx.font = "bold 110px 'Black Han Sans', sans-serif";
+  ctx.fillText(g.headline, 50, 310);
+
+  // Subhead
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 46px 'Barlow', sans-serif";
+  wrapText(ctx, g.subhead, 50, 380, W - 100, 56);
+
+  // Divider line
+  ctx.strokeStyle = g.color;
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(50, 420);
+  ctx.lineTo(W - 50, 420);
+  ctx.stroke();
+
+  // Points
+  ctx.font = "bold 36px 'Barlow', sans-serif";
+  g.points.forEach((point, i) => {
+    const y = 490 + (i * 72);
+    // Bullet
+    ctx.fillStyle = g.color;
+    ctx.beginPath();
+    ctx.arc(70, y - 12, 10, 0, Math.PI * 2);
+    ctx.fill();
+    // Text
+    ctx.fillStyle = "#f5f5f0";
+    ctx.fillText(point, 100, y);
+  });
+
+  // Warning bar
+  ctx.fillStyle = g.color;
+  ctx.fillRect(0, H - 180, W, 80);
+  ctx.fillStyle = "#000000";
+  ctx.font = "bold 32px 'Barlow', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText(g.warning, W / 2, H - 128);
+  ctx.textAlign = "left";
+
+  // URL watermark bottom
+  ctx.fillStyle = "#1a1a1a";
+  ctx.fillRect(0, H - 100, W, 100);
+
+  ctx.fillStyle = "#555";
+  ctx.font = "bold 28px 'Barlow', sans-serif";
+  ctx.fillText("FREE HELP:", 50, H - 58);
+  ctx.fillStyle = g.color;
+  ctx.font = "bold 32px 'Barlow', sans-serif";
+  ctx.fillText(g.url, 220, H - 58);
+
+  // QR placeholder box
+  ctx.strokeStyle = "#333";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(W - 130, H - 120, 90, 90);
+  ctx.fillStyle = "#1a1a1a";
+  ctx.fillRect(W - 130, H - 120, 90, 90);
+  ctx.fillStyle = "#444";
+  ctx.font = "bold 14px sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("SCAN", W - 85, H - 70);
+  ctx.fillText("ME", W - 85, H - 52);
+  ctx.textAlign = "left";
+
+  // Draw mini QR using qrcode lib into offscreen canvas
+  const qrDiv = document.createElement("div");
+  qrDiv.style.position = "absolute";
+  qrDiv.style.left = "-9999px";
+  document.body.appendChild(qrDiv);
+
+  try {
+    new QRCode(qrDiv, {
+      text: "https://" + g.url,
+      width: 90,
+      height: 90,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+    setTimeout(() => {
+      const qrImg = qrDiv.querySelector("img") || qrDiv.querySelector("canvas");
+      if (qrImg) {
+        const tempImg = new Image();
+        tempImg.crossOrigin = "anonymous";
+        tempImg.onload = () => {
+          ctx.drawImage(tempImg, W - 128, H - 118, 86, 86);
+        };
+        tempImg.src = qrImg.src || (qrImg.toDataURL ? qrImg.toDataURL() : "");
+      }
+      document.body.removeChild(qrDiv);
+    }, 300);
+  } catch(e) {
+    document.body.removeChild(qrDiv);
+  }
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(" ");
+  let line = "";
+  for (let w of words) {
+    const test = line ? line + " " + w : w;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      ctx.fillText(line, x, y);
+      line = w;
+      y += lineHeight;
+    } else {
+      line = test;
+    }
+  }
+  ctx.fillText(line, x, y);
+  return y;
+}
+
+function updateCaption(g) {
+  document.getElementById("captionText").textContent = g.caption;
+}
+
+function copyCaption() {
+  navigator.clipboard.writeText(currentGraphic.caption).then(() => {
+    const btn = document.querySelector(".copy-btn");
+    btn.textContent = "✅ Copied!";
+    setTimeout(() => btn.textContent = "Copy Caption", 2000);
+  });
+}
+
+function downloadGraphic() {
+  const link = document.createElement("a");
+  link.download = currentGraphic.id + "-scam-alert.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
+
+function downloadStory() {
+  // Create 9:16 version
+  const storyCanvas = document.createElement("canvas");
+  storyCanvas.width = 1080;
+  storyCanvas.height = 1920;
+  const sCtx = storyCanvas.getContext("2d");
+
+  sCtx.fillStyle = "#0a0a0a";
+  sCtx.fillRect(0, 0, 1080, 1920);
+
+  // Draw main graphic centered
+  sCtx.drawImage(canvas, 0, 420, 1080, 1080);
+
+  // Top text
+  sCtx.fillStyle = currentGraphic.color;
+  sCtx.font = "bold 52px sans-serif";
+  sCtx.textAlign = "center";
+  sCtx.fillText("SAVE THIS. SHARE THIS.", 540, 200);
+  sCtx.fillStyle = "#888";
+  sCtx.font = "36px sans-serif";
+  sCtx.fillText("Someone you know needs it.", 540, 270);
+  sCtx.textAlign = "left";
+
+  const link = document.createElement("a");
+  link.download = currentGraphic.id + "-story.png";
+  link.href = storyCanvas.toDataURL("image/png");
+  link.click();
+}
+
+// Init
+drawGraphic(graphics[0]);
+updateCaption(graphics[0]);
+</script>
+<script src="/kit/kit.js"></script>
+</body>
+</html>

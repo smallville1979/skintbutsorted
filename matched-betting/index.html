@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matched Betting Guide | Skint But Sorted</title>
+  <meta name="description" content="Matched betting explained honestly. How it works, how much you can make, free tools to replace OddsMonkey, and when to stop. Real money, real risks, real talk.">
+  <meta property="og:title" content="Matched Betting Guide | Skint But Sorted">
+  <meta property="og:description" content="Make £200–£1000 from bookmaker free bets. Matched betting explained — free tools, honest risks, step by step.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/matched-betting/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(150deg, #080814 0%, #1a1a2e 55%, #0f1820 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '£';
+      position: absolute;
+      font-size: 320px;
+      color: rgba(245,197,24,0.04);
+      top: -60px;
+      right: -30px;
+      pointer-events: none;
+      font-weight: 900;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      background: rgba(245,197,24,0.08);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    h2 { font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 1.1rem; color: white; margin-bottom: 12px; font-weight: bold; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* Honest box */
+    .honest-box {
+      background: rgba(245,197,24,0.06);
+      border: 2px solid rgba(245,197,24,0.3);
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin: 24px 0;
+    }
+    .honest-box .h-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .honest-box p { color: var(--text); margin: 0; font-size: 16px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Green box */
+    .green-box {
+      background: rgba(46,204,113,0.06);
+      border: 1px solid rgba(46,204,113,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .green-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .green-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* How it works visual */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 24px 0;
+    }
+
+    .flow-step {
+      background: var(--card-bg);
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 20px 22px;
+      position: relative;
+    }
+
+    .flow-step + .flow-step {
+      margin-top: 6px;
+    }
+
+    .flow-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: #000;
+      font-weight: 900;
+      font-size: 13px;
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+
+    .flow-title { font-size: 1rem; font-weight: bold; color: white; margin-bottom: 6px; }
+    .flow-step p { font-size: 15px; color: #bbb; margin: 0; }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1;
+      padding: 4px 0;
+    }
+
+    /* Example calc box */
+    .calc-box {
+      background: #0d0d1a;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin: 24px 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    .calc-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #ccc;
+      padding: 5px 0;
+      border-bottom: 1px solid #1a1a2e;
+    }
+
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row.total { color: var(--green); font-weight: bold; font-size: 16px; margin-top: 6px; }
+    .calc-row span:last-child { text-align: right; }
+
+    /* Tool cards */
+    .tool-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      padding: 22px 24px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+    .tool-card:hover { border-color: var(--gold); }
+
+    .tool-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tool-name { font-size: 1.05rem; font-weight: bold; color: white; }
+    .tool-cost { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .tool-badge {
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge-free { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+    .badge-paid { background: rgba(233,69,96,0.12); color: var(--primary); border: 1px solid rgba(233,69,96,0.3); }
+    .badge-best { background: rgba(245,197,24,0.12); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+
+    .tool-card p { font-size: 15px; color: #bbb; margin-bottom: 8px; }
+    .tool-link { color: var(--gold); text-decoration: none; font-size: 14px; }
+    .tool-link:hover { text-decoration: underline; }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 10px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 12px;
+    }
+
+    /* Bookies list */
+    .bookies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .bookie-card {
+      background: var(--card-bg);
+      border: 1px solid #2a2a4a;
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+
+    .bookie-name { font-size: 14px; font-weight: bold; color: white; margin-bottom: 4px; }
+    .bookie-offer { font-size: 13px; color: var(--green); }
+
+    /* Steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--gold);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Risk-Free Income Method</div>
+  <h1>Matched Betting.<br><span>Honest Guide.</span></h1>
+  <p class="hero-sub">It genuinely works. Bookmakers give away free bets — matched betting turns those free bets into real cash, whatever the result. Here's how, what it earns, and what to watch out for.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">💰 £200–£1,000 from sign-up offers alone</div>
+    <div class="hero-stat">📅 Ongoing income after that</div>
+    <div class="hero-stat">🧮 Maths not gambling</div>
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Straight Up</div>
+    <h2>Does it actually work?</h2>
+
+    <div class="honest-box">
+      <div class="h-title">Honest Answer</div>
+      <p>Yes. Matched betting is real and it works. It's not gambling — it's using maths to cancel out risk. Bookmakers offer free bets to get you signed up. Matched betting extracts that free money whatever the outcome of the event. Thousands of people in the UK do it. The catch: bookmakers eventually restrict your account when they notice. The sign-up phase (most lucrative) doesn't last forever.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">How It Works</div>
+    <h2>The simple version</h2>
+
+    <p>Every bookmaker wants new customers, so they offer free bets like "Bet £10, get £30 free." Matched betting uses a betting exchange (like Betfair) to bet on both outcomes simultaneously — so you can't lose. The free bet money then becomes profit.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-title">Bookmaker gives you a free bet offer</div>
+        <p>Example: "Bet £10 get £30 free" — standard sign-up deal. You deposit £10 and place a qualifying bet.</p>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-title">You "lay" the same bet on an exchange</div>
+        <p>On Betfair Exchange you bet AGAINST the same outcome. This cancels your risk — whatever happens, you break roughly even on the qualifying bet (small loss of a few pence to £2).</p>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-title">Now use the free bet</div>
+        <p>Place your £30 free bet on an event. Lay it on the exchange again. Because the free bet costs you nothing, most of it converts to pure profit — typically 70–80% of the free bet value.</p>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-title">Cash out your profit</div>
+        <p>£30 free bet = roughly £21–£24 profit. Repeat across 30–40 bookmakers at sign-up = £500–£1,000 total.</p>
+      </div>
+    </div>
+
+    <div class="calc-box">
+      <div class="calc-title">Example: £30 Free Bet Calculation</div>
+      <div class="calc-row"><span>Free bet value</span><span>£30.00</span></div>
+      <div class="calc-row"><span>Lay stake on exchange (to cancel risk)</span><span>~£28.50</span></div>
+      <div class="calc-row"><span>Exchange commission (typically 2–5%)</span><span>-£0.85</span></div>
+      <div class="calc-row"><span>Qualifying bet small loss</span><span>-£1.20</span></div>
+      <div class="calc-row total"><span>Profit from this one offer</span><span>~£22.00 ✓</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Tools</div>
+    <h2>OddsMonkey is expensive now — here's what to use instead</h2>
+
+    <p>OddsMonkey used to be the go-to. Now it's £17.99/month+. For someone starting out there are better options — including doing it manually or using cheaper/free tools.</p>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <div class="tool-name">⚡ Oddsmonkey Free Tier</div>
+          <div class="tool-cost">Free (limited) — paid from £17.99/month</div>
+        </div>
+        <span class="tool-badge badge-free">Free Tier</span>
+      </div>
+      <p>Still has a free tier with access to the matched betting calculator and some offers. Use the free tier to learn and do your first few sign-ups — don't pay until you've made your money back.</p>
+      <a href="https://www.oddsmonkey.com" target="_blank" rel="noopener" class="tool-link">oddsmonkey.com →</a>
+      <div class="tip-line">💡 Free tier is enough for your first 5–10 bookmaker sign-ups. Do those first before paying for anything.</div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <div class="tool-name">🧮 Profit Accumulator</div>
+          <div class="tool-cost">Free trial available — paid from £17.99/month</div>
+        </div>
+        <span class="tool-badge badge-best">⭐ Best Free Trial</span>
+      </div>
+      <p>OddsMonkey's main competitor. Free trial gives you access to the calculator, video guides, and some offers. Often has better introductory deals. Good place to learn the basics properly before spending anything.</p>
+      <a href="https://www.profitaccumulator.co.uk" target="_blank" rel="noopener" class="tool-link">profitaccumulator.co.uk →</a>
+      <div class="tip-line">💡 The free trial + guides are genuinely useful even if you don't go paid. Watch all the tutorial videos first.</div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <div class="tool-name">🔧 Matched Bets Calculator (manual)</div>
+          <div class="tool-cost">100% Free — no account needed</div>
+        </div>
+        <span class="tool-badge badge-free">Free Forever</span>
+      </div>
+      <p>You don't need a paid service to do the maths. Free calculators exist that do exactly what OddsMonkey's calculator does. You find the odds yourself (takes more time) and plug them in.</p>
+      <a href="https://matchedbettingblog.com/matched-betting-calculator/" target="_blank" rel="noopener" class="tool-link">Free calculator →</a>
+      <div class="tip-line">💡 Manual route takes longer to find odds but costs nothing. Good for the first 10 sign-ups while you learn.</div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <div class="tool-name">📊 Betfair Exchange</div>
+          <div class="tool-cost">Free to join — commission on winnings only</div>
+        </div>
+        <span class="tool-badge badge-free">Essential</span>
+      </div>
+      <p>You need a betting exchange to "lay" your bets and cancel out risk. Betfair is the biggest and most liquid. Smarkets is an alternative with lower commission (2% vs Betfair's 5%). Sign up for both — Smarkets often has a sign-up bonus too.</p>
+      <a href="https://www.betfair.com/exchange" target="_blank" rel="noopener" class="tool-link">betfair.com/exchange →</a>
+      <div class="tip-line">💡 Smarkets has 2% commission vs Betfair's 5% — use Smarkets where possible for better profit margins.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Where The Money Is</div>
+    <h2>Sign-up offers — do these first</h2>
+    <p>The biggest and easiest money is in bookmaker sign-up offers. Do every single one before worrying about ongoing promotions.</p>
+
+    <div class="bookies-grid">
+      <div class="bookie-card"><div class="bookie-name">Bet365</div><div class="bookie-offer">Up to £50 in free bets</div></div>
+      <div class="bookie-card"><div class="bookie-name">William Hill</div><div class="bookie-offer">£30 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Paddy Power</div><div class="bookie-offer">£40 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Betway</div><div class="bookie-offer">£30 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Sky Bet</div><div class="bookie-offer">£30 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Coral</div><div class="bookie-offer">£20 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Ladbrokes</div><div class="bookie-offer">£20 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">888sport</div><div class="bookie-offer">£30 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Unibet</div><div class="bookie-offer">£40 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">BetVictor</div><div class="bookie-offer">£30 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">Betfred</div><div class="bookie-offer">£60 free bet</div></div>
+      <div class="bookie-card"><div class="bookie-name">BoyleSports</div><div class="bookie-offer">£20 free bet</div></div>
+    </div>
+
+    <div class="green-box">
+      <div class="g-title">Realistic Total From Sign-Ups</div>
+      <p>30–40 bookmakers × average £20 profit per sign-up = <strong>£600–£1,000</strong> over 2–3 months. After that you move to reload offers (existing customer promos) — smaller but ongoing.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Getting Started</div>
+    <h2>Step by step — your first matched bet</h2>
+
+    <div class="steps-block">
+      <h3>Do this before anything else</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Sign up to Betfair Exchange</strong> (or Smarkets). This is your lay betting account — you need it before starting any bookmaker.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Watch the free tutorial videos</strong> on Profit Accumulator or OddsMonkey free tier. Understand qualifying bets vs free bets before touching real money.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Start with one small sign-up offer</strong> — William Hill or Sky Bet. Something simple. £10 bet, £30 free bet. Practice the process end to end.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Use the calculator every time.</strong> Never guess the lay stake. The maths must be right or you lose money.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Keep a spreadsheet.</strong> Track every offer — bookmaker, free bet value, profit, account status. You'll thank yourself later.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-text"><strong>Work through sign-up offers methodically</strong> — one or two per day. Reinvest profit to cover lay stakes as you go.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Honest Bit</div>
+    <h2>What they don't always tell you</h2>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Gubbing — it will happen</div>
+      <p>Bookmakers "gub" accounts that look like matched bettors — they restrict you to tiny maximum stakes or remove you from promotions. This happens eventually to everyone. The sign-up phase (most lucrative) lasts longest. After that, some accounts will be restricted within weeks. It's the nature of it.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ It's not passive income</div>
+      <p>Matched betting takes time — finding offers, doing the maths, placing bets on both sides. Budget 2–3 hours per week minimum if doing it properly. It pays well for the time but it is work.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Don't gamble with the profits</div>
+      <p>The whole point is you're removing risk with maths. The moment you start placing normal bets "just for fun" the system breaks. Pull the profit out and leave it alone.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Problem gambling risk</div>
+      <p>If you have a history of problem gambling, matched betting is not for you — being inside bookmaker accounts regularly can trigger old habits. Be honest with yourself. GambleAware: <a href="https://www.gambleaware.org" target="_blank" rel="noopener" style="color:var(--primary);">gambleaware.org</a></p>
+    </div>
+
+    <div class="honest-box">
+      <div class="h-title">Bottom Line</div>
+      <p>Matched betting works. £500–£1,000 from sign-ups is realistic for most people. It's not a scam, not passive, and not permanent — but as a one-off injection of cash when you need it, it's one of the most reliable legal methods available. Do the sign-ups, take the money, move on.</p>
+    </div>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone who needs extra cash and has never heard of this?</strong><br>Send them this page. Could be the most useful thing they read this year.</p>
+    <a href="/matched-betting/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">Offers change regularly — verify all bookmaker offers before placing bets. 18+ only. Please gamble responsibly. BeGambleAware.org</p>
+</footer>
+
+</body>
+</html>

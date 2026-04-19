@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints & Compensation Guide | Skint But Sorted</title>
+  <meta name="description" content="How to complain to energy firms, banks, BT, NHS and actually get money back. Internal complaints first. Ombudsman second. Real amounts, real results.">
+  <meta property="og:title" content="Complaints & Compensation Guide | Skint But Sorted">
+  <meta property="og:description" content="Complain smart. Get paid. OVO, Lloyds, BT, EE, NHS — what works, what doesn't, and how much you can get.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/complaints-guide/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --escape: #1a4d1a;
+      --gold: #f5c518;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '£';
+      position: absolute;
+      font-size: 300px;
+      color: rgba(233,69,96,0.04);
+      top: -60px;
+      right: -40px;
+      font-family: Georgia, serif;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,197,24,0.1);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      border-bottom: 1px solid #222;
+    }
+
+    .read-time strong { color: var(--primary); }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 40px 0 10px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .rule-box {
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .rule-box .rule-title {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .rule-box p {
+      color: var(--text);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .company-grid {
+      display: grid;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .company-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 22px 24px;
+      transition: border-color 0.2s;
+    }
+
+    .company-card:hover { border-color: var(--primary); }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .compo-badge {
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .badge-green { background: rgba(26,77,26,0.4); color: #6fcf6f; border: 1px solid #4a8a4a; }
+    .badge-amber { background: rgba(200,140,0,0.2); color: #f5c518; border: 1px solid #c8a000; }
+    .badge-red { background: rgba(180,40,40,0.2); color: #e94560; border: 1px solid #8a2020; }
+
+    .company-card p {
+      font-size: 15px;
+      color: #bbb;
+      margin: 0 0 10px;
+    }
+
+    .company-tip {
+      font-size: 14px;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      padding-top: 8px;
+      border-top: 1px solid #2a2a4a;
+    }
+
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .steps-block h3 {
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--primary);
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; font-family: Arial, sans-serif; }
+    .step-text strong { color: white; }
+
+    .warning-box {
+      background: rgba(233,69,96,0.08);
+      border: 1px solid rgba(233,69,96,0.3);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+
+    .warning-box .w-title {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    .gold-box {
+      background: rgba(245,197,24,0.07);
+      border: 1px solid rgba(245,197,24,0.3);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+
+    .gold-box .g-title {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    .template-block {
+      background: #0d0d1a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      color: #aed6f1;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .cta-btn.secondary {
+      background: var(--btn);
+      border: 1px solid #3a5a90;
+    }
+
+    .cta-btn.secondary:hover { background: #1a4a80; }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+
+    .share-nudge p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    footer a { color: #666; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #2a2a4a;
+      margin: 10px 0 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Free Money You're Owed</div>
+  <h1>Complain Smart.<br><span>Get Paid.</span></h1>
+  <p class="hero-sub">Energy firms, banks, BT, EE, NHS — how to complain the right way and actually get compensation back in your pocket.</p>
+  <div class="hero-stat">⚡ Internal complaint first. Ombudsman second. In that order.</div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">The Golden Rule</div>
+    <h2>Internal complaint first. Always.</h2>
+    <p>The ombudsman used to be your secret weapon. Not anymore. They're slow, overloaded, and the payouts have shrunk. The money is inside the company now — their internal complaints team has a budget for compensation and they'll spend it to avoid an escalation.</p>
+
+    <div class="rule-box">
+      <div class="rule-title">The Formula That Works</div>
+      <p>1. Complain internally → wait 8 weeks → if unresolved or rejected → THEN go to ombudsman. Skip the internal step and you lose leverage. Do it right and you can get £50–£500 without ever leaving the house.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Company By Company</div>
+    <h2>What actually works right now</h2>
+    <p>This is real intel — not a leaflet. What pays, what doesn't, what's changed.</p>
+
+    <div class="company-grid">
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">⚡ OVO Energy</div>
+          <span class="compo-badge badge-green">✓ Worth It</span>
+        </div>
+        <p>Complain regularly about billing errors, smart meter failures, or long wait times. They hand out small credits (£10–£50) fairly readily to shut complaints down. Not glamorous but consistent.</p>
+        <div class="company-tip">💡 Tip: Mention "I've been waiting X weeks for this to be resolved" — they hate escalation risk.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">🏦 Lloyds Bank</div>
+          <span class="compo-badge badge-green">✓ Big Payout Possible</span>
+        </div>
+        <p>Internal complaints team has serious compensation budget. Document everything — time wasted, stress caused, financial impact. A well-written complaint citing "distress and inconvenience" can land £50–£200+.</p>
+        <div class="company-tip">💡 Tip: Reference their own complaints policy. Ask for compensation for "reasonable distress." They paid £50 for one bad day at the branch — this is real.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">📊 Financial Ombudsman</div>
+          <span class="compo-badge badge-amber">⚠ Last Resort Only</span>
+        </div>
+        <p>Used to be a goldmine. Now it's slow (6–12 months), understaffed, and decisions are more conservative. Still worth it for big amounts (£200+) or PPI-style systemic issues. Not worth it for small stuff anymore.</p>
+        <div class="company-tip">💡 Tip: Go internal first. Get a Final Response Letter. Then — and only then — escalate to FOS. The 8-week clock starts from your first complaint.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">📡 BT</div>
+          <span class="compo-badge badge-red">✗ Harder Now</span>
+        </div>
+        <p>BT complaints have tightened up. Automatic compensation still exists for missed engineer appointments and loss of service — but they fight everything else harder. Worth trying but don't expect easy wins.</p>
+        <div class="company-tip">💡 Tip: Check Ofcom's automatic compensation scheme — missed appointments = £30, delayed repairs = £10/day. These are legally required, not optional.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">📱 EE</div>
+          <span class="compo-badge badge-red">✗ Harder Now</span>
+        </div>
+        <p>Same as BT (they're the same company). Used to pay out easily. Now much tighter. Still worth a formal complaint for service failures — just don't expect the same quick wins as 5 years ago.</p>
+        <div class="company-tip">💡 Tip: Ofcom automatic compensation applies here too. Document every outage, every failed fix, every missed call-back with dates and times.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">🏥 NHS</div>
+          <span class="compo-badge badge-red">✗ Very Hard</span>
+        </div>
+        <p>NHS complaints are a marathon. The right route is PALS (Patient Advice and Liaison Service) then formal complaint to the Trust. Expect 6+ months. No-win-no-fee agencies exist for clinical negligence but the bar is high.</p>
+        <div class="company-tip">💡 Tip: PALS first for quick resolution. Formal complaint in writing for anything serious. Keep ALL records — dates, names, what was said.</div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">🏦 Lloyds Data Breach</div>
+          <span class="compo-badge badge-red">✗ Very Hard</span>
+        </div>
+        <p>Data breach claims need you to prove actual damage — financial loss, identity theft, demonstrable distress. Without direct evidence linking to you personally, no-win-no-fee firms won't take it and payouts are rare.</p>
+        <div class="company-tip">💡 Tip: If you received a data breach notification letter, you have a stronger case. Without one — drop it and move on.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">How To Do It</div>
+    <h2>The complaint that actually gets paid</h2>
+
+    <div class="steps-block">
+      <h3>Step by step — internal complaint</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Write it down, not on the phone.</strong> Email or letter only. Phone calls don't create a paper trail. Ask for a complaint reference number.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>State the problem clearly.</strong> What happened, when, how long it went unresolved, what it cost you (time, money, stress).</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Ask for specific compensation.</strong> Don't say "I want something." Say "I'm requesting £X compensation for distress and inconvenience plus a refund of £Y."</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Mention the escalation path.</strong> "If this is not resolved within 8 weeks I will refer this to [Ofgem / FCA / Ofcom / Financial Ombudsman]." This scares them.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Wait for the Final Response Letter.</strong> This is your golden ticket to escalate. Keep it.</div>
+      </div>
+    </div>
+
+    <div class="gold-box">
+      <div class="g-title">Copy-Paste Complaint Template</div>
+      <p>Use this as your base — fill in the blanks and send via email.</p>
+    </div>
+
+    <div class="template-block">Dear [Company Name] Complaints Team,
+
+I am writing to formally complain about [brief description of the problem].
+
+The issue began on [date] and despite [X contacts / X weeks], it remains unresolved.
+
+This has caused me [describe impact: financial loss / time wasted / distress / inconvenience].
+
+I am requesting:
+1. [Specific resolution — refund / fix / action]
+2. Compensation of £[amount] for the distress and inconvenience caused.
+
+Please provide a written response within 8 weeks. If I do not receive a satisfactory resolution, I will refer this matter to [relevant ombudsman / Ofgem / FCA / Ofcom].
+
+Please confirm receipt of this complaint and provide a reference number.
+
+Yours sincerely,
+[Your Name]
+[Account Number / Reference]
+[Date]</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Escalation Routes</div>
+    <h2>Who to go to after 8 weeks</h2>
+
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-name" style="margin-bottom:10px;">⚡ Energy — Ofgem / Energy Ombudsman</div>
+        <p style="margin:0;font-size:15px;">For OVO, British Gas, EDF, E.ON, Octopus. After 8 weeks with no resolution or a final response letter.</p>
+        <a href="https://www.ombudsman-services.org/sectors/energy" target="_blank" rel="noopener" class="cta-btn secondary" style="margin-top:14px;font-size:14px;padding:10px 16px;">Energy Ombudsman →</a>
+      </div>
+      <div class="company-card">
+        <div class="company-name" style="margin-bottom:10px;">🏦 Banking — Financial Ombudsman</div>
+        <p style="margin:0;font-size:15px;">For Lloyds, Barclays, Halifax, Santander, HSBC. Free to use. Takes 6–12 months now.</p>
+        <a href="https://www.financial-ombudsman.org.uk" target="_blank" rel="noopener" class="cta-btn secondary" style="margin-top:14px;font-size:14px;padding:10px 16px;">Financial Ombudsman →</a>
+      </div>
+      <div class="company-card">
+        <div class="company-name" style="margin-bottom:10px;">📡 Telecoms — Ofcom / CISAS</div>
+        <p style="margin:0;font-size:15px;">For BT, EE, Sky, Virgin, TalkTalk. Ofcom sets the automatic compensation rules. CISAS handles disputes.</p>
+        <a href="https://www.cisas.org.uk" target="_blank" rel="noopener" class="cta-btn secondary" style="margin-top:14px;font-size:14px;padding:10px 16px;">CISAS →</a>
+      </div>
+      <div class="company-card">
+        <div class="company-name" style="margin-bottom:10px;">🏥 NHS — Parliamentary Ombudsman</div>
+        <p style="margin:0;font-size:15px;">After PALS and formal Trust complaint fail. Long process. Keep all records. Worth it for serious failures.</p>
+        <a href="https://www.ombudsman.org.uk" target="_blank" rel="noopener" class="cta-btn secondary" style="margin-top:14px;font-size:14px;padding:10px 16px;">NHS Ombudsman →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Facebook Rants</div>
+    <h2>Don't. Seriously.</h2>
+    <div class="warning-box">
+      <div class="w-title">A Facebook rant costs you money</div>
+      <p>Public venting feels good for 10 minutes. But companies use it to avoid paying. "The customer posted publicly and we offered a resolution" = they close the complaint without compensation. Go private, go formal, go in writing. That's where the money is.</p>
+    </div>
+    <p>The people who get paid are the ones who send boring formal emails and wait. That's the game.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Quick Wins</div>
+    <h2>Easiest money right now</h2>
+    <div class="rule-box">
+      <div class="rule-title">The Low Hanging Fruit List</div>
+      <p>
+        ✅ Missed engineer appointment (BT/EE/Virgin) → £30 automatic, no complaint needed<br><br>
+        ✅ Broadband delay past promised date → £10/day Ofcom automatic compensation<br><br>
+        ✅ Energy billing error → credit + goodwill gesture if you ask formally<br><br>
+        ✅ Bank charged you incorrectly → full refund + distress compensation if you ask<br><br>
+        ✅ Loan/credit mis-selling → FCA route, worth checking with a no-win-no-fee firm
+      </p>
+    </div>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone who's been ripped off and never complained?</strong><br>Send them this page. It might be the best thing you do for them today.</p>
+    <a href="/complaints-guide/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">Information correct to the best of our knowledge — always verify with official sources before acting.</p>
+</footer>
+
+</body>
+</html>

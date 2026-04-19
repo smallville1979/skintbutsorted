@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live-In Jobs Guide | Skint But Sorted</title>
+  <meta name="description" content="Get a job AND free accommodation at the same time. Live-in pub work, care work, au pair, hotel jobs, caretaker roles — solve rent and income in one move.">
+  <meta property="og:title" content="Live-In Jobs Guide | Skint But Sorted">
+  <meta property="og:description" content="No rent. Wage coming in. Two problems solved at once. Live-in jobs explained — where to find them, what they pay, what to expect.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/live-in-jobs/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(150deg, #080814 0%, #1a1a2e 55%, #0d1a10 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--green);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🏠';
+      position: absolute;
+      font-size: 240px;
+      opacity: 0.04;
+      top: -30px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--green); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .two-birds {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(46,204,113,0.08);
+      border: 1px solid rgba(46,204,113,0.3);
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 15px;
+      color: var(--green);
+      font-weight: bold;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    h2 { font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 1.1rem; color: white; margin-bottom: 12px; font-weight: bold; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* Job cards */
+    .job-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .job-card:hover { border-color: var(--green); }
+
+    .job-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #2a2a4a;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job-title-block {}
+    .job-icon-name { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .job-icon { font-size: 22px; }
+    .job-name { font-size: 1.1rem; font-weight: bold; color: white; }
+
+    .job-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .meta-pill {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .pill-green { background: rgba(46,204,113,0.12); color: var(--green); border: 1px solid rgba(46,204,113,0.25); }
+    .pill-gold { background: rgba(245,197,24,0.1); color: var(--gold); border: 1px solid rgba(245,197,24,0.25); }
+    .pill-red { background: rgba(233,69,96,0.1); color: var(--primary); border: 1px solid rgba(233,69,96,0.25); }
+
+    .job-difficulty {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .diff-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .diff-stars { font-size: 16px; }
+
+    .job-body { padding: 18px 24px; }
+    .job-body p { font-size: 15px; color: #bbb; margin-bottom: 12px; }
+
+    .job-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    @media (max-width: 480px) { .job-detail { grid-template-columns: 1fr; } }
+
+    .detail-item {
+      background: #0d0d1a;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+
+    .detail-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .detail-value { font-size: 15px; color: var(--text); font-weight: bold; }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 12px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 4px;
+    }
+
+    .find-links { margin-top: 12px; }
+    .find-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+    .link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .find-link {
+      font-size: 13px;
+      color: var(--green);
+      text-decoration: none;
+      background: rgba(46,204,113,0.07);
+      border: 1px solid rgba(46,204,113,0.2);
+      padding: 5px 12px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .find-link:hover { background: rgba(46,204,113,0.15); }
+
+    /* Honest box */
+    .honest-box {
+      background: rgba(46,204,113,0.05);
+      border: 2px solid rgba(46,204,113,0.25);
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin: 24px 0;
+    }
+    .honest-box .h-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .honest-box p { color: var(--text); margin: 0; font-size: 16px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Gold box */
+    .gold-box {
+      background: rgba(245,197,24,0.05);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .gold-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--green);
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+
+    /* Savings calc */
+    .savings-visual {
+      background: linear-gradient(135deg, rgba(46,204,113,0.08), rgba(46,204,113,0.03));
+      border: 2px solid rgba(46,204,113,0.25);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .savings-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .savings-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(46,204,113,0.1);
+      font-size: 15px;
+    }
+
+    .savings-row:last-child { border-bottom: none; }
+    .savings-row .label { color: #aaa; }
+    .savings-row .value { color: var(--green); font-weight: bold; }
+    .savings-row.total .label { color: white; font-size: 17px; }
+    .savings-row.total .value { color: var(--green); font-size: 20px; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Two Problems. One Solution.</div>
+  <h1>Live-In Jobs.<br><span>No Rent. Wage Coming In.</span></h1>
+  <p class="hero-sub">No fixed address. Rent bleeding you dry. Can't save a penny. A live-in job kills two problems at once — accommodation included, wage on top. Here's every option.</p>
+  <div class="two-birds">
+    🐦 No rent &nbsp;+&nbsp; 🐦 Income &nbsp;=&nbsp; Two birds. One stone.
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Why This Works</div>
+    <h2>When rent is the problem, solve rent first</h2>
+
+    <p>Most people try to fix money problems by earning slightly more. But if rent is eating 50–70% of your income, earning slightly more doesn't fix anything. A live-in job changes the whole equation — accommodation becomes part of your pay package, so almost everything you earn is yours to keep.</p>
+
+    <div class="savings-visual">
+      <div class="savings-title">What a live-in job actually saves you</div>
+      <div class="savings-row"><span class="label">Rent no longer paying</span><span class="value">£600–£900/month</span></div>
+      <div class="savings-row"><span class="label">Bills no longer paying</span><span class="value">£100–£200/month</span></div>
+      <div class="savings-row"><span class="label">Commute costs gone</span><span class="value">£50–£150/month</span></div>
+      <div class="savings-row total"><span class="label">Effective monthly gain</span><span class="value">£750–£1,250</span></div>
+    </div>
+
+    <p>On top of a wage. That's the maths. It's not glamorous — but it works.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Jobs</div>
+    <h2>Every live-in option — honest breakdown</h2>
+
+    <!-- Live-in pub -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">🍺</div>
+            <div class="job-name">Live-In Pub / Bar Work</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Room included</span>
+            <span class="meta-pill pill-green">Meals often included</span>
+            <span class="meta-pill pill-gold">Immediate start</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐☆☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>The classic 2-birds-1-stone move. Pub chains and independent pubs regularly need live-in bar staff, especially outside cities. Room above the pub, meals on shift, wage on top. No experience always needed — attitude matters more than a CV.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Typical Wage</div><div class="detail-value">£11–£13/hr + tips</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Room above pub, free</div></div>
+          <div class="detail-item"><div class="detail-label">Food</div><div class="detail-value">Often included on shift</div></div>
+          <div class="detail-item"><div class="detail-label">Notice needed</div><div class="detail-value">Often same week</div></div>
+        </div>
+        <p>Walk in. Don't email. Ask to speak to the manager. Say: "I'm looking for live-in work, can start immediately." That line alone puts you ahead of 90% of applicants.</p>
+        <div class="find-links">
+          <div class="find-label">Find live-in pub jobs</div>
+          <div class="link-row">
+            <a href="https://www.caterer.com/jobs/live-in" target="_blank" rel="noopener" class="find-link">Caterer.com →</a>
+            <a href="https://www.indeed.co.uk/jobs?q=live+in+bar+staff" target="_blank" rel="noopener" class="find-link">Indeed →</a>
+            <a href="https://www.gumtree.com/jobs/uk/bar-staff" target="_blank" rel="noopener" class="find-link">Gumtree →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 Pub chains (Greene King, Marston's, JD Wetherspoon) regularly advertise live-in roles — search their careers pages directly.</div>
+      </div>
+    </div>
+
+    <!-- Live-in care -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">❤️</div>
+            <div class="job-name">Live-In Care Worker</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Room included</span>
+            <span class="meta-pill pill-green">All bills covered</span>
+            <span class="meta-pill pill-gold">Training provided</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐⭐☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>You live with one person (elderly or disabled) and support them with daily life. Your own room, all bills paid by the client, and a daily wage on top. Agencies provide training. This is one of the most underused live-in options — the shortage is real and they need people.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Typical Daily Rate</div><div class="detail-value">£80–£120/day</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Private room, all bills paid</div></div>
+          <div class="detail-item"><div class="detail-label">Rota</div><div class="detail-value">2 weeks on / 2 weeks off typical</div></div>
+          <div class="detail-item"><div class="detail-label">Training</div><div class="detail-value">Provided by agency, paid</div></div>
+        </div>
+        <p>The rota model (2 weeks on, 2 weeks off) means you accumulate money fast during your working weeks. During your off weeks your savings build because you have no outgoings at work.</p>
+        <div class="find-links">
+          <div class="find-label">Live-in care agencies</div>
+          <div class="link-row">
+            <a href="https://www.eldercare.co.uk" target="_blank" rel="noopener" class="find-link">Eldercare →</a>
+            <a href="https://www.promedica24.co.uk" target="_blank" rel="noopener" class="find-link">Promedica24 →</a>
+            <a href="https://www.indeed.co.uk/jobs?q=live+in+carer" target="_blank" rel="noopener" class="find-link">Indeed →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 DBS check required — agencies organise this for you. Takes 2–4 weeks. Apply now, start next month.</div>
+      </div>
+    </div>
+
+    <!-- Hotel / hospitality -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">🏨</div>
+            <div class="job-name">Hotel / Hospitality Live-In</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Staff accommodation</span>
+            <span class="meta-pill pill-gold">Meals on shift</span>
+            <span class="meta-pill pill-gold">Tips on top</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐☆☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>Hotels, resorts, and holiday parks regularly offer staff accommodation — especially in seasonal or rural locations. Housekeeping, reception, kitchen, restaurant service. High turnover means they're almost always hiring.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Typical Wage</div><div class="detail-value">£11–£13/hr + tips</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Staff house/room, subsidised or free</div></div>
+          <div class="detail-item"><div class="detail-label">Best locations</div><div class="detail-value">Lake District, Scotland, coastal</div></div>
+          <div class="detail-item"><div class="detail-label">Season</div><div class="detail-value">Year-round, peak March–Sept</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Find hotel live-in roles</div>
+          <div class="link-row">
+            <a href="https://www.caterer.com/jobs/live-in-accommodation" target="_blank" rel="noopener" class="find-link">Caterer.com →</a>
+            <a href="https://www.seasonworkers.com" target="_blank" rel="noopener" class="find-link">SeasonWorkers →</a>
+            <a href="https://www.coolworks.com" target="_blank" rel="noopener" class="find-link">Coolworks →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 Holiday parks (Haven, Butlins, Center Parcs) have huge staff accommodation villages — good year-round option.</div>
+      </div>
+    </div>
+
+    <!-- Au Pair -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">👶</div>
+            <div class="job-name">Au Pair / Live-In Nanny</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Room + board</span>
+            <span class="meta-pill pill-gold">All bills covered</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐⭐☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>Live with a family, help with childcare. Room, food, and bills all covered. Pocket money on top. Works best for younger people or those with childcare experience. Strong demand from professional families.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Pocket Money</div><div class="detail-value">£100–£200/week</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Private room, all meals, bills</div></div>
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">25–35hrs/week typically</div></div>
+          <div class="detail-item"><div class="detail-label">Experience needed</div><div class="detail-value">Helpful but not essential</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Au pair / nanny platforms</div>
+          <div class="link-row">
+            <a href="https://www.aupair-world.net" target="_blank" rel="noopener" class="find-link">AuPair World →</a>
+            <a href="https://www.findababysitter.com" target="_blank" rel="noopener" class="find-link">Find a Babysitter →</a>
+            <a href="https://www.indeed.co.uk/jobs?q=live+in+nanny" target="_blank" rel="noopener" class="find-link">Indeed →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caretaker / Warden -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">🔑</div>
+            <div class="job-name">Caretaker / Site Manager / Warden</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Property included</span>
+            <span class="meta-pill pill-gold">Often quiet role</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐⭐☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>Schools, housing associations, sports facilities, and industrial sites hire live-in caretakers. Flat or house on site, all bills paid. Steady, lower-pressure work. Often advertised quietly — worth contacting housing associations and councils directly.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Typical Wage</div><div class="detail-value">£22,000–£28,000/year</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Flat/house on site, free</div></div>
+          <div class="detail-item"><div class="detail-label">Who hires</div><div class="detail-value">Councils, housing associations, schools</div></div>
+          <div class="detail-item"><div class="detail-label">Experience</div><div class="detail-value">Handy skills help but not essential</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Find caretaker roles</div>
+          <div class="link-row">
+            <a href="https://www.indeed.co.uk/jobs?q=live+in+caretaker" target="_blank" rel="noopener" class="find-link">Indeed →</a>
+            <a href="https://www.jobs.nhs.uk" target="_blank" rel="noopener" class="find-link">NHS Jobs →</a>
+            <a href="https://www.gov.uk/find-a-job" target="_blank" rel="noopener" class="find-link">Find a Job →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 Contact your local housing association directly — these roles often don't get widely advertised.</div>
+      </div>
+    </div>
+
+    <!-- Volunteer with accommodation -->
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title-block">
+          <div class="job-icon-name">
+            <div class="job-icon">🤝</div>
+            <div class="job-name">Volunteer Roles with Accommodation</div>
+          </div>
+          <div class="job-meta">
+            <span class="meta-pill pill-green">Room + board free</span>
+            <span class="meta-pill pill-gold">Reference builder</span>
+            <span class="meta-pill pill-red">No wage</span>
+          </div>
+        </div>
+        <div class="job-difficulty">
+          <div class="diff-label">Barrier</div>
+          <div class="diff-stars">⭐☆☆☆☆</div>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>If you've never worked and need a reference — or need a roof over your head right now — volunteer roles that include accommodation solve both. It's not ideal but it's real. You eat, you sleep, you get a reference, you get a job. That's the ladder.</p>
+        <div class="job-detail">
+          <div class="detail-item"><div class="detail-label">Pay</div><div class="detail-value">Expenses / pocket money only</div></div>
+          <div class="detail-item"><div class="detail-label">Accommodation</div><div class="detail-value">Included, varies by scheme</div></div>
+          <div class="detail-item"><div class="detail-label">What you gain</div><div class="detail-value">Reference + experience + roof</div></div>
+          <div class="detail-item"><div class="detail-label">Duration</div><div class="detail-value">Weeks to months</div></div>
+        </div>
+        <div class="find-links">
+          <div class="find-label">Volunteer with accommodation schemes</div>
+          <div class="link-row">
+            <a href="https://www.workaway.info" target="_blank" rel="noopener" class="find-link">Workaway →</a>
+            <a href="https://www.helpx.net" target="_blank" rel="noopener" class="find-link">HelpX →</a>
+            <a href="https://do-it.org" target="_blank" rel="noopener" class="find-link">Do-it.org →</a>
+          </div>
+        </div>
+        <div class="tip-line">💡 A reference is a reference. Volunteer first, get the reference, get the paying job. Tough titty — but it works.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Getting One</div>
+    <h2>How to actually land a live-in job</h2>
+
+    <div class="steps-block">
+      <h3>The fastest route</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Decide which type fits you.</strong> Pub work if you're sociable and can handle late nights. Care work if you're patient and caring. Hotel if you want seasonal flexibility.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>For pub/hotel: walk in, don't email.</strong> Show up in person between 2–5pm (after lunch rush, before evening). Ask for the manager. "I'm looking for live-in work, available immediately."</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>For care work: contact 3–4 agencies today.</strong> Tell them you're available for live-in placements and can start within 2 weeks. DBS check takes time — start it now.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Ask the right questions upfront.</strong> Is the room private? Are bills included? What's the notice period to leave if needed? Don't find out after you've moved in.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Get it in writing.</strong> Accommodation terms, notice periods, what's included. A verbal agreement isn't enough when it's also your home.</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Know your rights</div>
+      <p>If your employer also provides your accommodation, they can deduct rent from your wage — but they cannot take you below National Minimum Wage after deductions. Get the accommodation terms in your contract before starting. If you're dismissed, you may also lose your home — so always have a backup plan.</p>
+    </div>
+
+    <div class="gold-box">
+      <div class="g-title">Benefits Impact</div>
+      <p>Starting a live-in job may affect Universal Credit, Housing Benefit, or Council Tax Reduction. Report any change of circumstances to DWP immediately. Your in-work benefits may change but you should still be better off overall — use <a href="https://www.entitledto.co.uk" target="_blank" rel="noopener" style="color:var(--gold);">entitledto.co.uk</a> to calculate.</p>
+    </div>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Know someone who's homeless or about to lose their place?</strong><br>This page might be the answer. Send it today.</p>
+    <a href="/live-in-jobs/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">Always verify accommodation terms in writing before starting any live-in role.</p>
+</footer>
+
+</body>
+</html>

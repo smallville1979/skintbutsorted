@@ -1,0 +1,1141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/claimit/">
+  <meta property="og:title" content="Claim Everything You Are Entitled To In The Uk">
+  <meta property="og:description" content="Claim everything you are entitled to in the UK">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claim Everything You Are Entitled To In The Uk">
+  <meta name="twitter:description" content="Claim everything you are entitled to in the UK">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaimIt — Find Every UK Benefit You're Owed</title>
+<meta name="description" content="Are you claiming everything you're entitled to? Check PIP, Universal Credit, cost of living payments and more. Free, instant, no signup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --surface: #111111;
+    --surface2: #181818;
+    --border: #2a2a2a;
+    --green: #00e676;
+    --green-dim: #00e67622;
+    --green-mid: #00e67644;
+    --amber: #ffab00;
+    --red: #ff4444;
+    --white: #f5f5f0;
+    --muted: #777;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--green); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--green);
+    color: var(--black) !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(0,230,118,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-dim);
+    border: 1px solid var(--green-mid);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 .accent { color: var(--green); }
+
+  .hero h1 .line2 {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--muted);
+    max-width: 540px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--black);
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 0 rgba(0,230,118,0);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(0,230,118,0.3);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--muted);
+    background: var(--surface);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    overflow: hidden;
+    background: var(--green);
+    padding: 14px 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .marquee-item::before {
+    content: '✦';
+    margin-right: 20px;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 560px;
+    font-weight: 300;
+    margin-bottom: 56px;
+  }
+
+  /* ── CHECKER ── */
+  #checker {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 60px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #checker::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,230,118,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .checker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .checker-question {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+  }
+
+  .checker-question:hover {
+    border-color: var(--green);
+    background: var(--green-dim);
+  }
+
+  .checker-question.selected {
+    border-color: var(--green);
+    background: var(--green-dim);
+  }
+
+  .checker-question .q-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .checker-question .q-text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .checker-question .q-check {
+    width: 20px; height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .checker-question.selected .q-check {
+    border-color: var(--green);
+    background: var(--green);
+  }
+
+  .checker-question.selected .q-check::after {
+    content: '✓';
+    font-size: 11px;
+    color: var(--black);
+    font-weight: 900;
+  }
+
+  .checker-result {
+    display: none;
+    margin-top: 24px;
+    background: linear-gradient(135deg, rgba(0,230,118,0.1), rgba(0,230,118,0.05));
+    border: 1px solid var(--green-mid);
+    border-radius: 12px;
+    padding: 28px 32px;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .checker-result.show { display: block; }
+
+  .result-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+
+  .result-text {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .btn-check {
+    width: 100%;
+    background: var(--green);
+    color: var(--black);
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-display);
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-check:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── BENEFITS CARDS ── */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .benefit-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card:hover {
+    border-color: #444;
+    transform: translateY(-4px);
+  }
+
+  .benefit-card.featured {
+    border-color: var(--green);
+    background: linear-gradient(160deg, rgba(0,230,118,0.06), var(--surface));
+  }
+
+  .benefit-card .card-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .tag-green { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-mid); }
+  .tag-amber { background: rgba(255,171,0,0.1); color: var(--amber); border: 1px solid rgba(255,171,0,0.3); }
+  .tag-red   { background: rgba(255,68,68,0.1); color: var(--red); border: 1px solid rgba(255,68,68,0.3); }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .card-amount {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .card-link {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .card-link:hover { gap: 10px; }
+
+  /* ── FOMO BANNER ── */
+  .fomo-banner {
+    background: linear-gradient(135deg, #0a1a10, #0d1f14);
+    border: 1px solid rgba(0,230,118,0.2);
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 40px;
+  }
+
+  .fomo-banner::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(0,230,118,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fomo-amount {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 10vw, 120px);
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: -4px;
+    line-height: 1;
+    margin: 20px 0 16px;
+  }
+
+  .fomo-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    opacity: 0.7;
+  }
+
+  .fomo-text {
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto 36px;
+  }
+
+  .fomo-text strong { color: var(--white); }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .step {
+    background: var(--surface);
+    padding: 48px 36px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--green);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .faq-q {
+    padding: 22px 28px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+    user-select: none;
+  }
+
+  .faq-q:hover { background: var(--surface2); }
+
+  .faq-q .icon {
+    width: 28px; height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--green);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; }
+
+  .faq-a p {
+    padding: 0 28px 24px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .trust-item .icon {
+    width: 32px; height: 32px;
+    background: var(--green-dim);
+    border: 1px solid var(--green-mid);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-brand .nav-logo { font-size: 26px; text-decoration: none; display: inline-block; margin-bottom: 16px; }
+
+  .footer-desc { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 280px; }
+
+  footer h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  footer ul a { color: #888; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+  footer ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    padding: 24px 40px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; justify-content: center; }
+    section { padding: 70px 20px; }
+    #checker { padding: 32px 24px; }
+    .checker-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .fomo-banner { padding: 40px 24px; margin: 0 20px; }
+    footer { grid-template-columns: 1fr; gap: 32px; }
+    .trust-bar { gap: 20px; padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+<style>.slow-read-bar{background:#111;border-left:5px solid #FF1744;padding:18px 20px;margin:0 0 24px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;font-family:sans-serif;}.slow-read-icon{font-size:28px;flex-shrink:0;}.slow-read-text{flex:1;min-width:200px;}.slow-read-text strong{display:block;font-size:18px;color:#fff;margin-bottom:4px;}.slow-read-text p{font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.5;}.slow-read-save-btn{background:#FF1744;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:900;white-space:nowrap;align-self:center;}</style>
+<div class="slow-read-bar"><span class="slow-read-icon">⛔</span><div class="slow-read-text"><strong>Stop. Read This Properly.</strong><p>People who rush this mess it up. This takes 3 minutes to read. Save it first.</p></div><button class="slow-read-save-btn" onclick="alert('Press Ctrl+D (Mac: Cmd+D) to bookmark. On mobile tap Share then Save.')">📌 Save This</button></div>
+
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Claim<span>It</span></a>
+  <ul class="nav-links">
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#checker" class="nav-cta">Check now — free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width: 100%; padding: 120px 40px 80px;">
+  <div class="hero-label">Updated March 2026</div>
+
+  <h1>
+    You're probably<br>
+    <span class="accent">owed money.</span>
+    <span class="line2">Most people never claim it.</span>
+  </h1>
+
+  <p class="hero-sub">
+    <strong>£23 billion in UK benefits go unclaimed every year.</strong>
+    Check what you're entitled to — free, instant, no signup required.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#checker" class="btn-primary">Check my entitlement →</a>
+    <a href="#benefits" class="btn-ghost">See all benefits</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">£23B</div>
+      <div class="stat-label">Unclaimed each year</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8.7M</div>
+      <div class="stat-label">People missing payments</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2 min</div>
+      <div class="stat-label">To check eligibility</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item">Universal Credit</span>
+    <span class="marquee-item">PIP — up to £184.30/week</span>
+    <span class="marquee-item">Cost of Living Payments</span>
+    <span class="marquee-item">Carer's Allowance</span>
+    <span class="marquee-item">Council Tax Reduction</span>
+    <span class="marquee-item">Warm Home Discount</span>
+    <span class="marquee-item">Healthy Start Vouchers</span>
+    <span class="marquee-item">Free Prescriptions</span>
+    <span class="marquee-item">Universal Credit</span>
+    <span class="marquee-item">PIP — up to £184.30/week</span>
+    <span class="marquee-item">Cost of Living Payments</span>
+    <span class="marquee-item">Carer's Allowance</span>
+    <span class="marquee-item">Council Tax Reduction</span>
+    <span class="marquee-item">Warm Home Discount</span>
+    <span class="marquee-item">Healthy Start Vouchers</span>
+    <span class="marquee-item">Free Prescriptions</span>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">🔒</div> No personal data stored</div>
+  <div class="trust-item"><div class="icon">✓</div> Based on DWP official rates</div>
+  <div class="trust-item"><div class="icon">⚡</div> Updated April 2026</div>
+  <div class="trust-item"><div class="icon">🇬🇧</div> England, Scotland & Wales</div>
+  <div class="trust-item"><div class="icon">£</div> Completely free to use</div>
+</div>
+
+<!-- CHECKER -->
+<section style="padding: 100px 40px; max-width: 860px; margin: 0 auto;">
+  <div class="section-label">Eligibility checker</div>
+  <h2>Find out what<br>you're owed.</h2>
+  <p class="section-intro">Answer 4 quick questions. We'll tell you which benefits you likely qualify for right now.</p>
+
+  <div id="checker">
+    <div class="checker-grid" id="q1">
+      <div class="checker-question" onclick="selectQ(this, 'q1', 'yes')">
+        <div class="q-check"></div>
+        <div class="q-label">Your situation</div>
+        <div class="q-text">I have a long-term health condition or disability</div>
+      </div>
+      <div class="checker-question" onclick="selectQ(this, 'q1', 'no')">
+        <div class="q-check"></div>
+        <div class="q-label">Your situation</div>
+        <div class="q-text">I don't have a long-term health condition</div>
+      </div>
+    </div>
+
+    <div class="checker-grid" id="q2">
+      <div class="checker-question" onclick="selectQ(this, 'q2', 'yes')">
+        <div class="q-check"></div>
+        <div class="q-label">Employment</div>
+        <div class="q-text">I'm currently working (full or part time)</div>
+      </div>
+      <div class="checker-question" onclick="selectQ(this, 'q2', 'no')">
+        <div class="q-check"></div>
+        <div class="q-label">Employment</div>
+        <div class="q-text">I'm not currently working</div>
+      </div>
+    </div>
+
+    <div class="checker-grid" id="q3">
+      <div class="checker-question" onclick="selectQ(this, 'q3', 'yes')">
+        <div class="q-check"></div>
+        <div class="q-label">Household</div>
+        <div class="q-text">I have dependent children or care for someone</div>
+      </div>
+      <div class="checker-question" onclick="selectQ(this, 'q3', 'no')">
+        <div class="q-check"></div>
+        <div class="q-label">Household</div>
+        <div class="q-text">I live alone or with a partner, no dependants</div>
+      </div>
+    </div>
+
+    <div class="checker-grid" id="q4">
+      <div class="checker-question" onclick="selectQ(this, 'q4', 'low')">
+        <div class="q-check"></div>
+        <div class="q-label">Income</div>
+        <div class="q-text">My household income is below £35,000/year</div>
+      </div>
+      <div class="checker-question" onclick="selectQ(this, 'q4', 'high')">
+        <div class="q-check"></div>
+        <div class="q-label">Income</div>
+        <div class="q-text">My household income is above £35,000/year</div>
+      </div>
+    </div>
+
+    <button class="btn-check" onclick="showResult()">See what I'm owed →</button>
+
+    <div class="checker-result" id="result">
+      <div class="result-title" id="result-title">You could qualify for multiple benefits</div>
+      <div class="result-text" id="result-text">Based on your answers, you may be entitled to payments you're not currently receiving. See the full list of benefits below and click each one for your specific eligibility criteria.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOMO SECTION -->
+<div class="fomo-banner">
+  <div class="fomo-label">The number nobody talks about</div>
+  <div class="fomo-amount">£23,000,000,000</div>
+  <p class="fomo-text"><strong>£23 billion in benefits go unclaimed in the UK every year.</strong> That's money the government owes — that most people never collect.</p>
+  <a href="#checker" class="btn-primary">Check if you're one of them →</a>
+</div>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="section-label">What you could be claiming</div>
+  <h2>Every benefit.<br>Plain English.</h2>
+  <p class="section-intro">The ones most people miss, explained in a way that actually makes sense.</p>
+
+  <div class="benefits-grid">
+
+    <div class="benefit-card featured">
+      <span class="card-tag tag-green">Most Missed</span>
+      <div class="card-title">PIP</div>
+      <div class="card-amount">£184/wk</div>
+      <p class="card-desc">Personal Independence Payment. For people with long-term health conditions or disabilities. Physical OR mental health. You don't need to be unable to work.</p>
+      <a href="#faq" class="card-link">Check if I qualify →</a>
+    </div>
+
+    <div class="benefit-card">
+      <span class="card-tag tag-amber">Deadline Driven</span>
+      <div class="card-title">Universal Credit</div>
+      <div class="card-amount">£393/mo</div>
+      <p class="card-desc">Monthly support for people on low income or out of work. Working people can still claim. Replaces six older benefits — most people don't know they're owed the top-up.</p>
+      <a href="#faq" class="card-link">See full rates →</a>
+    </div>
+
+    <div class="benefit-card">
+      <span class="card-tag tag-green">Quick Win</span>
+      <div class="card-title">Council Tax Reduction</div>
+      <div class="card-amount">Up to 100%</div>
+      <p class="card-desc">You could pay zero council tax. Only 1 in 3 people who qualify actually claim it. Takes 10 minutes to apply through your local council.</p>
+      <a href="#faq" class="card-link">Check eligibility →</a>
+    </div>
+
+    <div class="benefit-card">
+      <span class="card-tag tag-amber">For Carers</span>
+      <div class="card-title">Carer's Allowance</div>
+      <div class="card-amount">£81.90/wk</div>
+      <p class="card-desc">If you care for someone who receives PIP or DLA for at least 35 hours per week — you're almost certainly owed this. Most carers have never heard of it.</p>
+      <a href="#faq" class="card-link">Am I a carer? →</a>
+    </div>
+
+    <div class="benefit-card">
+      <span class="card-tag tag-red">Urgent</span>
+      <div class="card-title">Warm Home Discount</div>
+      <div class="card-amount">£150</div>
+      <p class="card-desc">One-off payment off your energy bill. If you receive certain benefits, you're automatically eligible — but you still need to apply. Applications close each spring.</p>
+      <a href="#faq" class="card-link">Check deadline →</a>
+    </div>
+
+    <div class="benefit-card">
+      <span class="card-tag tag-green">Low Income</span>
+      <div class="card-title">Free Prescriptions</div>
+      <div class="card-amount">£9.90 each</div>
+      <p class="card-desc">If you receive Universal Credit, PIP, or are on a low income — you don't need to pay for prescriptions. Most people on benefits still pay because nobody told them.</p>
+      <a href="#faq" class="card-link">Get exemption →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="padding: 60px 40px 100px; max-width: 1100px; margin: 0 auto;">
+  <div class="section-label">How it works</div>
+  <h2>Three steps.<br>No jargon.</h2>
+  <p class="section-intro">We cut through the DWP language so you know exactly what to do.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Check eligibility</div>
+      <p class="step-desc">Answer a few quick questions. No personal data stored. We show you which benefits you're likely entitled to based on your situation.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Get the full picture</div>
+      <p class="step-desc">We show you the exact amounts, the rules, and what to say in your application — in plain English, not DWP language.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Start your claim</div>
+      <p class="step-desc">We link you directly to the official claim pages with notes on what to prepare — so you don't miss anything that could reduce your payment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding: 60px 40px 100px; max-width: 800px; margin: 0 auto;">
+  <div class="section-label">Questions</div>
+  <h2>The things people<br>actually ask.</h2>
+  <br>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I claim PIP if I'm still working?
+        <div class="icon">+</div>
+      </div>
+      <div class="faq-a"><p>Yes. PIP is not means-tested and has nothing to do with your employment status. It's based entirely on how your condition affects your daily life and mobility — not your income or whether you work.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        I was rejected for PIP before. Should I try again?
+        <div class="icon">+</div>
+      </div>
+      <div class="faq-a"><p>Yes. Over 60% of PIP appeals at tribunal are won. Initial decisions are frequently wrong. You can request a Mandatory Reconsideration within 1 month of a decision — and if that fails, take it to tribunal. Many people win at this stage.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Does Universal Credit affect my other benefits?
+        <div class="icon">+</div>
+      </div>
+      <div class="faq-a"><p>Universal Credit replaces six older benefits: Income Support, Housing Benefit, Working Tax Credit, Child Tax Credit, Income-related ESA, and income-based JSA. If you're migrating from these, transitional protection means your payments won't drop — but you need to manage the migration carefully to keep it.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How far back can I backdate a benefits claim?
+        <div class="icon">+</div>
+      </div>
+      <div class="faq-a"><p>It depends on the benefit. Most benefits can only be backdated a maximum of 1–3 months and only in exceptional circumstances. PIP generally cannot be backdated. This is why claiming as soon as possible — even before your first assessment — is critical.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is this website official? Are the figures accurate?
+        <div class="icon">+</div>
+      </div>
+      <div class="faq-a"><p>ClaimIt is independent, not affiliated with the DWP or government. All benefit rates are based on current official DWP figures and are updated every April following the annual uprating. We always recommend confirming final figures at GOV.UK before making financial decisions.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo">Claim<span>It</span></a>
+    <p class="footer-desc">Independent UK benefits information. Not affiliated with the DWP or any government body. Updated April 2026.</p>
+  </div>
+  <div>
+    <h4>Benefits</h4>
+    <ul>
+      <li><a href="#">PIP</a></li>
+      <li><a href="#">Universal Credit</a></li>
+      <li><a href="#">Carer's Allowance</a></li>
+      <li><a href="#">Council Tax Reduction</a></li>
+      <li><a href="#">Warm Home Discount</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="#">How to appeal</a></li>
+      <li><a href="#">Benefit calculator</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2026 ClaimIt · Independent UK benefits information · Not financial or legal advice
+</div>
+
+<script>
+  const answers = {};
+
+  function selectQ(el, group, val) {
+    document.querySelectorAll(`#${group} .checker-question`).forEach(q => q.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[group] = val;
+  }
+
+  function showResult() {
+    const result = document.getElementById('result');
+    const title  = document.getElementById('result-title');
+    const text   = document.getElementById('result-text');
+    const keys   = Object.keys(answers);
+
+    if (keys.length < 2) {
+      title.textContent = 'Select at least a few options above';
+      text.textContent  = 'The more you answer, the more accurate your results.';
+    } else {
+      const hasCondition = answers.q1 === 'yes';
+      const hasChildren  = answers.q3 === 'yes';
+      const lowIncome    = answers.q4 === 'low';
+      const notWorking   = answers.q2 === 'no';
+
+      let benefits = [];
+      if (hasCondition) benefits.push('PIP (up to £184/week)', 'Free prescriptions');
+      if (lowIncome || notWorking) benefits.push('Universal Credit', 'Council Tax Reduction', 'Warm Home Discount');
+      if (hasChildren) benefits.push("Child Benefit", "Free school meals");
+      if (benefits.length === 0) benefits.push('Council Tax Reduction', 'Warm Home Discount');
+
+      title.textContent = `You may qualify for ${benefits.length} benefits`;
+      text.textContent  = `Potentially: ${benefits.join(', ')}. Scroll down to check each one in detail — or use GOV.UK's official calculator for a full assessment.`;
+    }
+
+    result.classList.add('show');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+<script src="/kit/kit.js"></script>
+</body>
+</html>

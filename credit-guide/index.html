@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free UK guide to fixing and building your credit file. Electoral register, rent reporting, credit builder cards, overdrafts and the steps nobody tells you about.">
+<meta property="og:title" content="Fix Your Credit File 💳 Free UK Guide">
+<meta property="og:description" content="Sort your credit file now so you can get a mortgage, flat, or car one day. Free guide — electoral register, rent reporting, credit builders. No jargon.">
+<meta property="og:url" content="/credit-guide/">
+<title>Fix Your Credit File 💳 Free UK Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0d;--card:#161616;--card2:#1e1e1e;
+  --gold:#f5c842;--gold2:#e6b830;
+  --green:#3ecf8e;--blue:#4a9eff;--red:#ff5c5c;--purple:#b97fff;
+  --text:#f0f0f0;--muted:#888;--border:#2a2a2a;
+  --r:14px;--r2:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 1rem;overflow-x:auto;white-space:nowrap}
+nav::-webkit-scrollbar{height:2px;background:var(--border)}
+nav::-webkit-scrollbar-thumb{background:var(--gold)}
+.nav-inner{display:inline-flex;gap:0;padding:0}
+.nav-inner a{display:inline-block;padding:.7rem .9rem;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-inner a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+section{padding:5rem 1.5rem;max-width:960px;margin:0 auto}
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,200,66,.3);border-radius:20px;padding:.3rem .9rem;margin-bottom:1rem}
+section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);line-height:1;color:var(--text);margin-bottom:.5rem}
+.section-intro{font-size:1.05rem;color:#aaa;max-width:600px;margin-bottom:3rem}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem}
+.card-icon{font-size:2rem;display:block;margin-bottom:.75rem}
+.card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem;color:var(--text)}
+.card p{font-size:.95rem;color:#bbb;line-height:1.6}
+.card p+p{margin-top:.6rem}
+.card-badge{display:inline-block;margin-top:1rem;font-size:12px;font-weight:600;padding:.3rem .8rem;border-radius:20px}
+.badge-gold{background:rgba(245,200,66,.15);color:var(--gold);border:1px solid rgba(245,200,66,.3)}
+.badge-blue{background:rgba(74,158,255,.15);color:var(--blue);border:1px solid rgba(74,158,255,.3)}
+.badge-green{background:rgba(62,207,142,.15);color:var(--green);border:1px solid rgba(62,207,142,.3)}
+.badge-red{background:rgba(255,92,92,.15);color:var(--red);border:1px solid rgba(255,92,92,.3)}
+.hero{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(245,200,66,.06) 0%,transparent 70%)}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,12vw,8rem);line-height:.95;color:var(--gold);letter-spacing:.02em;margin-bottom:1.5rem}
+.hero-sub{font-size:clamp(1rem,3vw,1.25rem);color:#bbb;max-width:560px;margin:0 auto 2rem}
+.warning-box{background:rgba(255,92,92,.1);border:1px solid rgba(255,92,92,.3);border-radius:var(--r2);padding:1rem 1.25rem;margin-top:1rem;font-size:.9rem;color:#ffaaaa}
+.step-list{list-style:none;margin-top:1rem}
+.step-list li{padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:#ccc;display:flex;gap:.75rem}
+.step-list li:last-child{border-bottom:none}
+.step-num{background:var(--gold);color:#000;font-weight:700;font-size:12px;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+hr.divider{border:none;border-top:1px solid var(--border);max-width:960px;margin:0 auto}
+@media(max-width:600px){section{padding:3.5rem 1rem}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#why">💳 Why It Matters</a>
+    <a href="#check">🔍 Check Your File</a>
+    <a href="#quickwins">⚡ Quick Wins</a>
+    <a href="#builders">🏗️ Credit Builders</a>
+    <a href="#banks">🏦 Banks & Overdrafts</a>
+    <a href="#avoid">🚫 Avoid This</a>
+    <a href="#mortgage">🏠 Mortgage Ready</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:100%;padding:4rem 1.5rem">
+  <h1>Fix Your<br>Credit File</h1>
+  <p class="hero-sub">Nobody teaches you this at school. One day you'll need a flat, a mortgage, a car on finance. Your credit file decides all of it. Here's exactly what to do — free, no jargon, no scams.</p>
+</section>
+<hr class="divider">
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-tag">💳 Why It Matters</div>
+  <h2>Sort It<br>Now</h2>
+  <p class="section-intro">You might not need credit today. But one day you will — and your file will already be built or not. Start now.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🏠</span>
+      <h3>Getting a Flat or Mortgage</h3>
+      <p>Landlords and mortgage lenders credit-check you. A thin or bad file = rejection. A good file = options. Every month you ignore this is a month of history you're not building.</p>
+      <div class="card-badge badge-gold">⏱️ History takes time — start today</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚗</span>
+      <h3>Car Finance, Phone Contracts</h3>
+      <p>Most 0% car finance deals and monthly phone contracts require a credit check. Bad file = pay more upfront or get refused. Good file = better deals.</p>
+      <div class="card-badge badge-blue">📱 Even phone contracts check your file</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚫</span>
+      <h3>Better Than Being Scammed</h3>
+      <p>People with no credit history turn to doorstep lenders, payday loans, and loan sharks because banks won't touch them. <strong>Build credit now</strong> so you never have to go near those people.</p>
+      <div class="card-badge badge-red">⚠️ Bad credit = prey for loan sharks</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <h3>What's Actually On Your File?</h3>
+      <p>Electoral register, address history, accounts, missed payments, defaults, CCJs. Three agencies hold your data — Experian, Equifax, TransUnion. They don't always match. Check all three.</p>
+      <div class="card-badge badge-blue">🔍 Free to check — no excuses</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- CHECK -->
+<section id="check">
+  <div class="section-tag">🔍 Check Your File Free</div>
+  <h2>See Where<br>You Stand</h2>
+  <p class="section-intro">All three services below are free. Check all three — they hold different data and don't always agree.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Experian — Free Forever</h3>
+      <p>The biggest credit agency in the UK. Free account gives you your Experian score and report. Check it, read every line, dispute anything wrong.</p>
+      <a href="https://www.experian.co.uk/consumer/free-credit-score.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">Check Experian Free →</a>
+    </div>
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Credit Karma (TransUnion)</h3>
+      <p>Free forever, no card needed. Shows your TransUnion file. Different data from Experian — check both. Also shows what's dragging your score down.</p>
+      <a href="https://www.creditkarma.co.uk/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">Check Credit Karma Free →</a>
+    </div>
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Clearscore (Equifax)</h3>
+      <p>Free forever. Shows your Equifax file and score. Sends weekly updates. Good for tracking improvements over time. All three free = full picture.</p>
+      <a href="https://www.clearscore.com/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">Check Clearscore Free →</a>
+    </div>
+    <div class="card">
+      <span class="card-icon">⚠️</span>
+      <h3>Dispute Errors — They Happen</h3>
+      <p>Errors on your file are more common than you think — wrong address, old debt that's been paid, someone else's default. You can legally dispute and remove them. Do it.</p>
+      <div class="card-badge badge-red">✏️ Wrong info on your file? Get it removed</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- QUICK WINS -->
+<section id="quickwins">
+  <div class="section-tag">⚡ Quick Wins</div>
+  <h2>Do These<br>This Week</h2>
+  <p class="section-intro">These cost nothing and some will boost your score immediately. No excuses — do every single one.</p>
+  <div class="card" style="max-width:680px">
+    <ul class="step-list">
+      <li><span class="step-num">1</span><span><strong>Electoral Register</strong> — register to vote at your current address at gov.uk/register-to-vote. This is the single biggest quick boost on your credit file. Takes 5 minutes. Free.</span></li>
+      <li><span class="step-num">2</span><span><strong>Report Your Rent</strong> — use <a href="https://www.credithladder.com/" target="_blank" rel="noopener" style="color:var(--gold)">Credit Ladder</a> or <a href="https://www.canopy.rent/" target="_blank" rel="noopener" style="color:var(--gold)">Canopy</a> to add your rent payments to your credit file. You've been paying rent — that history should count. Free.</span></li>
+      <li><span class="step-num">3</span><span><strong>Check for Errors</strong> — go through all three free reports (Experian, Credit Karma, Clearscore). Dispute anything wrong. Old address? Wrong employer? Paid-off debt still showing? Get it fixed.</span></li>
+      <li><span class="step-num">4</span><span><strong>Close Unused Accounts</strong> — old store cards, old bank accounts you forgot about. Tidy your file. Unused credit can look risky to lenders.</span></li>
+      <li><span class="step-num">5</span><span><strong>Don't Apply for Lots of Credit at Once</strong> — every hard search shows on your file. Space applications out. Too many in a short time looks desperate.</span></li>
+      <li><span class="step-num">6</span><span><strong>Keep Utilisation Low</strong> — if you have a credit card with a £500 limit, try to keep the balance under £150 (30%). High utilisation tanks your score even if you pay it off.</span></li>
+      <li><span class="step-num">7</span><span><strong>Pay Everything On Time</strong> — set up direct debits for minimum payments on everything. One missed payment can stay on your file for 6 years.</span></li>
+    </ul>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BUILDERS -->
+<section id="builders">
+  <div class="section-tag">🏗️ Credit Builder Cards</div>
+  <h2>Build Credit<br>Safely</h2>
+  <p class="section-intro">These cards exist for people with thin or bad credit history. Use them correctly and they build your file every month. Use them wrong and they make things worse.</p>
+  <div class="warning-box" style="max-width:680px;margin-bottom:2rem">⚠️ <strong>The rule:</strong> Get a credit builder card for emergencies only. Do NOT use it for daily spending. Pay the full balance every month by direct debit. Never miss a payment. Think of it as a tool, not money.</div>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>Aqua Card</h3>
+      <p>One of the most accessible credit builder cards in the UK. Designed for people rebuilding credit. Start with a small limit, pay in full every month, watch your score grow. APR is high — <strong>never carry a balance.</strong></p>
+      <a href="https://www.aquacard.co.uk/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">See Aqua Card →</a>
+      <div class="card-badge badge-gold">✅ Pay in full monthly — always</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>Capital One Classic</h3>
+      <p>Another well-known credit builder. Low limit to start, increases with good behaviour. Reports to all three agencies monthly. Use for one small purchase, pay in full.</p>
+      <a href="https://www.capitalone.co.uk/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">See Capital One →</a>
+      <div class="card-badge badge-gold">✅ Emergency use only</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>Tesco Foundation Card</h3>
+      <p>Tesco's credit builder option — reports monthly. Small limit. Only use if you can guarantee you'll pay in full every month via direct debit.</p>
+      <a href="https://www.tescobank.com/credit-cards/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">See Tesco Card →</a>
+      <div class="card-badge badge-blue">🔁 Set up direct debit — never miss</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔒</span>
+      <h3>Loqbox — Save & Build Credit</h3>
+      <p>Loqbox is a clever free tool — you commit to saving a small amount monthly (as low as £20), it reports this as credit activity, and releases your savings at the end. Builds credit with no debt risk.</p>
+      <a href="https://www.loqbox.com/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--gold);font-weight:600">Try Loqbox Free →</a>
+      <div class="card-badge badge-green">💚 Safest option — no debt involved</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BANKS -->
+<section id="banks">
+  <div class="section-tag">🏦 Banks & Overdrafts</div>
+  <h2>Get a Real<br>Bank Account</h2>
+  <p class="section-intro">A bank account with a small overdraft is a foundation. Even if you never use the overdraft — having it and not using it helps your file.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🏦</span>
+      <h3>Monzo or Starling — Start Here</h3>
+      <p>Both do a soft check only — no hard search on your file. You get a full UK bank account, sort code and account number. Once you've used it well for 6 months, apply to upgrade to one with an arranged overdraft.</p>
+      <div class="card-badge badge-green">✅ No credit check to open</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📈</span>
+      <h3>Small Arranged Overdraft</h3>
+      <p>Once you have a bank account history, apply for a small arranged overdraft — £100 to £250. <strong>Don't use it.</strong> Having an unused arranged overdraft shows lenders you can be trusted with credit. It's a signal, not a spending tool.</p>
+      <div class="card-badge badge-blue">💡 Have it. Don't use it.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🗓️</span>
+      <h3>Pay Your Bills From It</h3>
+      <p>Set up your direct debits through your main account — rent (via Credit Ladder), energy, broadband, phone. Regular payments in and out tell lenders you're reliable. Stability on an account is worth more than a high score with no history.</p>
+      <div class="card-badge badge-gold">📊 Consistent activity = healthy file</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>Revolut — Free Account + Budgeting Tools</h3>
+      <p>Revolut is one of the best free accounts in the UK. Instant spending notifications, built-in budgeting, no fees abroad, and you can hold multiple currencies. Great as a second account alongside your main bank. Helps you track exactly where money is going — essential when you're rebuilding.</p>
+      <a href="https://revolut.com/referral/?referral-code=tomfd6a!MAR1-26-VR-GB&geo-redirect" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;background:var(--gold);color:#000;font-weight:700;padding:.6rem 1.2rem;border-radius:50px;text-decoration:none;font-size:14px">Open Revolut Free →</a>
+      <div class="card-badge badge-green">✅ No credit check — free forever</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💰</span>
+      <h3>PayPal Credit → Revolut — Free Float Trick</h3>
+      <p>Get PayPal Credit approved (free, 2 mins inside PayPal). Add your Revolut account to PayPal Wallet. Send money to a trusted friend or family member using PayPal Credit — they send it straight back to your PayPal balance. Withdraw it to Revolut. You now have cash, interest-free, on PayPal's tab. <strong>Pay it back before the statement date and it costs you nothing.</strong> This is a short-term bridge — use it before your bank DD clears, not as spending money.</p>
+      <a href="https://py.pl/1erctY" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;background:var(--gold);color:#000;font-weight:700;padding:.6rem 1.2rem;border-radius:50px;text-decoration:none;font-size:14px">Get PayPal + £10 free →</a>
+      <div class="card-badge badge-red">⚠️ Must repay before due date or interest kicks in</div>
+      <div style="background:#1a0000;border:1px solid #FF5722;border-radius:6px;padding:12px 14px;margin-top:10px;font-size:13px;">
+        <p style="color:#FF7043;font-weight:bold;margin:0 0 6px;">&#x26A0;&#xFE0F; Is this right for you?</p>
+        <p style="color:#aaa;margin:0 0 6px;"><strong style="color:#4CAF50;">&#x2705; Yes</strong> — if income is coming in, you can repay in full within a few weeks, no existing balance.</p>
+        <p style="color:#aaa;margin:0;"><strong style="color:#FF5722;">&#x274C; No</strong> — if you're already in debt, spending on takeaways/treats you can't afford, or won't pay it off. At 23.9% APR it becomes expensive fast. Go to <a href="/break-the-cycle/" style="color:#FF7043;">Break the Cycle</a> instead.</p>
+      </div>
+    <div class="card">
+      <span class="card-badge">CASHBACK</span>
+      <h3>TopCashback &#x2014; Get Paid to Buy</h3>
+      <p>Every time you buy insurance, broadband, a SIM, or pretty much anything online &#x2014; you can get cashback. TopCashback is free to join and pays out real money, not points. Stack it with comparison sites for maximum saving.</p>
+      <a href="https://www.topcashback.co.uk/ref/q1979" target="_blank" rel="noopener" style="display:inline-block;background:#f5a623;color:#000;padding:8px 16px;border-radius:5px;font-weight:bold;font-size:0.88rem;text-decoration:none;margin-top:10px;">&#x1F4B0; Join Free &#x2192;</a><br>
+      <span style="color:#666;font-size:0.78rem;margin-top:4px;display:inline-block;">Referral link &#x2014; you get a welcome bonus, Tom gets a small commission.</span>
+    </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">⏳</span>
+      <h3>Time Is the Main Ingredient</h3>
+      <p>Credit history length matters hugely. A 3-year-old account with consistent payments beats a new account every time. Don't close your oldest account. Don't keep switching banks. Settle in one place and let time do the work.</p>
+      <div class="card-badge badge-gold">⏱️ Oldest account = most valuable</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- AVOID -->
+<section id="avoid">
+  <div class="section-tag">🚫 Avoid This</div>
+  <h2>Things That<br>Wreck It</h2>
+  <p class="section-intro">Some of these are obvious. Some aren't. All of them will damage your file for years.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🚨</span>
+      <h3>Payday Loans</h3>
+      <p>Even if you repay them on time, having a payday loan on your file tells mortgage lenders you were in financial difficulty. Many lenders auto-reject anyone who has used payday loans in the last 2–3 years. Avoid entirely.</p>
+      <div class="card-badge badge-red">❌ Auto-rejection trigger for mortgages</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚨</span>
+      <h3>Missing Payments</h3>
+      <p>One missed payment stays on your file for 6 years. Set up direct debits for the minimum on everything — even if you plan to pay more manually. The DD is a safety net.</p>
+      <div class="card-badge badge-red">❌ 6 years of damage for one mistake</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚨</span>
+      <h3>Too Many Applications</h3>
+      <p>Each hard search leaves a mark. Applying for 5 credit cards in a week looks desperate. Use eligibility checkers first — they use soft searches and don't affect your score.</p>
+      <div class="card-badge badge-red">❌ Use eligibility checkers — not applications</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚨</span>
+      <h3>Credit Repair Scams</h3>
+      <p>"We can fix your credit in 30 days for £299." No they can't. Legitimate errors can be removed free — you do it yourself via the credit agencies. Anyone charging to "fix" your credit file is a scam.</p>
+      <div class="card-badge badge-red">❌ Never pay anyone to fix your credit</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- MORTGAGE READY -->
+<section id="mortgage">
+  <div class="section-tag">🏠 Mortgage Ready</div>
+  <h2>One Day:<br>Your Own Home</h2>
+  <p class="section-intro">This is the long game. Every step you take now is a step toward owning. It takes years — so start the clock today.</p>
+  <div class="card" style="max-width:680px">
+    <ul class="step-list">
+      <li><span class="step-num">1</span><span>Register to vote at your current address</span></li>
+      <li><span class="step-num">2</span><span>Report your rent via Credit Ladder or Canopy</span></li>
+      <li><span class="step-num">3</span><span>Check all three credit files — fix any errors</span></li>
+      <li><span class="step-num">4</span><span>Open Monzo or Starling — let it age</span></li>
+      <li><span class="step-num">5</span><span>Get one credit builder card — pay in full monthly, never miss</span></li>
+      <li><span class="step-num">6</span><span>Apply for a small arranged overdraft — don't use it</span></li>
+      <li><span class="step-num">7</span><span>Use Loqbox to save and build credit at the same time</span></li>
+      <li><span class="step-num">8</span><span>Never use a payday loan. Ever.</span></li>
+      <li><span class="step-num">9</span><span>Wait 2–3 years of clean history before applying for a mortgage</span></li>
+      <li><span class="step-num">10</span><span>Use a mortgage broker (not a bank) — they find the best deal for your file</span></li>
+    </ul>
+    <div class="card-badge badge-green" style="margin-top:1.5rem">🏠 Do all 10 and you'll get there. Start today.</div>
+  </div>
+</section>
+
+<script src="/kit/kit.js"></script>
+</body>
+</html>

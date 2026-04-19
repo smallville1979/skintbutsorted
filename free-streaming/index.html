@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Streaming Hacks | Skint But Sorted</title>
+  <meta name="description" content="Watch everything for free. FireStick apps, Stremio, Real-Debrid, Kodi, SmartTube, NetFly — the complete setup guide. No subscriptions. No excuses.">
+  <meta property="og:title" content="Free Streaming Hacks | Skint But Sorted">
+  <meta property="og:description" content="FireStick, Stremio, Real-Debrid, SmartTube — the full free streaming setup. Cancel Netflix today.">
+  <meta property="og:image" content="/skintbutsorted/og-image.png">
+  <meta property="og:url" content="/free-streaming/">
+  <script src="/kit/kit.js?v=2" defer></script>
+  <style>
+    :root {
+      --primary: #e94560;
+      --nav: #1a1a2e;
+      --dropdown: #16213e;
+      --btn: #0f3460;
+      --gold: #f5c518;
+      --green: #2ecc71;
+      --purple: #9b59b6;
+      --text: #eaeaea;
+      --muted: #aaa;
+      --card-bg: #16213e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--nav);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #080814 0%, #1a1a2e 55%, #0f1528 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '📺';
+      position: absolute;
+      font-size: 220px;
+      opacity: 0.05;
+      top: -20px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .device-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .device-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .read-time {
+      text-align: center;
+      padding: 12px 20px;
+      background: #0d0d1a;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid #222;
+    }
+    .read-time strong { color: var(--primary); }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+    .section { padding: 40px 0 10px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    p { color: #ccc; margin-bottom: 14px; font-size: 16px; }
+
+    .divider { border: none; border-top: 1px solid #2a2a4a; margin: 10px 0 30px; }
+
+    /* Device tabs */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 0;
+      border-bottom: 2px solid #2a2a4a;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-bar::-webkit-scrollbar { display: none; }
+
+    .tab {
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .tab:hover { color: white; }
+
+    .tab-content { display: none; padding-top: 24px; }
+    .tab-content.active { display: block; }
+
+    /* App cards */
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #2a2a4a;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+
+    .app-card:hover { border-color: var(--primary); }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .app-name {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-tag {
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .tag-free { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+    .tag-best { background: rgba(245,197,24,0.12); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+    .tag-setup { background: rgba(155,89,182,0.15); color: #bb88ee; border: 1px solid rgba(155,89,182,0.3); }
+
+    .app-card p { font-size: 15px; color: #bbb; margin-bottom: 10px; }
+
+    .install-line {
+      background: #0d0d1a;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--gold);
+      font-family: 'Courier New', monospace;
+      margin-top: 10px;
+    }
+
+    .tip-line {
+      font-size: 14px;
+      color: var(--gold);
+      padding-top: 10px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 12px;
+    }
+
+    /* Legit free section */
+    .legit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .legit-card {
+      background: var(--card-bg);
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 16px 18px;
+      transition: border-color 0.2s;
+    }
+
+    .legit-card:hover { border-color: var(--green); }
+
+    .legit-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .legit-desc { font-size: 14px; color: #999; margin: 0; }
+
+    .legit-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .legit-link:hover { text-decoration: underline; }
+
+    /* Steps */
+    .steps-block {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid #2a2a4a;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text { font-size: 15px; color: #ccc; }
+    .step-text strong { color: white; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(233,69,96,0.07);
+      border: 1px solid rgba(233,69,96,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .w-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .warning-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    /* Gold box */
+    .gold-box {
+      background: rgba(245,197,24,0.06);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .gold-box .g-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gold-box p { color: #ccc; margin: 0; font-size: 15px; }
+
+    .cta-btn {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 12px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #c73452; transform: translateY(-1px); }
+
+    .share-nudge {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a4a;
+      margin-top: 40px;
+    }
+    .share-nudge p { font-size: 16px; color: var(--muted); margin-bottom: 16px; }
+    .share-nudge strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Watch Everything For Free</div>
+  <h1>Free Streaming.<br><span>Full Setup Guide.</span></h1>
+  <p class="hero-sub">FireStick, FireCube, PC, Android, iPhone — every device covered. Cancel the lot. Watch everything. Pay nothing.</p>
+  <div class="device-pills">
+    <span class="device-pill">🔥 FireStick / FireCube</span>
+    <span class="device-pill">💻 PC / Mac</span>
+    <span class="device-pill">📱 Android</span>
+    <span class="device-pill">📺 Smart TV</span>
+  </div>
+</div>
+
+<div class="read-time">
+  ⏱️ <strong>This site takes 1 hour to fully read</strong> — click every link, view every page.
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Pick Your Device</div>
+    <h2>What are you watching on?</h2>
+    <p>Different devices need different setups. Pick yours below — everything's covered.</p>
+
+    <div class="tab-bar">
+      <button class="tab active" onclick="showTab('firestick', this)">🔥 FireStick / Cube</button>
+      <button class="tab" onclick="showTab('pc', this)">💻 PC / Mac</button>
+      <button class="tab" onclick="showTab('android', this)">📱 Android</button>
+      <button class="tab" onclick="showTab('smarttv', this)">📺 Smart TV</button>
+    </div>
+
+    <!-- FIRESTICK TAB -->
+    <div id="firestick" class="tab-content active">
+
+      <div class="gold-box" style="margin-top:24px;">
+        <div class="g-title">First — Enable Unknown Sources</div>
+        <p>Settings → My Fire TV → Developer Options → turn on "Apps from Unknown Sources" and "ADB Debugging". Do this once. Then install the Downloader app from the Amazon store — this is how you sideload everything below.</p>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">▶️ SmartTube <span class="app-tag tag-best">⭐ Best for YouTube</span></div>
+        </div>
+        <p>YouTube with zero ads, background play, 4K, Sponsorblock (skips sponsored segments automatically), picture-in-picture. This is genuinely better than YouTube Premium.</p>
+        <div class="install-line">Downloader → URL: smarttubeapp.com → install</div>
+        <div class="tip-line">💡 Set SmartTube as default for YouTube links so it opens automatically every time.</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎬 Stremio + Real-Debrid <span class="app-tag tag-setup">Needs Setup</span></div>
+        </div>
+        <p>Stremio is a streaming hub — add free add-ons and watch films and TV shows. Add Real-Debrid (£3–4/month) and the quality becomes HD/4K with fast reliable links. Best Netflix replacement available.</p>
+        <div class="install-line">Downloader → stremio.com → install → add Torrentio add-on</div>
+        <p style="margin-top:12px;font-size:14px;color:#999;">Real-Debrid: real-debrid.com — worth every penny for the quality upgrade. About £3/month.</p>
+        <div class="tip-line">💡 Even without Real-Debrid, Stremio free add-ons have huge libraries. Start free, upgrade if you want HD.</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎬 NetFly <span class="app-tag tag-free">Free</span></div>
+        </div>
+        <p>Free Netflix-style app for Fire devices. Large catalogue, no account needed, no subscription. Good for casual watching — quality varies but it works.</p>
+        <div class="install-line">Search "NetFly" in Downloader app</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎬 Cinema HD <span class="app-tag tag-free">Free</span></div>
+        </div>
+        <p>Huge film and TV library. Multiple stream sources per title so if one link breaks there are backups. Popular and regularly updated.</p>
+        <div class="install-line">Downloader → cinemahdapk.com → download APK</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">📺 Kodi <span class="app-tag tag-setup">Power User</span></div>
+        </div>
+        <p>The granddaddy of free streaming. Install Kodi, then add the Exodus Redux or The Crew add-on for films and TV. Steeper learning curve but incredibly powerful once set up.</p>
+        <div class="install-line">Downloader → kodi.tv → install → add Exodus Redux</div>
+        <div class="tip-line">💡 Search YouTube for "Kodi FireStick setup 2025" — 10-minute video will walk you through it.</div>
+      </div>
+
+    </div>
+
+    <!-- PC TAB -->
+    <div id="pc" class="tab-content">
+
+      <div class="app-card" style="margin-top:24px;">
+        <div class="app-header">
+          <div class="app-name">🛡️ uBlock Origin <span class="app-tag tag-best">⭐ Install First</span></div>
+        </div>
+        <p>Free browser extension. Blocks ALL ads on YouTube, news sites, and everywhere else. Also bypasses most newspaper paywalls as a bonus. Works on Chrome, Firefox, Edge.</p>
+        <div class="install-line">ublockorigin.com — takes 30 seconds to install</div>
+        <div class="tip-line">💡 This single extension replaces YouTube Premium on PC. Free forever.</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎬 Stremio <span class="app-tag tag-best">⭐ Best Netflix Replace</span></div>
+        </div>
+        <p>Download Stremio for Windows/Mac, install the Torrentio add-on, and you have a Netflix-quality catalogue for free. Add Real-Debrid for HD links (~£3/month).</p>
+        <div class="install-line">stremio.com → download for Windows/Mac</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎵 Spotify Web Player <span class="app-tag tag-free">Free</span></div>
+        </div>
+        <p>Use Spotify free on open.spotify.com in your browser — uBlock Origin blocks the ads automatically. More skips, no interruptions.</p>
+        <div class="install-line">open.spotify.com → use in browser with uBlock Origin running</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">📰 Newspaper Paywalls <span class="app-tag tag-free">Bypassed Free</span></div>
+        </div>
+        <p>uBlock Origin handles most. For the rest: paste the article URL into <strong>archive.ph</strong> or <strong>12ft.io</strong> and get the full article free.</p>
+        <div class="install-line">archive.ph or 12ft.io — paste any paywalled URL</div>
+      </div>
+
+    </div>
+
+    <!-- ANDROID TAB -->
+    <div id="android" class="tab-content">
+
+      <div class="app-card" style="margin-top:24px;">
+        <div class="app-header">
+          <div class="app-name">▶️ YouTube ReVanced <span class="app-tag tag-best">⭐ No-Ad YouTube</span></div>
+        </div>
+        <p>Patched version of YouTube — no ads, background play, picture-in-picture, sponsor block. Fully free. Needs manual install (APK sideload) but worth it.</p>
+        <div class="install-line">Search: "YouTube ReVanced install guide Android 2025"</div>
+        <div class="tip-line">💡 Takes about 15 minutes to set up. Saves £168/year if you were on Premium.</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎵 Mutify <span class="app-tag tag-free">Spotify Ad Muter</span></div>
+        </div>
+        <p>Automatically mutes Spotify when ads play on Android. Not perfect but takes the edge off while you decide if you need Premium at all.</p>
+        <div class="install-line">Search "Mutify" in Google Play Store</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🎬 Stremio Android <span class="app-tag tag-free">Free</span></div>
+        </div>
+        <p>Stremio has a full Android app. Same setup as PC — install Torrentio add-on, watch films and TV free. Add Real-Debrid for HD.</p>
+        <div class="install-line">Play Store: search "Stremio" → install → add Torrentio</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🌐 Brave Browser <span class="app-tag tag-free">Built-in Ad Block</span></div>
+        </div>
+        <p>Free browser with built-in ad blocking — blocks YouTube ads in browser, blocks all website ads, no extension needed. Great alternative to Chrome on Android.</p>
+        <div class="install-line">Play Store: search "Brave Browser" → install → use for YouTube</div>
+      </div>
+
+    </div>
+
+    <!-- SMART TV TAB -->
+    <div id="smarttv" class="tab-content">
+
+      <div class="gold-box" style="margin-top:24px;">
+        <div class="g-title">Best Option: Ditch the Smart TV apps</div>
+        <p>Smart TV built-in apps are slow, ad-heavy, and hard to update. Plug a FireStick or FireCube into your TV's HDMI port — it costs £20–£40 and transforms what you can do. Everything on the FireStick tab above then applies.</p>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">📺 Samsung / LG Smart TVs <span class="app-tag tag-free">Free Apps Built In</span></div>
+        </div>
+        <p>Most modern Samsung and LG TVs have free streaming built in — Pluto TV, Rakuten TV, Samsung TV Plus all come pre-installed with no subscription. Check your TV's app store before paying for anything.</p>
+        <div class="tip-line">💡 Samsung TV Plus alone has 100+ free channels including news, films, and sport highlights.</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-name">🔥 Recommend: Add a FireStick <span class="app-tag tag-best">Best Upgrade</span></div>
+        </div>
+        <p>£29.99 (often on sale for £19.99). Plug it into any HDMI port. Instant access to everything in the FireStick tab above — SmartTube, Stremio, NetFly, Cinema HD. Pays for itself in one month of cancelled Netflix.</p>
+        <div class="install-line">amazon.co.uk — search "Fire TV Stick Lite" for cheapest option</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">100% Legal — Zero Cost</div>
+    <h2>Free streaming that needs no setup</h2>
+    <p>These are fully legitimate, free, no account required, no grey area. Pure free TV.</p>
+
+    <div class="legit-grid">
+      <div class="legit-card">
+        <div class="legit-name">BBC iPlayer</div>
+        <p class="legit-desc">Massive catalogue. Needs TV licence. Best UK free streaming.</p>
+        <a href="https://www.bbc.co.uk/iplayer" target="_blank" rel="noopener" class="legit-link">bbc.co.uk/iplayer →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">ITVX</div>
+        <p class="legit-desc">Free with ads. Good drama, films, reality. No account needed to start.</p>
+        <a href="https://www.itvx.com" target="_blank" rel="noopener" class="legit-link">itvx.com →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">Channel 4 Streaming</div>
+        <p class="legit-desc">Free films, documentaries, 4Seven catch-up. Underrated library.</p>
+        <a href="https://www.channel4.com" target="_blank" rel="noopener" class="legit-link">channel4.com →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">Pluto TV</div>
+        <p class="legit-desc">100+ free live channels. Films, news, comedy, sport. No account needed.</p>
+        <a href="https://pluto.tv" target="_blank" rel="noopener" class="legit-link">pluto.tv →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">Tubi</div>
+        <p class="legit-desc">Massive free film catalogue. US-heavy but available in UK. Ad-supported.</p>
+        <a href="https://tubitv.com" target="_blank" rel="noopener" class="legit-link">tubitv.com →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">Rakuten TV</div>
+        <p class="legit-desc">Free ad-supported films. Good new releases in the free section.</p>
+        <a href="https://rakuten.tv" target="_blank" rel="noopener" class="legit-link">rakuten.tv →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">BBC Sounds</div>
+        <p class="legit-desc">Free music, podcasts, radio. Huge catalogue. Replaces Spotify for many.</p>
+        <a href="https://www.bbc.co.uk/sounds" target="_blank" rel="noopener" class="legit-link">bbc.co.uk/sounds →</a>
+      </div>
+      <div class="legit-card">
+        <div class="legit-name">My5 (Channel 5)</div>
+        <p class="legit-desc">Free catch-up plus live Channel 5. Free account, easy setup.</p>
+        <a href="https://www.channel5.com" target="_blank" rel="noopener" class="legit-link">channel5.com →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">The Smart Setup</div>
+    <h2>Best free streaming stack — total cost £0</h2>
+
+    <div class="steps-block">
+      <h3>The complete free setup in order</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>FireStick:</strong> Enable Unknown Sources → install Downloader → install SmartTube (YouTube sorted).</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>FireStick:</strong> Install Stremio via Downloader → add Torrentio add-on → films and TV sorted.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>PC:</strong> Install uBlock Origin → kills YouTube ads + newspaper paywalls in one go.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Phone:</strong> Install Brave Browser for ad-free browsing + YouTube. Install Mutify for Spotify.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Cancel:</strong> Netflix, YouTube Premium, Spotify Premium, Amazon Video ad-free tier. Done.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-text"><strong>Bookmark:</strong> iPlayer, ITVX, Pluto TV, Tubi for when you want something legit and simple.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Worth Knowing</div>
+    <h2>VPN — do you need one?</h2>
+    <p>A VPN lets you appear to be in another country — useful for accessing region-locked content. For basic free streaming on the apps above you don't need one. If you want to access US Netflix or other region-locked content, a free VPN tier (ProtonVPN free) works for occasional use.</p>
+
+    <div class="warning-box">
+      <div class="w-title">Free VPNs — be careful</div>
+      <p>Many free VPNs sell your browsing data. ProtonVPN's free tier is genuinely trustworthy. Avoid random free VPNs from the app store — they make money from your data, not from you.</p>
+    </div>
+  </div>
+
+  <div class="share-nudge">
+    <p><strong>Got a mate still paying for Netflix?</strong><br>Send them this. Takes 20 minutes to set up and saves them £200+ a year.</p>
+    <a href="/free-streaming/" class="cta-btn" style="max-width:400px;margin:0 auto;">Share this guide →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of the <a href="https://skintbutsorted.floot.app">Skint But Sorted</a> network · Free, always · No ads · Built for real people</p>
+  <p style="margin-top:8px;">App availability changes — verify before cancelling paid subscriptions. Apps listed for information only.</p>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

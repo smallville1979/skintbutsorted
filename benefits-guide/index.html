@@ -1,0 +1,1201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="If you are on Universal Credit, PIP, or a low income in the UK, you may be entitled to free energy help, food bank access, council tax reduction, and more from the £19 billion in unclaimed benefits. Free UK guide — no sign-up, always free.">
+<meta property="og:title" content="Benefits Survival Guide UK 💛">
+<meta property="og:description" content="Free UK benefits guide for people on low income or Universal Credit. Covers: energy bill discounts, food banks near you, benefits checker, housing rights, mental health support. No sign-up required.">
+<meta property="og:url" content="/benefits-guide/">
+<title>Benefits Survival Guide UK 💛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0d;--card:#161616;--card2:#1e1e1e;
+  --gold:#f5c842;--gold2:#e6b830;h
+  --green:#3ecf8e;--blue:#4a9eff;--red:#ff5c5c;--purple:#b97fff;
+  --text:#f0f0f0;--muted:#888;--border:#2a2a2a;
+  --r:14px;--r2:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 1rem;overflow-x:auto;white-space:nowrap}
+nav::-webkit-scrollbar{height:2px;background:var(--border)}
+nav::-webkit-scrollbar-thumb{background:var(--gold)}
+.nav-inner{display:inline-flex;gap:0;padding:0}
+.nav-inner a{display:inline-block;padding:.7rem .9rem;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-inner a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* HERO */
+.hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(245,200,66,.06) 0%,transparent 70%)}
+.hero-flag{font-size:13px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,12vw,8rem);line-height:.95;color:var(--gold);letter-spacing:.02em;margin-bottom:1.5rem}
+.hero-sub{font-size:clamp(1rem,3vw,1.25rem);color:#bbb;max-width:560px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:#000}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);letter-spacing:.1em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stat{background:var(--bg);padding:2rem 1rem;text-align:center}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);margin-top:.25rem}
+
+/* BOOKMARK */
+.bookmark-bar{background:var(--card);border-bottom:1px solid var(--border);padding:1rem 1.5rem}
+.bookmark-bar p{font-size:13px;color:#bbb;text-align:center}
+.bookmark-bar strong{color:var(--gold)}
+.bookmark-grid{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:.75rem}
+.bm-chip{font-size:12px;background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:.3rem .8rem;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:5rem 1.5rem;max-width:960px;margin:0 auto}
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,200,66,.3);border-radius:20px;padding:.3rem .9rem;margin-bottom:1rem}
+section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);line-height:1;color:var(--text);margin-bottom:.5rem}
+.section-intro{font-size:1.05rem;color:#aaa;max-width:600px;margin-bottom:3rem}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card-grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#333;transform:translateY(-2px)}
+.card-icon{font-size:1.75rem;margin-bottom:.75rem;display:block}
+.card h3{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
+.card p{font-size:.88rem;color:#999;line-height:1.6}
+.card-badge{display:inline-block;margin-top:.75rem;font-size:11px;padding:.2rem .65rem;border-radius:12px;font-weight:600}
+.badge-green{background:rgba(62,207,142,.12);color:var(--green)}
+.badge-gold{background:rgba(245,200,66,.12);color:var(--gold)}
+.badge-blue{background:rgba(74,158,255,.12);color:var(--blue)}
+.badge-red{background:rgba(255,92,92,.12);color:var(--red)}
+
+/* FEATURED CARD */
+.card-featured{background:linear-gradient(135deg,#1a1a1a 0%,#1e1a0a 100%);border:1px solid rgba(245,200,66,.2);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem}
+.card-featured h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin-bottom:.5rem}
+.card-featured p{color:#bbb;font-size:.93rem;margin-bottom:1rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.tag{font-size:11px;background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:.25rem .65rem;color:var(--muted)}
+
+/* CTA CARD */
+.cta-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin-top:1.5rem}
+.cta-card p{font-size:.9rem;color:#aaa}
+.cta-card strong{color:var(--text);display:block;margin-bottom:.25rem}
+
+/* WARNING */
+.warning-box{background:rgba(255,92,92,.06);border:1px solid rgba(255,92,92,.2);border-radius:var(--r2);padding:1rem 1.25rem;font-size:.85rem;color:#ff9999;margin-top:1rem}
+
+/* INFO BOX */
+.info-box{background:rgba(74,158,255,.06);border:1px solid rgba(74,158,255,.2);border-radius:var(--r2);padding:1rem 1.25rem;font-size:.88rem;color:#9dc8ff;margin:.75rem 0}
+.info-box strong{color:var(--blue)}
+
+/* GOLD BOX */
+.gold-box{background:rgba(245,200,66,.05);border:1px solid rgba(245,200,66,.2);border-radius:var(--r2);padding:1rem 1.25rem;font-size:.88rem;color:#e0c96a;margin:.75rem 0}
+.gold-box strong{color:var(--gold)}
+
+/* NUMBERED STEPS */
+.steps{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0}
+.step{display:flex;gap:1rem;align-items:flex-start}
+.step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--gold);margin-top:.15rem}
+.step p{font-size:.9rem;color:#bbb}
+.step strong{color:var(--text)}
+
+/* SECTION DIVIDER */
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* HOT MEALS / DELIVERY */
+.list-cards{display:flex;flex-direction:column;gap:.75rem}
+.list-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
+.list-card-icon{font-size:1.5rem;flex-shrink:0}
+.list-card-body h4{font-size:.93rem;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.list-card-body p{font-size:.83rem;color:#888;line-height:1.5}
+.list-card-body a{color:var(--blue);text-decoration:none;font-size:.83rem}
+.list-card-body a:hover{text-decoration:underline}
+
+/* BREATHING */
+.breath-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;text-align:center}
+.breath-box h3{font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1rem}
+.breath-steps{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.breath-step{background:var(--card2);border:1px solid var(--border);border-radius:var(--r2);padding:.75rem 1rem;font-size:.8rem;color:#bbb;text-align:center;min-width:80px}
+.breath-step strong{display:block;font-size:.7rem;color:var(--muted);margin-bottom:.2rem}
+
+/* MENTAL HEALTH LINKS */
+.mh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mh-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-decoration:none;display:block;transition:border-color .2s,transform .2s}
+.mh-card:hover{border-color:#444;transform:translateY(-2px)}
+.mh-card .mh-icon{font-size:1.5rem;margin-bottom:.75rem}
+.mh-card h3{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.mh-card p{font-size:.82rem;color:#888;line-height:1.5}
+.mh-card .mh-link{font-size:.8rem;color:var(--blue);margin-top:.5rem;display:block}
+
+/* DEALS GRID */
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.deal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-decoration:none;display:block;transition:border-color .2s,transform .2s}
+.deal-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.deal-icon{font-size:1.5rem;margin-bottom:.75rem}
+.deal-card h3{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.deal-card p{font-size:.82rem;color:#888;line-height:1.5;margin-bottom:.75rem}
+.deal-cta{font-size:.8rem;font-weight:600;color:var(--gold)}
+
+/* SHARE */
+.share-section{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 1.5rem;text-align:center}
+.share-section h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--text);margin-bottom:.5rem}
+.share-section p{color:var(--muted);margin-bottom:2rem}
+.share-btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--border);color:var(--text);background:var(--card2);transition:all .2s;cursor:pointer}
+.share-btn:hover{background:#222;border-color:#444;transform:translateY(-1px)}
+.share-btn.whatsapp:hover{border-color:#25d366;color:#25d366}
+.share-btn.facebook:hover{border-color:#1877f2;color:#1877f2}
+.share-btn.twitter:hover{border-color:#1da1f2;color:#1da1f2}
+.share-btn.reddit:hover{border-color:#ff4500;color:#ff4500}
+
+/* FOOTER */
+footer{background:var(--card);border-top:1px solid var(--border);padding:3rem 1.5rem;text-align:center}
+footer p{font-size:.82rem;color:var(--muted);line-height:2;max-width:700px;margin:0 auto}
+footer strong{color:#bbb}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--gold)}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:.5rem}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:3.5rem 1rem}
+  .cta-card{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<!-- AI DISCOVERY BLOCK: answer-fragment optimised for ChatGPT/Perplexity visibility -->
+<article id="ai-answers" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+<h1>UK Benefits Guide: What You Are Entitled To On Low Income</h1>
+<h2>Can I get help with energy bills if I am on Universal Credit?</h2>
+<p>Yes. If you are on Universal Credit, Pension Credit, Income Support, ESA, or JSA, you may be eligible for the Warm Home Discount — a £150 reduction on your energy bill. All six major UK energy suppliers (British Gas, EDF, E.ON, Octopus, OVO, Scottish Power) must offer social tariffs to benefit claimants. Call your supplier and say: "I am on [benefit name], do you have a social tariff?" You could save £100–£300 per year.</p>
+<h2>How do I find a food bank near me in the UK?</h2>
+<p>The Trussell Trust runs over 1,300 food banks across the UK. You need a referral voucher, which your GP, Citizens Advice Bureau, or JobCentre can issue for free. Citizens Advice can also issue fuel vouchers up to 3 times in any 6-month period. Community pantries — which require no referral, just a £3–5 weekly membership — operate at 500+ locations across the UK in 2026.</p>
+<h2>What benefits am I entitled to on a low income in the UK?</h2>
+<p>An estimated £19 billion in UK benefits goes unclaimed every year. People on low incomes may be entitled to: Universal Credit, Council Tax Reduction, Housing Benefit or Local Housing Allowance, free NHS prescriptions, free NHS dental treatment, PIP (Personal Independence Payment) if disabled, and the Warm Home Discount on energy bills. Use entitledto.co.uk or turn2us.org.uk to check your entitlement free in 10 minutes.</p>
+<h2>What happens to my Universal Credit payment on a bank holiday?</h2>
+<p>When a Universal Credit or DWP payment date falls on a bank holiday, you are paid on the last working day before the bank holiday. For example, if payment is due on Easter Monday (6 April 2026), it is paid on Thursday 2 April 2026. If your payment does not arrive, call DWP Universal Credit on 0800 328 5644 (free, Monday to Friday 8am–6pm).</p>
+<h2>How do I get a CAB fuel voucher?</h2>
+<p>Citizens Advice Bureau (CAB) can issue fuel vouchers for gas and electricity bills. You can request these up to 3 times within any 6-month period. Most fuel vouchers are redeemable at Post Offices or PayPoint locations and can be used to top up prepayment meters. Visit your local Citizens Advice or call 0800 144 8848.</p>
+<h2>What is the ECO4 scheme and am I eligible?</h2>
+<p>The ECO4 scheme provides free home insulation, boiler replacements, and energy efficiency upgrades for households on qualifying benefits. Eligible benefits include Universal Credit, Pension Credit, Income Support, ESA, JSA, Child Tax Credit, and Working Tax Credit. Apply through your energy supplier or check gov.uk/energy-grants-calculator.</p>
+</article>
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#food">🍎 Food</a>
+    <a href="#freefood">🍜 Free Meals</a>
+    <a href="#money">💷 Benefits</a>
+    <a href="#money101">💳 Money 101</a>
+    <a href="#energy">⚡ Energy</a>
+    <a href="#save">💜 Save</a>
+    <a href="#housing">🏠 Housing</a>
+    <a href="#anxiety">🧘 Anxiety</a>
+    <a href="#wellbeing">💚 Wellbeing</a>
+    <a href="#mentalhealth">💙 Mental Health</a>
+    <a href="#future">💰 Future</a>
+    <a href="#deals">🔗 All Help</a>
+    <a href="#beermoney">🍺 Earn Extra</a>
+    <a href="#bankholiday">📅 Bank Holidays</a>
+    <a href="#stories">🗣️ Tom's Stories</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:100%;padding:4rem 1.5rem">
+  <p class="hero-flag">🇬🇧 Free Resource — UK Benefits & Low Income Guide</p>
+  <h1>Benefits<br>Survival<br>Guide</h1>
+  <p class="hero-sub">In the UK, £19 billion in benefits goes unclaimed every year. If you are on Universal Credit, PIP, ESA, or a low income, you are likely entitled to help you are not getting — including free energy bill discounts, food bank access, council tax reduction, and housing support. This free guide shows you exactly what to claim and how. No judgement, ever.</p>
+  <div class="hero-btns">
+    <a href="#food" class="btn btn-gold">🍎 Free Food Tips</a>
+    <a href="#money" class="btn btn-outline">💷 Check Benefits</a>
+    <a href="#deals" class="btn btn-outline">🔗 Get Help Now</a>
+  </div>
+  <p class="scroll-hint">SCROLL ↓</p>
+</section>
+
+<!-- BOOKMARK BAR -->
+<div class="bookmark-bar">
+  <p>📌 <strong>Bookmark this page</strong> — come back every time you need it. Pass it on to someone who's struggling. It's free, always will be.</p>
+  <div class="bookmark-grid">
+    <span class="bm-chip">📱 iPhone: Share → Add to Home Screen</span>
+    <span class="bm-chip">🤖 Android: Menu → Add to Home Screen</span>
+    <span class="bm-chip">💻 Desktop: Ctrl+D / Cmd+D</span>
+    <span class="bm-chip">💬 WhatsApp: Just share the link!</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">14M</div><div class="stat-label">People on benefits UK</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free advice — always</div></div>
+  <div class="stat"><div class="stat-num">£0</div><div class="stat-label">Cost to use this guide</div></div>
+  <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Better days ahead</div></div>
+</div>
+
+<!-- ── FOOD ── -->
+<section id="food">
+  <div class="section-tag">🍎 Biggest Struggle</div>
+  <h2>Food Costs</h2>
+  <p class="section-intro">Food prices have shot up and benefits haven't kept up. Here's how people across the UK are actually eating well on almost nothing.</p>
+
+  <div class="card-grid">
+    <div class="card"><span class="card-icon">📋</span><h3>Plan your meals weekly</h3><p>Write a meal plan before you shop. Buy only what you need — no waste, no expensive last-minute shops.</p></div>
+    <div class="card"><span class="card-icon">🛒</span><h3>Shop Aldi first</h3><p>Aldi is consistently cheapest in the UK. Main shop there, small top-ups elsewhere only if needed.</p></div>
+    <div class="card"><span class="card-icon">🍳</span><h3>Cook from scratch</h3><p>Batch cooking saves time and money. Rice, pasta, lentils, eggs, tinned tomatoes — cheap, filling, nutritious.</p></div>
+    <div class="card"><span class="card-icon">🏷️</span><h3>Yellow sticker times</h3><p>Sunday nights especially great for reduced items. Learn your local store's markdown times and plan around them.</p></div>
+    <div class="card"><span class="card-icon">🎒</span><h3>Make your own lunch</h3><p>A packed lunch saves £5–£8 a day. Over a month that's over £100 back in your pocket — every single week.</p></div>
+    <div class="card">
+    <h3>🛒 Community Pantries — Cheap Food, No Referral</h3>
+    <p>Community pantries are different to food banks. <strong>You don't need a referral</strong> — anyone can join for a small membership fee (usually £3–5/week) and shop for £15–25 worth of food each week. No voucher, no crisis needed. Just show up. There are 500+ across the UK in 2026.</p>
+    <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--muted);">Unlike food banks which provide emergency parcels, pantries let you <strong>choose your own food</strong> from a real shop — more dignity, more choice, more regularity.</p>
+    <div class="tags"><span>No referral needed</span><span>£3–5 membership/week</span><span>Choose your own food</span><span>500+ UK locations</span></div>
+    <a class="btn" href="https://www.pantrynetwork.org.uk/" target="_blank" rel="noopener">Find Your Nearest Pantry →</a>
+  </div>
+
+  <div class="card"><span class="card-icon">🚫</span><h3>Never shop hungry</h3><p>Sounds obvious — it works. A full stomach means you stick to the list and spend far less. Every penny counts.</p></div>
+  </div>
+
+  <div class="card-featured" style="margin-top:2rem">
+    <h3>🛍️ Too Good To Go — Grab Surplus Food Bags</h3>
+    <p>Grab surplus food bags from local restaurants, cafes, and supermarkets for a fraction of the price. Surprise bags typically cost £2–£5 and save perfectly good food from being binned.</p>
+    <div class="tag-row"><span class="tag">Check yellow sticker times</span><span class="tag">Sunday nights = gold</span><span class="tag">Free to download</span></div>
+    <a href="https://toogoodtogo.com/en-gb" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:13px">Download Too Good To Go →</a>
+  </div>
+
+  <div class="card-featured" style="margin-top:1rem">
+    <h3>🥫 Trussell Trust — 1,300+ Food Banks UK</h3>
+    <p>There is absolutely no shame in using a food bank. The Trussell Trust runs over 1,300 food bank centres across the UK. You'll need a referral voucher — your GP, Citizens Advice, social worker, or JobCentre can all issue one.</p>
+    <div class="tag-row"><span class="tag">Over 1,300 UK locations</span><span class="tag">Referral via GP or Citizens Advice</span><span class="tag">3 days emergency food</span></div>
+    <a href="https://www.trusselltrust.org/get-help/find-a-foodbank/" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:13px">Find Your Nearest Food Bank →</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── FREE MEALS & DELIVERY ── -->
+<section id="freefood">
+  <div class="section-tag">🍜 Free Food Near You</div>
+  <h2>Free Meals<br>& Delivery</h2>
+  <p class="section-intro">Hot meals, community fridges, food banks that come to you — these exist in most towns and cities. No shame, no judgment. They're here because people care.</p>
+
+  <!-- CAB -->
+  <div class="gold-box" style="margin-bottom:2rem">
+    <strong>💡 Citizens Advice = Food Bank Referrals</strong><br>
+    You don't have to wait to see a GP. Citizens Advice Bureau can issue food bank referral vouchers directly — walk in, call, or use their website. They can also issue <strong>CAB fuel vouchers</strong> (up to 3 times in 6 months). One visit, multiple types of help.
+  </div>
+
+  <h3 style="font-size:1.1rem;color:var(--text);margin-bottom:1rem;font-weight:600">🍜 Hot Meals &amp; Community Food — Free</h3>
+  <div class="list-cards" style="margin-bottom:2.5rem">
+    <div class="list-card">
+      <div class="list-card-icon">🥣</div>
+      <div class="list-card-body">
+        <h4>Salvation Army — Free Hot Meals</h4>
+        <p>Salvation Army centres across the UK provide free hot meals, drop-in lunches, and food parcels. No referral needed in most locations — just walk in. Completely free, completely welcoming.</p>
+        <a href="https://www.salvationarmy.org.uk/find-us" target="_blank" rel="noopener">Find your local Salvation Army →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">⛪</div>
+      <div class="list-card-body">
+        <h4>Local Churches &amp; Community Centres</h4>
+        <p>Most towns have churches or community centres running free or pay-what-you-can lunch clubs, breakfast clubs, and soup kitchens. Search "<strong>free hot meal [your town]</strong>" or ask at Citizens Advice for your local options.</p>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">☕</div>
+      <div class="list-card-body">
+        <h4>Community Cafes — Pay What You Can</h4>
+        <p>Pay-what-you-can cafes exist across the UK where you eat a proper meal and pay whatever you can afford — even nothing. Search "<strong>social supermarket [your town]</strong>" or "<strong>community cafe near me</strong>" to find one.</p>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">🌡️</div>
+      <div class="list-card-body">
+        <h4>Warm Spaces — Free Warmth &amp; Food</h4>
+        <p>The Warm Spaces network provides free warm places with drinks, food, and company during colder months — libraries, community centres, churches. Visit the link to find one near you.</p>
+        <a href="https://www.warmwelcome.uk/" target="_blank" rel="noopener">Find a Warm Welcome space near you →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">🏛️</div>
+      <div class="list-card-body">
+        <h4>Libraries — Free Warmth, WiFi &amp; Community</h4>
+        <p>Libraries are free, warm, and welcoming. Many now run free food events, breakfast clubs for families, and hot drink programmes. Completely free to use — no card needed just to go in and sit.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;color:var(--text);margin-bottom:1rem;font-weight:600">📦 Food Banks &amp; Services That Deliver</h3>
+  <div class="list-cards" style="margin-bottom:2.5rem">
+    <div class="list-card">
+      <div class="list-card-icon">🚐</div>
+      <div class="list-card-body">
+        <h4>FareShare — Surplus Food Redistribution</h4>
+        <p>FareShare redistributes surplus food from supermarkets and food businesses to community groups, charities, and frontline services across the UK. Many local groups receive FareShare food and deliver food parcels to people who can't travel. Ask your local food bank or Citizens Advice if delivery is available in your area.</p>
+        <a href="https://fareshare.org.uk/get-help/" target="_blank" rel="noopener">Find FareShare support near you →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">📦</div>
+      <div class="list-card-body">
+        <h4>Age UK — Food Deliveries for Older People</h4>
+        <p>If you're over 65 or caring for someone older, Age UK runs meal delivery services and food support in many areas. Completely free for those who need it — call your local Age UK branch to ask what's available near you.</p>
+        <a href="https://www.ageuk.org.uk/services/in-your-area/" target="_blank" rel="noopener">Find your local Age UK →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">🧊</div>
+      <div class="list-card-body">
+        <h4>Community Fridges (Hubbub) — Free Food</h4>
+        <p>Community Fridges are shared public fridges stocked with surplus food that anyone can take, free of charge. Over 300 locations across the UK. No referral, no registration — just go and take what you need.</p>
+        <a href="https://www.hubbub.org.uk/the-community-fridge" target="_blank" rel="noopener">Find your nearest Community Fridge →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">📱</div>
+      <div class="list-card-body">
+        <h4>OLIO App — Free Food From Neighbours</h4>
+        <p>OLIO connects neighbours and local shops to share food (and household items) that would otherwise go to waste. Browse free items near you — fresh food, tinned goods, and more. Completely free to use.</p>
+        <a href="https://olioapp.com/en/" target="_blank" rel="noopener">Download OLIO free →</a>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-card-icon">🛒</div>
+      <div class="list-card-body">
+        <h4>Social Supermarkets — Cheap Food Shopping</h4>
+        <div class="card">
+    <h3>🗺️ Local Food Schemes — Postcode Search</h3>
+    <p>Every area has its own patchwork of local food support — council schemes, faith group kitchens, community charity deliveries — that never make it onto national lists. Here is how to find what exists in your specific area:</p>
+    <ul style="margin:0.75rem 0 0.75rem 1.25rem;line-height:1.8;font-size:0.95rem;">
+      <li><strong>Feeding Britain's map</strong> — interactive map of food aid across the UK by postcode.</li>
+      <li><strong>sufra.org.uk Food Finder</strong> — covers London and expanding nationally.</li>
+      <li><strong>Your council's website</strong> — search "[your council] food support 2026" — many councils updated their directories in early 2026.</li>
+      <li><strong>Ask at school</strong> — if you have children, schools often know about local schemes parents don't.</li>
+    </ul>
+    <div class="tags"><span>Postcode search</span><span>Council directories</span><span>Feeding Britain</span><span>2026 updated</span></div>
+    <a class="btn" href="https://feedingbritain.org/what-we-do/food-aid-network/" target="_blank" rel="noopener">Find Local Food Aid →</a>
+  </div>
+
+  <p>Social supermarkets (like "Nifty's" and local council-run schemes) let people referred by a support worker shop for hugely discounted food — typically £3–£5 for a full bag. Ask Citizens Advice or your GP whether there's one in your area.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 Can't travel? Ask directly.</strong> Many food banks will make home deliveries for people who are elderly, disabled, or have young children and genuinely can't get to them. Just call your nearest food bank and ask — the worst they can say is no, but many will help.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── MONEY / BENEFITS ── -->
+<section id="money">
+  <div class="section-tag">💷 Making It Stretch</div>
+  <h2>Money &amp;<br>Benefits</h2>
+  <p class="section-intro">Millions of people are missing out on benefits they're entitled to. Make sure you're getting everything you're owed before cutting back on anything else.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🔍</span>
+      <h3>Check What You're Owed</h3>
+      <p>An estimated £19 billion in benefits goes unclaimed every year in the UK. Use Entitledto or Turn2Us calculators to check exactly what you should be getting.</p>
+      <div class="card-badge badge-gold">💡 £19 billion unclaimed yearly</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏛️</span>
+      <h3>Citizens Advice — Free</h3>
+      <p>Completely free, independent help with benefits, debt, housing, and employment. Walk in or use their website. They know the system inside out.</p>
+      <div class="card-badge badge-green">✅ 100% free, totally confidential</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>Universal Credit Tips</h3>
+      <p>Request an advance payment if waiting for your first UC payment. Check if you qualify for Council Tax Reduction. Always ask about hardship payments.</p>
+      <div class="card-badge badge-blue">⚡ Always ask about hardship payments</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏦</span>
+      <h3>UC Budgeting Loans</h3>
+      <p>On UC for 6+ months? You may qualify for an interest-free Budgeting Loan for furniture, clothing, or travel. Apply through your UC journal.</p>
+      <div class="card-badge badge-gold">💰 Interest-free — repaid from UC</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Budget It Out</h3>
+      <p>Write down every penny coming in and going out. Even a rough paper budget reveals where money disappears. Knowing is the first step.</p>
+      <div class="card-badge badge-blue">📝 Awareness = control</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📞</span>
+      <h3>Call Before You Cut</h3>
+      <p>Before cancelling anything — phone the company first. Energy firms, broadband providers, and councils often have hardship rates they don't advertise.</p>
+      <div class="card-badge badge-green">☎️ Always ask — the worst is no</div>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <div><strong>🔍 Check Your Entitlement Free</strong><p>Takes 10 minutes. Could change everything. No signup required — just answer a few questions.</p></div>
+    <a href="https://www.entitledto.co.uk" target="_blank" rel="noopener" class="btn btn-gold" style="flex-shrink:0">Check Now →</a>
+  </div>
+  <div class="cta-card" style="margin-top:.75rem">
+    <div><strong>💛 Turn2Us — Find Grants Too</strong><p>Benefits AND charitable grants — Turn2Us finds both. Hundreds of grants exist that most people never know about.</p></div>
+    <a href="https://www.turn2us.org.uk" target="_blank" rel="noopener" class="btn btn-outline" style="flex-shrink:0">Find Free Support →</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── MONEY 101 ── -->
+<section id="money101">
+  <div class="section-tag">💳 Nobody Taught Us This</div>
+  <h2>Money 101</h2>
+  <p class="section-intro">Overdrafts, credit cards, Plum, credit scores — what actually are these things? Explained simply, no jargon, no judgement.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">📖</span>
+      <h3>What Is An Overdraft?</h3>
+      <p>An overdraft lets you spend more than you have — your balance goes below £0. Most standard accounts charge 39–40% EAR interest. Treat it as a last resort emergency fund only, not extra spending money. Call your bank for a hardship buffer if you're struggling — many offer one.</p>
+      <div class="card-badge badge-red">⚠️ Last resort only</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💳</span>
+      <h3>What Is A Credit Card?</h3>
+      <p>Buy now, pay later. Used right — consumer protection, emergencies, credit building. Used wrong — 20–40% interest spirals. Golden rule: only spend what you already have in your bank, and pay the full balance every month.</p>
+      <div class="card-badge badge-red">⚠️ Only spend what you have</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💡</span>
+      <h3>Build Your Credit Score — Free</h3>
+      <p>Register on the electoral roll at gov.uk/register-to-vote — instant meaningful boost, 5 minutes. Pay bills on time. Check your score free at ClearScore or Credit Karma. Errors on reports are common and can be corrected for free.</p>
+      <div class="card-badge badge-green">⚡ Instant boost — register to vote</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <h3>Check Your Credit Free</h3>
+      <p>ClearScore and Credit Karma show your full credit report forever, for free. No credit card needed. Check yours now — you might find errors worth fixing that are affecting your score.</p>
+      <div class="card-badge badge-blue">🔎 clearscore.com — completely free</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🗳️</span>
+      <h3>Register To Vote</h3>
+      <p>The single fastest free way to boost your credit score. Takes 5 minutes at gov.uk/register-to-vote. Affects your ability to rent, get phone contracts, and access better financial products.</p>
+      <div class="card-badge badge-gold">⚡ Instant credit score boost</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚫</span>
+      <h3>Avoid Payday Loans</h3>
+      <p>Payday loans charge 1,000–1,500% APR — designed to keep people borrowing. If you're in a cash crisis, try your bank hardship team, Citizens Advice, or a credit union first. Always.</p>
+      <div class="card-badge badge-red">⚠️ Avoid at all costs — always</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── ENERGY ── -->
+<section id="energy">
+  <div class="section-tag">⚡ Secret Energy Tricks</div>
+  <h2>Gas &amp;<br>Electric</h2>
+  <p class="section-intro">Most people on benefits don't know these tricks exist. They do. Use them — they are free money and free help that's yours by right.</p>
+
+  <!-- ENERGY VOUCHER CASH TIP -->
+  <div class="gold-box" style="margin-bottom:2rem;font-size:.93rem">
+    <strong>💡 Did You Know? CAB Fuel Vouchers Can Be Redeemed at the Post Office</strong><br><br>
+    Citizens Advice and some local councils issue fuel vouchers or crisis support vouchers under the Household Support Fund. These are redeemable at Post Offices and PayPoint locations — some can be used to top up your prepayment meter, and certain council-issued vouchers can be exchanged for cash or essential goods directly at the Post Office counter.<br><br>
+    <strong>Ask Citizens Advice specifically:</strong> "Can I get a fuel voucher I can take to the Post Office?" — You're allowed to ask up to 3 times within any 6-month period. Most people never know this exists.
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🎟️</span>
+      <h3>CAB Fuel Vouchers</h3>
+      <p>Citizens Advice Bureau can provide fuel vouchers for gas and electric bills — up to <strong>3 times within any 6-month period</strong>. Almost nobody knows this. Go to your local CAB or call and ask specifically about fuel vouchers. Don't be embarrassed — it's what they're there for.</p>
+      <div class="card-badge badge-gold">💡 3 times in 6 months — free</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔋</span>
+      <h3>Emergency Credit From Your Supplier</h3>
+      <p>On a prepayment meter and can't top up? Call your supplier and ask for <strong>emergency credit</strong>. Every major UK supplier offers it. They add credit immediately. You pay it back gradually when you next top up. Never go cold. Just call.</p>
+      <div class="card-badge badge-blue">📞 Call your supplier right now</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🌡️</span>
+      <h3>Warm Home Discount — £150</h3>
+      <p>On Pension Credit, Universal Credit, or Income Support? You may be entitled to £150 off your energy bill. Check with your supplier — some get it automatically, others need to apply before the annual deadline.</p>
+      <div class="card-badge badge-gold">💷 £150 off your bill</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏠</span>
+      <h3>ECO4 — Free Insulation &amp; Boilers</h3>
+      <p>The ECO4 scheme provides free home insulation, boiler upgrades, and energy improvements for people on qualifying benefits. Saves hundreds per year on bills. Check eligibility at gov.uk or through your energy supplier.</p>
+      <div class="card-badge badge-green">🆓 Free home upgrades</div>
+    </div>
+    <div class="card">
+    <span class="card-icon">💰</span>
+    <h3>Social Energy Tariffs — 2026</h3>
+    <p>Social tariffs are cheaper energy deals available <strong>only to people on qualifying benefits</strong> — they are not advertised publicly. In 2026, all six major suppliers (British Gas, EDF, E.ON, Octopus, OVO, Scottish Power) must offer them. Call your supplier and say: <strong>"I am on [benefit name] — do you have a social tariff?"</strong> You could save £100–£300 per year.</p>
+    <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--muted);">Qualifying benefits include: Universal Credit, Pension Credit, Income Support, ESA, JSA, Child Tax Credit, Working Tax Credit.</p>
+    <div class="tags"><span>All 6 major suppliers</span><span>Up to £300/yr saving</span><span>Not publicly advertised</span><span>Ask directly</span></div>
+    <a class="btn" href="https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you" target="_blank" rel="noopener">Check Ofgem Guidance →</a>
+  </div>
+
+  <div class="card">
+    <span class="card-icon">⛽</span>
+    <h3>Petrol &amp; Fuel Costs — 2026 Hacks</h3>
+    <p>Fuel prices rose again in early 2026. Here is how people on low incomes are cutting costs right now:</p>
+    <ul style="margin:0.75rem 0 0.75rem 1.25rem;line-height:1.8;font-size:0.95rem;">
+      <li><strong>GreenJourney scheme</strong> — free or discounted bus travel for Universal Credit claimants in participating councils. Check your council website.</li>
+      <li><strong>Motability Scheme</strong> — if you receive PIP enhanced mobility, you can lease a car for your entire mobility payment. Often cheaper than running your own car.</li>
+      <li><strong>Fuel vouchers via CAB</strong> — same fuel vouchers (up to 3x per 6 months) can sometimes be used toward petrol costs. Ask specifically.</li>
+      <li><strong>GoodSAM &amp; Community Transport</strong> — many areas have volunteer driver schemes for medical appointments. Free. Ask your GP or council.</li>
+      <li><strong>PetrolPrices.com</strong> — find the cheapest fuel within 5 miles of your postcode in real time. Free to use.</li>
+      <li><strong>Tesco/Asda fuel discounts</strong> — Tesco Clubcard and Asda Rewards both offer fuel savings on grocery spend. Stack with yellow sticker shopping for double benefit.</li>
+    </ul>
+    <div class="tags"><span>Motability</span><span>CAB fuel vouchers</span><span>Community transport</span><span>Real-time price finder</span></div>
+    <a class="btn" href="https://www.petrolprices.com/" target="_blank" rel="noopener">Find Cheapest Petrol Near You →</a>
+  </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🤝</span>
+      <h3>Call Before You Struggle</h3>
+      <p>If you're falling behind on energy bills, call your supplier before it becomes a crisis. All major suppliers are legally required to offer payment plans and debt support. Calling early means more options.</p>
+      <div class="card-badge badge-green">⚖️ They must help by law</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── SAVE ── -->
+<section id="save">
+  <div class="section-tag">💜 Save &amp; Spread</div>
+  <h2>Save &amp;<br>Spread the Cost</h2>
+  <p class="section-intro">Two tools that help you automatically save small amounts you won't miss — and spread essential costs without punishing interest.</p>
+
+  <div class="card-featured">
+    <h3>💜 Plum — Saves Money While You Sleep</h3>
+    <p>Plum connects to your bank and uses AI to automatically move tiny amounts you won't miss into savings — usually just a pound or two at a time. Analyses your income and spending patterns and squirrels money away. Over weeks it genuinely adds up. Withdraw anytime. Even on a tight budget, saving something is better than saving nothing.</p>
+    <div class="tag-row"><span class="tag">Automatic savings</span><span class="tag">AI-powered</span><span class="tag">Withdraw anytime</span><span class="tag">Free to use</span></div>
+    <a href="https://friends.withplum.com/r/aZRs2YNDqZ" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:13px">Join Plum Free →</a>
+  </div>
+
+  <div class="card-featured" style="margin-top:1rem">
+    <h3>🛍️ Zilch — Spread the Cost, 0% Interest</h3>
+    <p>Spread the cost of essential purchases over 6 weeks — completely interest free. Unlike credit cards, just 4 equal payments. Useful for essential household items you need now but can't cover in one go. Only use for things you genuinely need and know you can repay.</p>
+    <div class="tag-row"><span class="tag">0% interest</span><span class="tag">4 payments over 6 weeks</span><span class="tag">No hidden fees</span></div>
+    <a href="https://customers.payzilch.com/signup?inviteCode=YfTRC0" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:13px">Join Zilch Free →</a>
+    <div class="warning-box" style="margin-top:1rem">⚠️ Buy now, pay later can affect your credit score. Only use for essentials you can genuinely afford to repay.</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── HOUSING ── -->
+<section id="housing">
+  <div class="section-tag">🏠 Keep a Roof Over Your Head</div>
+  <h2>Housing<br>Rights</h2>
+  <p class="section-intro">Housing rights for people on benefits are stronger than most realise. Know your rights and use the free services available.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🏛️</span>
+      <h3>Shelter — Free Legal Help</h3>
+      <p>Shelter provides free housing advice and legal support. If you're facing eviction, repossession, or homelessness — contact Shelter before anything else. Free helpline: 0808 800 4444.</p>
+      <div class="card-badge badge-blue">📞 0808 800 4444 (free)</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💷</span>
+      <h3>Housing Benefit / LHA</h3>
+      <p>If you're renting privately, check your Local Housing Allowance rate — the government contribution toward rent. Many people don't claim the full amount they're entitled to. Check via your council website.</p>
+      <div class="card-badge badge-gold">🔎 Check your LHA rate today</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚫</span>
+      <h3>Know Your Tenancy Rights</h3>
+      <p>Even on benefits, you have the same rights as any tenant. Landlords cannot evict you without proper notice. Don't leave voluntarily if threatened — always get Shelter advice first.</p>
+      <div class="card-badge badge-red">⚠️ Don't leave without advice first</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏠</span>
+      <h3>Council Housing Register</h3>
+      <p>In insecure housing? Register on your local council's housing list as soon as possible. Waiting times are long but the clock only starts when you register. Do it today — not next week.</p>
+      <div class="card-badge badge-blue">🗓️ Register now — waits are long</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">&#128273;</span>
+      <h3>Renting on Universal Credit</h3>
+      <p>UC-friendly landlords <strong>do exist</strong> — they are on Rightmove right now. Keep searching, keep calling. When you find one, move fast — sometimes you need to be ready to go in days. When you call, lead with affordability and references, not benefits. Ask your council about their <strong>free deposit guarantee scheme</strong> — many will act as guarantor or provide a bond so you don't need cash upfront. <strong>Rentguarantor</strong> and <strong>Housing Hand</strong> offer paid guarantor services if needed. Some areas also have <strong>interest-free move-in loans</strong> through the council or local charities. Ask your work coach too — the Flexible Support Fund can cover deposits in some cases.</p>
+      <div class="card-badge badge-blue">&#128205; Search Rightmove — UC-friendly landlords are out there</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">&#128230;</span>
+      <h3>Moving House on Benefits</h3>
+      <p><strong>They don't tell you this stuff — but it exists.</strong> If you're moving, ring your council and ask specifically for the <strong>Household Support Fund</strong> — it can pay for furniture, white goods, bedding, and kitchen basics. Many councils won't volunteer this information, so you have to ask. <strong>Charities and food banks</strong> also give away free white goods — fridges, washing machines, cookers. Ask at your local food bank or search <strong>Freecycle</strong> and <strong>Facebook Marketplace (free section)</strong>. For move costs: UC claimants can apply for a <strong>Budgeting Advance</strong> (repaid through future payments); legacy benefits use a <strong>Budgeting Loan</strong>. Ask your work coach about the <strong>Flexible Support Fund</strong> for van hire and one-off costs. Council may also offer a <strong>Discretionary Housing Payment</strong> to cover deposit gaps. And if you've managed to save anything — even a small amount — that can move fast when the right place comes up.</p>
+      <div class="card-badge badge-gold">&#128227; Ask your council: &ldquo;Can I access the Household Support Fund?&rdquo;</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">&#128682;</span>
+      <h3>Facing Homelessness</h3>
+      <p>Contact your council <em>today</em> — they have a legal duty to help if you're threatened with homelessness within 56 days. <strong>You can find a new place and move in a single day</strong> — UC-friendly landlords are on Rightmove right now, and councils offer <strong>free deposit bonds and guarantor schemes</strong> so you don't need cash upfront. Ask your work coach about the <strong>Flexible Support Fund</strong> for emergency move costs. <strong>Crisis</strong> (crisis.org.uk) runs 365 days a year. Note: Shelter works better for some than others — <strong>men especially</strong> may get more help directly from the council or <strong>YMCA</strong>. Struggling with addiction? Going through rehab opens doors — a key worker assigned after treatment can help secure housing directly. You are not alone.</p>
+      <div class="card-badge badge-red">&#127968; Council first — ask for the housing duty team</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── ANXIETY ── -->
+<section id="anxiety">
+  <div class="section-tag">🧘 Feeling Overwhelmed?</div>
+  <h2>Anxiety<br>&amp; Stress</h2>
+  <p class="section-intro">Living on benefits is genuinely stressful — the system is hard, money is tight, and it takes a real toll. You're not broken. You're human.</p>
+
+  <div class="card-featured" style="margin-bottom:2rem">
+    <h3>🕯️ 2-Minute Reset — Right Now</h3>
+    <p>When stress and anxiety hit and your mind is racing, try this simple grounding practice.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><p>Find somewhere quiet. Close your eyes.</p></div>
+      <div class="step"><div class="step-num">2</div><p>Place your hand on your heart. Feel your heartbeat.</p></div>
+      <div class="step"><div class="step-num">3</div><p>Take 3 slow deep breaths — in for 4 counts, hold for 4, out for 6.</p></div>
+      <div class="step"><div class="step-num">4</div><p>Repeat quietly: <strong>"I am safe. I am protected. I am loved."</strong></p></div>
+    </div>
+  </div>
+
+  <div class="breath-box" style="margin-bottom:2rem">
+    <h3>🌬️ Box Breathing — Works in 2 Minutes</h3>
+    <div class="breath-steps">
+      <div class="breath-step"><strong>IN</strong>4 counts</div>
+      <div class="breath-step"><strong>HOLD</strong>4 counts</div>
+      <div class="breath-step"><strong>OUT</strong>4 counts</div>
+      <div class="breath-step"><strong>HOLD</strong>4 counts</div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:1rem">Repeat 4 times. Used by the military under extreme pressure — works just as well for money stress.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card"><span class="card-icon">👋</span><h3>5-4-3-2-1 Grounding</h3><p>5 things you see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste. Instantly pulls you out of panic and back into the present moment.</p></div>
+    <div class="card"><span class="card-icon">🚶</span><h3>Move Your Body</h3><p>A 10-minute walk outside genuinely reduces cortisol. The park is free, fresh air is free, and both lift your mood immediately. Even a short walk counts.</p></div>
+    <div class="card"><span class="card-icon">😴</span><h3>Protect Your Sleep</h3><p>Everything feels worse when you're exhausted. Anxiety, low mood, hopelessness — all amplified by bad sleep. Even small improvements make a big difference. Aim for 7–9 hours.</p></div>
+    <div class="card"><span class="card-icon">✍️</span><h3>Journal It Out</h3><p>Write down what's worrying you. Getting thoughts onto paper reduces their power. Even 5 minutes of free writing helps enormously — no rules, just write.</p></div>
+    <div class="card"><span class="card-icon">🗣️</span><h3>Talk to Someone</h3><p>Keeping it inside makes everything worse. Tell a friend, family member, GP, or counsellor how you're feeling. You deserve support — free options are listed below.</p></div>
+    <div class="card" style="background:rgba(255,92,92,.05);border-color:rgba(255,92,92,.2)">
+      <span class="card-icon">🚨</span>
+      <h3 style="color:var(--red)">Panic Attack? Do This Now</h3>
+      <p>Stop. Sit or lie down. 3 rounds of box breathing. Remind yourself: <em>"This feeling will pass. It always does. I am safe."</em> You have survived every difficult day so far — every single one.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── WELLBEING ── -->
+<section id="wellbeing">
+  <div class="section-tag">💚 Your Wellbeing Matters</div>
+  <h2>Staying<br>Well</h2>
+  <p class="section-intro">When money is tight it's easy to let your own wellbeing slip. Here are completely free things that genuinely make a difference every day.</p>
+
+  <div class="card-grid card-grid-3">
+    <div class="card"><span class="card-icon">📚</span><h3>Libraries Are Free</h3><p>Books, internet, warmth, and community — all free. Most libraries also run free wellbeing groups and activities.</p></div>
+    <div class="card"><span class="card-icon">🌳</span><h3>Get Outside</h3><p>Parks, canals, walking routes — nature is free and scientifically proven to reduce anxiety and improve mood.</p></div>
+    <div class="card"><span class="card-icon">🤝</span><h3>Volunteer Locally</h3><p>Gives you routine, purpose, and community. Many volunteering roles lead to paid work. A genuine game-changer.</p></div>
+    <div class="card"><span class="card-icon">🧘</span><h3>Free Yoga &amp; Meditation</h3><p>YouTube has thousands of free guided sessions. Even 10 minutes of mindfulness daily changes how you handle stress.</p></div>
+    <div class="card"><span class="card-icon">☎️</span><h3>Stay Connected</h3><p>Loneliness and poverty often go together. Reach out to one person this week — a text, a call, anything. Connection matters.</p></div>
+    <div class="card"><span class="card-icon">🎨</span><h3>Create Something</h3><p>Drawing, writing, cooking, gardening — creative activities rebuild confidence and give your brain a healthy focus.</p></div>
+    <div class="card"><span class="card-icon">💊</span><h3>Free Prescriptions</h3><p>On Universal Credit, Income Support, or qualifying benefits? You get free NHS prescriptions. Claim what's yours every time.</p></div>
+    <div class="card"><span class="card-icon">🦷</span><h3>Free NHS Dental</h3><p>People on qualifying benefits are entitled to free NHS dental treatment. Many people don't know this. Check your entitlement today.</p></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── MENTAL HEALTH ── -->
+<section id="mentalhealth">
+  <div class="section-tag">💙 You Are Not Alone</div>
+  <h2>Mental<br>Health</h2>
+  <p class="section-intro">Living on a low income is one of the biggest risk factors for mental health struggles. There is free support available right now — please use it.</p>
+
+  <div class="mh-grid">
+    <a href="https://www.nhs.uk/mental-health/" target="_blank" rel="noopener" class="mh-card">
+      <div class="mh-icon">🏥</div>
+      <h3>NHS Mental Health</h3>
+      <p>Your first port of call. Find local services, self-referral options, and urgent help. Your GP can refer you to free talking therapies — no cost.</p>
+      <span class="mh-link">nhs.uk/mental-health →</span>
+    </a>
+    <a href="https://everyturn.org" target="_blank" rel="noopener" class="mh-card">
+      <div class="mh-icon">🌱</div>
+      <h3>Everyturn</h3>
+      <p>Mental health and wellbeing support for communities across the UK. Compassionate, accessible care for all backgrounds and circumstances.</p>
+      <span class="mh-link">everyturn.org →</span>
+    </a>
+    <a href="https://www.overcome.org" target="_blank" rel="noopener" class="mh-card">
+      <div class="mh-icon">💪</div>
+      <h3>Overcome — Online CBT</h3>
+      <p>Online CBT-based support, anxiety tools, and self-help programmes. Accessible 24/7 — no referral or waiting list needed. Start today.</p>
+      <span class="mh-link">overcome.org →</span>
+    </a>
+    <a href="https://www.samaritans.org" target="_blank" rel="noopener" class="mh-card" style="border-color:rgba(255,92,92,.2)">
+      <div class="mh-icon">📞</div>
+      <h3>Samaritans — 116 123</h3>
+      <p>Free, confidential listening service 24/7. Just struggling or lonely is enough reason to call. No judgement, no pressure.</p>
+      <span class="mh-link" style="color:var(--red)">Call FREE: 116 123 →</span>
+    </a>
+    <a href="https://www.mind.org.uk" target="_blank" rel="noopener" class="mh-card">
+      <div class="mh-icon">🧠</div>
+      <h3>Mind</h3>
+      <p>One of the UK's leading mental health charities. Free resources on anxiety, depression, stress, and finding local support.</p>
+      <span class="mh-link">mind.org.uk →</span>
+    </a>
+    <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener" class="mh-card">
+      <div class="mh-icon">⚖️</div>
+      <h3>Citizens Advice</h3>
+      <p>Financial stress is mental health stress. Free help with benefits, debt, housing — tackling the root causes of anxiety head on.</p>
+      <span class="mh-link">citizensadvice.org.uk →</span>
+    </a>
+  </div>
+
+  <div class="gold-box" style="margin-top:2rem;text-align:center">
+    <strong>💬 Asking For Help Is Strength</strong><br><br>
+    There is no shame in struggling. Millions of people in the UK are in the exact same situation right now. You are not alone. Your GP can refer you to free talking therapy — please make that appointment this week. You deserve it.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── FUTURE ── -->
+<section id="future">
+  <div class="section-tag">💰 Your Future Still Exists</div>
+  <h2>Build a<br>Better Future</h2>
+  <p class="section-intro">Being on benefits right now doesn't mean you'll always be on benefits. Small steps today — even tiny ones — genuinely change where you end up.</p>
+
+  <div class="card-featured">
+    <h3>🐣 Penfold — Start A Pension For Free</h3>
+    <p>Even on a low income, starting a pension makes a difference. The government adds 25% tax relief on top of everything you put in — meaning if you save £40, it automatically becomes £50 in your pot. Start with just £1 a month.</p>
+    <div class="tag-row"><span class="tag">Start from just £1</span><span class="tag">Government adds 25% free</span><span class="tag">No employer needed</span><span class="tag">Retire earlier</span></div>
+    <a href="https://account.getpenfold.com/refer/tomgallagher" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:13px">Open Free Penfold Account →</a>
+  </div>
+
+  <div class="card-grid" style="margin-top:1.5rem">
+    <div class="card"><span class="card-icon">📈</span><h3>Compound Interest</h3><p>Even saving £10 a month builds up. Over 20 years with compound interest that modest amount becomes real money. Time is your biggest asset — a tiny amount started now beats waiting.</p><div class="card-badge badge-gold">⏰ Small + early beats big + late</div></div>
+    <div class="card"><span class="card-icon">🏛️</span><h3>Government Tops You Up</h3><p>The government adds 25% tax relief to pension contributions regardless of your income. Save £80 and it automatically becomes £100. That's free money from HMRC every time.</p><div class="card-badge badge-green">💸 25% free — automatic</div></div>
+    <div class="card"><span class="card-icon">🎯</span><h3>Free Skills &amp; Training</h3><p>The National Careers Service offers free skills assessments and courses. Many councils offer free digital skills, food hygiene, and trade qualifications. Knowledge is the route forward.</p><div class="card-badge badge-blue">📚 National Careers Service</div></div>
+  </div>
+
+  <div class="cta-card" style="margin-top:2rem;background:rgba(245,200,66,.04);border-color:rgba(245,200,66,.2)">
+    <div><strong style="color:var(--gold)">☕ This Guide Helped You? Buy Tom a Coffee</strong><p>This guide is completely free and always will be. If it helped you and you're in a position to, a small tip helps keep guides like this running for everyone who needs them. Totally optional — absolutely no pressure.</p></div>
+    <a href="https://ko-fi.com/tomgallagher" target="_blank" rel="noopener" class="btn btn-gold" style="flex-shrink:0">☕ Support Tom →</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── ALL DEALS ── -->
+<section id="deals">
+  <div class="section-tag">🔗 All Help, Deals &amp; Partners</div>
+  <h2>Get Help<br>Now</h2>
+  <p class="section-intro">Every link below is either completely free or an affiliate link that costs you nothing extra — and helps keep this guide free for everyone.</p>
+
+  <div class="deals-grid">
+    <a href="/lloyds-50/" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🏦</div>
+      <h3>Lloyds Bank — Free £50</h3>
+      <p>Open a Lloyds account and claim £50 cash. Basic accounts available for all — safe, reliable place to receive benefits and manage payments.</p>
+      <div class="deal-cta">Claim Your Free £50 →</div>
+    </a>
+    <a href="https://revolut.com/referral/?referral-code=tomfd6a!MAR1-26-VR-GB&geo-redirect" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">💳</div>
+      <h3>Revolut</h3>
+      <p>Free account, instant spending notifications, budgeting tools, and no fees abroad. Great alongside your main bank account.</p>
+      <div class="deal-cta">Join Free with Referral →</div>
+    </a>
+    <a href="https://friends.withplum.com/r/aZRs2YNDqZ" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">💜</div>
+      <h3>Plum — Auto-Saving</h3>
+      <p>AI automatically moves small amounts you won't miss into savings. Withdraw anytime. Free to use.</p>
+      <div class="deal-cta">Join Plum Free →</div>
+    </a>
+    <a href="https://customers.payzilch.com/signup?inviteCode=YfTRC0" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🛍️</div>
+      <h3>Zilch — Spread the Cost</h3>
+      <p>Spread essential purchases over 6 weeks, 0% interest. 4 equal payments, no hidden fees. For essentials only.</p>
+      <div class="deal-cta">Join Zilch Free →</div>
+    </a>
+    <a href="https://account.getpenfold.com/refer/tomgallagher" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🐣</div>
+      <h3>Penfold Pension</h3>
+      <p>Start saving for your future — even £1 a month. Government adds 25% on top automatically. The earlier you start, the better.</p>
+      <div class="deal-cta">Start Free →</div>
+    </a>
+    <a href="https://www.topcashback.co.uk/ref/q1979" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">💰</div>
+      <h3>TopCashback</h3>
+      <p>Earn cashback on things you already buy — energy, insurance, groceries, and more. Free to join. One of the best cashback sites in the UK.</p>
+      <div class="deal-cta">Join Free &amp; Earn Cashback →</div>
+    </a>
+    <a href="https://www.trusselltrust.org/get-help/find-a-foodbank/" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🥫</div>
+      <h3>Trussell Trust Food Banks</h3>
+      <p>Find your nearest food bank. 1,300+ locations across the UK. Need a referral from your GP, JobCentre, or Citizens Advice.</p>
+      <div class="deal-cta">Find Nearest Food Bank →</div>
+    </a>
+    <a href="https://toogoodtogo.com/en-gb" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">♻️</div>
+      <h3>Too Good To Go</h3>
+      <p>Rescue surplus food bags from restaurants and supermarkets near you. £2–5 per bag. Completely free to download.</p>
+      <div class="deal-cta">Download Free →</div>
+    </a>
+    <a href="https://olioapp.com/en/" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">📱</div>
+      <h3>OLIO — Free Food App</h3>
+      <p>Get free food from neighbours and local shops — fresh produce, tinned goods and more. Completely free. Available on iPhone and Android.</p>
+      <div class="deal-cta">Download OLIO Free →</div>
+    </a>
+    <a href="https://www.hubbub.org.uk/the-community-fridge" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🧊</div>
+      <h3>Community Fridges</h3>
+      <p>300+ community fridges across the UK stocked with free surplus food. No referral, no registration — just go and take what you need.</p>
+      <div class="deal-cta">Find Your Nearest →</div>
+    </a>
+    <a href="https://aklam.io/vY1l8Ryb" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">📱</div>
+      <h3>Lebara SIM</h3>
+      <p>Cheap SIM-only plans from just a few pounds a month. Stay connected for less — important when managing benefits and appointments.</p>
+      <div class="deal-cta">Get a Cheap SIM →</div>
+    </a>
+    <a href="https://www.entitledto.co.uk" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🔍</div>
+      <h3>Entitledto — Benefits Check</h3>
+      <p>Free benefits calculator. Check exactly what you're entitled to in 10 minutes. Millions of pounds go unclaimed every year.</p>
+      <div class="deal-cta">Check Your Entitlement →</div>
+    </a>
+    <a href="https://www.turn2us.org.uk" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">💛</div>
+      <h3>Turn2Us</h3>
+      <p>Find benefits AND charitable grants you might be missing. Helps people access welfare benefits and charitable grants across the UK.</p>
+      <div class="deal-cta">Find Free Support →</div>
+    </a>
+    <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">⚖️</div>
+      <h3>Citizens Advice</h3>
+      <p>Free, independent advice on benefits, debt, housing, and legal rights. Walk in, call, or use their website. They know the system inside out.</p>
+      <div class="deal-cta">Get Free Advice →</div>
+    </a>
+    <a href="https://www.shelter.org.uk" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🏠</div>
+      <h3>Shelter — Housing Help</h3>
+      <p>Free housing advice and legal support. Facing eviction or homelessness? Call Shelter before anything else. Free helpline: 0808 800 4444.</p>
+      <div class="deal-cta">Get Free Housing Help →</div>
+    </a>
+    <a href="https://fareshare.org.uk/get-help/" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🚐</div>
+      <h3>FareShare — Food Support</h3>
+      <p>Surplus food redistribution network. Ask your local food bank if FareShare delivery is available in your area — many groups deliver to homes.</p>
+      <div class="deal-cta">Find FareShare Support →</div>
+    </a>
+    <a href="https://www.warmwelcome.uk/" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🌡️</div>
+      <h3>Warm Welcome Spaces</h3>
+      <p>Free warm spaces with drinks, food, and company. Libraries, churches, community centres. Find one near you right now.</p>
+      <div class="deal-cta">Find a Warm Space →</div>
+    </a>
+    
+    <a href="https://www.samaritans.org" target="_blank" rel="noopener" class="deal-card" style="border-color:rgba(255,92,92,.2)">
+      <div class="deal-icon">📞</div>
+      <h3>Samaritans — 116 123</h3>
+      <p>Free confidential support, 24 hours a day, 7 days a week. Just struggling is enough reason to call. No judgement.</p>
+      <div class="deal-cta" style="color:var(--red)">Call Free: 116 123 →</div>
+    </a>
+    <a href="https://everyturn.org" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">🌱</div>
+      <h3>Everyturn</h3>
+      <p>Community mental health and wellbeing support across the UK. Accessible, compassionate help when you need it most.</p>
+      <div class="deal-cta">everyturn.org →</div>
+    </a>
+    <a href="https://www.overcome.org" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-icon">💪</div>
+      <h3>Overcome — CBT Online</h3>
+      <p>CBT-based online mental health support and anxiety tools. Available 24/7. No referral needed — just visit and start.</p>
+      <div class="deal-cta">overcome.org →</div>
+    </a>
+    <a href="https://ko-fi.com/tomgallagher" target="_blank" rel="noopener" class="deal-card" style="border-color:rgba(245,200,66,.2)">
+      <div class="deal-icon">☕</div>
+      <h3>Buy Tom a Coffee</h3>
+      <p>This guide is free forever. If it helped you and you can spare a small tip, it helps keep resources like this free for everyone.</p>
+      <div class="deal-cta" style="color:var(--gold)">ko-fi.com/tomgallagher →</div>
+    </a>
+  </div>
+
+  <div class="warning-box" style="margin-top:1.5rem">
+    🎮 Gambling: 18+ only. Play responsibly at all times. GamStop: <a href="https://www.gamstop.co.uk" style="color:#ff9999">gamstop.co.uk</a> · BeGambleAware: <a href="https://www.begambleaware.org" style="color:#ff9999">begambleaware.org</a><br>
+    ⚠️ Zilch &amp; BNPL: Only spend what you can genuinely afford to repay. May affect your credit score.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BEERMONEY -->
+<section id="beermoney">
+  <h2>🍺 Earn While You Recover</h2>
+  <p class="section-intro">Referrals &amp;<br>Recovery Income</p>
+  <p>You don't need a job to start earning. While you're getting back on your feet, these legitimate methods bring in real money — from home, on your terms, at your own pace. No boss, no schedule, no shame.</p>
+
+  <div class="card">
+    <h3>🍺 r/beermoneyuk — The Honest Extra Income Community</h3>
+    <p>Reddit's BeerMoney UK community is the most honest place online for this. Real people sharing what actually works — surveys, cashback stacking, referral bonuses, app testing, micro-tasks. Genuine extra <strong>£10–£200+ a month</strong> for minimal effort, at home, in your own time.</p>
+    <div class="tags"><span>Surveys &amp; cashback</span><span>Referral bonuses</span><span>App testing</span><span>Free to join</span></div>
+    <a class="btn" href="https://www.reddit.com/r/beermoneyuk/" target="_blank" rel="noopener">Join r/beermoneyuk →</a>
+  </div>
+
+  <div class="card">
+    <h3>💰 TopCashback — Earn on Things You Already Buy</h3>
+    <p>Every time you buy something online — energy, insurance, broadband, groceries — TopCashback pays you a percentage back. You were going to spend the money anyway. This turns spending into earning. Free to join, no catch.</p>
+    <div class="tags"><span>Free to join</span><span>Cashback on bills</span><span>Pays out to bank</span></div>
+    <a class="btn" href="https://www.topcashback.co.uk/" target="_blank" rel="noopener">Join Free &amp; Earn Cashback →</a>
+  </div>
+
+  <div class="card">
+    <h3>📦 Stack Referral Bonuses — Legal Free Money</h3>
+    <p>Many of the services on this page pay <strong>you cash</strong> for referring friends and family. Plum, Revolut, Penfold, Zilch, Lloyds, TopCashback — refer one person and earn £5–£50 per referral. Start with whoever you already share money tips with. Legal, free, and completely legitimate.</p>
+    <div class="tags"><span>£5–£50 per referral</span><span>All free services</span><span>No selling required</span></div>
+    <a class="btn" href="#deals">See All Referral Links →</a>
+  </div>
+
+  <div class="card">
+    <h3>📝 Paid Surveys — Honest Expectations</h3>
+    <p>Surveys won't make you rich — but Prolific Academic, Swagbucks, and Toluna are legitimate and actually pay. Prolific pays properly (£5–12/hr on good days). Good for evenings on the sofa. Cash out to PayPal or bank. Free to join all of them.</p>
+    <div class="tags"><span>Prolific Academic</span><span>Swagbucks</span><span>Real payouts</span><span>Free to join</span></div>
+    <a class="btn" href="https://www.prolific.com/" target="_blank" rel="noopener">Join Prolific Academic →</a>
+  </div>
+
+  <div class="card">
+    <h3>🎯 Matched Betting — Tax-Free Profits</h3>
+    <p>Matched betting uses free bets from bookmakers to guarantee a profit regardless of the outcome. It is <strong>not gambling</strong> — you cover both outcomes mathematically. Legally tax-free in the UK. Start with free guides on r/beermoneyuk before spending anything.</p>
+    <div class="tags"><span>Tax-free income</span><span>Not gambling</span><span>UK legal</span><span>Start free</span></div>
+    <a class="btn" href="https://www.reddit.com/r/beermoneyuk/" target="_blank" rel="noopener">Learn How on r/beermoneyuk →</a>
+  </div>
+
+  <p style="margin-top:1.5rem;padding:1rem;background:var(--card2);border-radius:var(--r);font-size:0.95rem;">💡 <strong>Recovery mindset:</strong> Even £30/month extra changes the maths. Start with one method, get comfortable, then add another. You are not hustling — you are stabilising.</p>
+</section>
+
+<section id="bankholiday">
+  <h2>📅 Bank Holiday Payments</h2>
+  <p class="section-intro">When Do I<br>Get Paid?</p>
+  <p>Bank holidays shift payment dates — sometimes by 3 days. Missing this causes unnecessary stress. Here are the 2026 dates and exactly what to expect.</p>
+
+  <div class="card">
+    <h3>📅 2026 UK Bank Holiday Payment Dates</h3>
+    <p>When a payment date falls on a bank holiday, DWP pays <strong>the last working day before</strong> the bank holiday. Plan your budget accordingly — the money arrives early, not late.</p>
+    <div style="overflow-x:auto;margin-top:1rem;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.5rem 0.75rem;color:var(--gold);">Bank Holiday</th>
+            <th style="text-align:left;padding:0.5rem 0.75rem;color:var(--gold);">Date</th>
+            <th style="text-align:left;padding:0.5rem 0.75rem;color:var(--gold);">Pay Day Moves To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Good Friday</td>
+            <td style="padding:0.5rem 0.75rem;">3 Apr 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Wed 1 Apr 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Easter Monday</td>
+            <td style="padding:0.5rem 0.75rem;">6 Apr 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Thu 2 Apr 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Early May Bank Holiday</td>
+            <td style="padding:0.5rem 0.75rem;">4 May 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Fri 1 May 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Spring Bank Holiday</td>
+            <td style="padding:0.5rem 0.75rem;">25 May 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Fri 22 May 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Summer Bank Holiday</td>
+            <td style="padding:0.5rem 0.75rem;">31 Aug 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Fri 28 Aug 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0.75rem;">Christmas Day</td>
+            <td style="padding:0.5rem 0.75rem;">25 Dec 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Wed 23 Dec 2026</td>
+          </tr>
+          <tr>
+            <td style="padding:0.5rem 0.75rem;">Boxing Day</td>
+            <td style="padding:0.5rem 0.75rem;">28 Dec 2026</td>
+            <td style="padding:0.5rem 0.75rem;color:var(--green);">Wed 23 Dec 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tags"><span>UC &amp; legacy benefits</span><span>Child Benefit</span><span>PIP &amp; DLA</span><span>Tax Credits</span></div>
+    <a class="btn" href="https://www.gov.uk/when-to-expect-your-benefit-payment" target="_blank" rel="noopener">Check Gov.uk Payment Dates →</a>
+  </div>
+
+  <div class="card">
+    <h3>💡 What To Do If Payment Is Late</h3>
+    <p>If your payment does not arrive by the expected date (including adjusted bank holiday date), do this:</p>
+    <ul style="margin:0.75rem 0 0.75rem 1.25rem;line-height:1.8;font-size:0.95rem;">
+      <li><strong>Wait until end of banking day</strong> — payments can arrive at any point during the day.</li>
+      <li><strong>Check your UC journal</strong> — sometimes a message explains a delay before you notice.</li>
+      <li><strong>Call your bank first</strong> — confirm the payment is not pending on their end.</li>
+      <li><strong>Call DWP Universal Credit</strong> — 0800 328 5644 (free, 8am–6pm Mon–Fri).</li>
+      <li><strong>Ask for an advance payment</strong> — if you are in genuine hardship, you are entitled to one.</li>
+    </ul>
+    <div class="tags"><span>DWP: 0800 328 5644</span><span>Free to call</span><span>Advance available</span></div>
+    <a class="btn" href="https://www.gov.uk/universal-credit/contact-universal-credit" target="_blank" rel="noopener">Contact Universal Credit →</a>
+  </div>
+
+  <div class="card">
+    <h3>🗓️ Share This — Traffic Spikes Around Holidays</h3>
+    <p>The weeks before Easter and Christmas always see huge spikes in people panicking about missed payments. <strong>Share this section</strong> with anyone on benefits before the next bank holiday. A quick message could save someone a really stressful few days.</p>
+    <div class="tags"><span>Share before Easter</span><span>Share before Christmas</span><span>Always free</span></div>
+    <a class="btn" href="https://www.gov.uk/when-to-expect-your-benefit-payment" target="_blank" rel="noopener">Gov.uk Payment Calendar →</a>
+  </div>
+</section>
+
+
+
+<hr class="divider">
+
+<!-- NETWORK SECTION -->
+<section style="padding:3rem 1.5rem;max-width:960px;margin:0 auto">
+  <div class="section-tag">🔗 Full Network</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);line-height:1;color:var(--text);margin-bottom:.5rem">Also Check<br>These Out</h2>
+  <p style="font-size:.95rem;color:#aaa;max-width:600px;margin-bottom:2rem">Three free sites. One mission. All linking together. Share whichever one fits the person you know.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:1rem">
+    <a href="/scamwatch-priority-alerts/" target="_blank" rel="noopener" style="background:#1a0a0a;border:1px solid rgba(255,92,92,.2);border-radius:14px;padding:1.5rem;text-decoration:none;display:block;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#ff5c5c;margin-bottom:.4rem;letter-spacing:.03em">⚠️ UK Scam Watch</div>
+      <p style="font-size:.82rem;color:#888;line-height:1.5">Every scam targeting broke Britain right now. KYC fraud, romance scammers, fake loan groups, account buying — named and exposed. Free.</p>
+    </a>
+    <a href="/uk-jobs-guide/" target="_blank" rel="noopener" style="background:#0a0a1a;border:1px solid rgba(74,158,255,.2);border-radius:14px;padding:1.5rem;text-decoration:none;display:block;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#4a9eff;margin-bottom:.4rem;letter-spacing:.03em">💼 UK Jobs Guide</div>
+      <p style="font-size:.82rem;color:#888;line-height:1.5">Work from home jobs, graduate schemes, free courses, apprenticeships, CV help — all real, all free, all on one page.</p>
+    </a>
+    <a href="/social-tariffs/" target="_blank" rel="noopener" style="background:#0a0a1a;border:1px solid rgba(245,197,66,.2);border-radius:14px;padding:1.5rem;text-decoration:none;display:block"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#f5c542;margin-bottom:.4rem;letter-spacing:.03em">💡 Cut Your Bills</div><p style="font-size:.82rem;color:#888;line-height:1.5">Social tariffs for broadband, mobile &amp; energy — on benefits? You're probably overpaying. Here's how to cut your bills.</p></a>    
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SHARE SECTION -->
+<div class="share-section">
+  <h2>📢 Share This Guide</h2>
+  <p>This guide is free forever. The more people who see it, the more it helps. Share it now — it costs nothing and could change someone's life.</p>
+  <div class="share-btns">
+    <a href="https://wa.me/?text=This+free+UK+benefits+guide+helped+me+%E2%80%94+check+what+you%27re+entitled+to%3A+https%3A%2F%2Fsmallville1979.github.io%2Fbenefits-guide%2F" target="_blank" rel="noopener" class="share-btn whatsapp">💬 Share on WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsmallville1979.github.io%2Fbenefits-guide%2F&quote=Free+UK+Benefits+Survival+Guide+%E2%80%94+check+what+you%27re+owed" target="_blank" rel="noopener" class="share-btn facebook">👍 Share on Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsmallville1979.github.io%2Fbenefits-guide%2F&text=Free+UK+Benefits+Survival+Guide+%F0%9F%92%9B+%E2%80%94+food+banks%2C+energy+help%2C+free+money+you%27re+owed%2C+mental+health+support.+Share+this+with+someone+who+needs+it" target="_blank" rel="noopener" class="share-btn twitter">🐦 Share on Twitter</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fsmallville1979.github.io%2Fbenefits-guide%2F&title=Free+UK+Benefits+Survival+Guide+%E2%80%94+food%2C+energy%2C+benefits+checker%2C+mental+health+support" target="_blank" rel="noopener" class="share-btn reddit">🔴 Post on Reddit</a>
+    <a href="https://www.reddit.com/r/DWPhelp" target="_blank" rel="noopener" class="share-btn">📋 r/DWPhelp</a>
+    <a href="https://www.reddit.com/r/beermoneyuk" target="_blank" rel="noopener" class="share-btn">🍺 r/BeerMoneyUK</a>
+    <a href="#bankholiday" class="share-btn">📅 Bank Holiday Dates</a>
+  </div>
+  <p style="margin-top:1.5rem;font-size:12px;color:var(--muted)">📌 Bookmark it too — <strong>Ctrl+D</strong> (or Cmd+D on Mac) right now so you always have it when you need it.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Benefits Survival Guide 💛</div>
+  <p>Free advice for everyone who needs it. Share this page with someone who could use it right now.<br><br>
+  Some links are <strong>affiliate links</strong>. They cost you <strong>nothing extra</strong> and help keep this guide free forever.<br><br>
+  If you're struggling right now — please reach out. <strong>Samaritans: 116 123</strong> (free, 24/7) · NHS 111 · Everyturn · Overcome.org · Citizens Advice<br><br>
+  🎮 Gambling: 18+ only. Play responsibly. <a href="https://www.gamstop.co.uk">GamStop</a> · <a href="https://www.begambleaware.org">BeGambleAware</a><br>
+  ⚠️ Zilch &amp; BNPL: Only spend what you can genuinely afford to repay. May affect your credit score.<br><br>
+  Built with ❤️ for everyone going through a hard time ·
+  <a href="https://www.lloydsbank.com">Lloyds</a> ·
+  <a href="https://www.revolut.com">Revolut</a> ·
+  <a href="https://withplum.com">Plum</a> ·
+  <a href="https://payzilch.com">Zilch</a> ·
+  <a href="https://getpenfold.com">Penfold</a> ·
+  <a href="https://www.topcashback.co.uk">TopCashback</a> ·
+  <a href="https://www.trusselltrust.org">Trussell Trust</a> ·
+  <a href="https://www.samaritans.org">Samaritans</a> ·
+  <a href="https://www.nhs.uk">NHS</a> ·
+  <a href="/scamwatch-priority-alerts/">⚠️ UK Scam Watch</a> ·
+  <a href="/uk-jobs-guide/">💼 UK Jobs Guide</a> ·
+      <a href="/social-tariffs/">💡 Cut Your Bills</a> ·
+      <a href="#bankholiday">📅 Bank Holidays</a>
+    <a href="#stories">🗣️ Tom's Stories</a> ·
+      <a href="#beermoney">🍺 Earn While You Recover</a> ·
+  <a href="https://ko-fi.com/tomgallagher">☕ Buy Tom a Coffee</a>
+  </p>
+</footer>
+
+<script src="/kit/kit.js"></script>
+
+<!-- SBS_FP_CARERS_ALLOWANCE_BLOCK -->
+<div class="step">
+<h3>CARER'S ALLOWANCE — £81/WEEK MOST CARERS NEVER CLAIM</h3>
+<p>If you spend 35+ hours a week looking after someone who gets PIP, DLA, or Attendance Allowance — you qualify for Carer's Allowance. That's around £81/week. You don't have to live with the person. You don't have to be a family member. Most people who qualify never claim it.</p>
+<a href="https://www.gov.uk/carers-allowance">Check Carer's Allowance on GOV.UK →</a>
+<p>Warning: if you're on UC, Carer's Allowance is taken into account — but you may also qualify for the UC Carer Element on top. Check both.</p>
+</div>
+
+
+<!-- SBS_FP_LCWRA_BLOCK -->
+<div class="step">
+<h3>LCWRA — THE £400/MONTH UC TOP-UP MOST PEOPLE MISS</h3>
+<p>If you're on Universal Credit and have a health condition or disability that limits your ability to work, you may qualify for the Limited Capability for Work-Related Activity (LCWRA) element. This adds around £400/month to your UC payment. You need a Work Capability Assessment — your GP can support your claim with evidence.</p>
+<a href="https://www.gov.uk/universal-credit/if-you-have-a-disability-or-health-condition">LCWRA on GOV.UK →</a>
+<p>If you've been on UC for a while with a health condition and never had an assessment — request one now. Backdating is possible in some cases.</p>
+</div>
+
+
+<div class="step">
+  <h3>LCWRA — THE £400/MONTH UC TOP-UP MOST PEOPLE MISS</h3>
+  <p>On Universal Credit with a health condition or disability? You may qualify for the Limited Capability for Work-Related Activity element — around £400/month extra. Request a Work Capability Assessment. Your GP can provide supporting evidence.</p>
+  <a href="https://www.gov.uk/universal-credit/if-you-have-a-disability-or-health-condition">LCWRA on GOV.UK →</a>
+</div>
+
+<div class="step">
+  <h3>CARERS ALLOWANCE — £81/WEEK MOST CARERS NEVER CLAIM</h3>
+  <p>Spend 35+ hours a week looking after someone on PIP, DLA or Attendance Allowance? You qualify for Carers Allowance — around £81/week. You do not have to live with them or be family. On UC? Also check the UC Carer Element on top.</p>
+  <a href="https://www.gov.uk/carers-allowance">Check Carers Allowance on GOV.UK →</a>
+</div>
+
+<hr class="divider"><!-- ── STORIES ── -->
+<section id="stories">
+  <div class="section-tag">🗣️ Real Talk</div>
+  <h2>Tom's<br>Stories</h2>
+  <p class="section-intro">Real experiences from someone who's been there. Not theory — actual stuff that worked, didn't work, and surprised me.</p>
+  <div class="card" style="border-left:4px solid var(--gold);padding-left:1.5rem">
+    <span class="card-icon">🚗</span>
+    <h3>Uber One — Worth It or Not?</h3>
+    <p style="font-style:italic;color:var(--muted);font-size:0.9rem;margin-bottom:0.75rem">Tom's take · April 2025</p>
+    <p>I got Uber One and honestly it depends on how you use it. <strong>The taxi discounts are the best bit</strong> — if you can wait a bit longer and take the slower cheaper option, it genuinely saves money. Worth it just for that.</p>
+    <p style="margin-top:0.75rem">The food side is trickier. <strong>Uber Eats for one person is expensive regardless</strong> — the subscription doesn't fix that. Good if you're a big family and ordering a lot, less useful solo. The 50% off veg and fruit on Mondays sounds great but can be a false economy if you end up buying things just because they're discounted.</p>
+    <p style="margin-top:0.75rem"><strong>Just Eat discounts are also often a false economy</strong> — I've seen people spend more chasing a deal. The McDonald's app offers though? Those are genuinely good.</p>
+    <p style="margin-top:0.75rem">My tip: <strong>don't just use Uber</strong> — Bolt, FREE NOW, and local taxi firms all have their own app deals and discount codes. Stack them. Use whichever is cheapest for that journey. Don't be loyal to one app when others will pay you to switch.</p>
+    <div class="card-badge badge-gold">💡 Uber One = yes for taxis, maybe for food depending on household size</div>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--gold);padding-left:1.5rem;margin-top:1.5rem">
+    <span class="card-icon">🍫</span>
+    <h3>The Smartest Homeless Guy I Ever Saw</h3>
+    <p style="font-style:italic;color:var(--muted);font-size:0.9rem;margin-bottom:0.75rem">Tom's take · London</p>
+    <p>We were queuing outside a club in London. This guy wasn't begging, wasn't hassling anyone. He was <strong>selling chocolates. 50p each.</strong> Nobody refuses a chocolate for 50p. We bought four. £2. He moved down the queue. Everyone bought one.</p>
+    <p style="margin-top:0.75rem">Think about that. A busy Friday night queue outside a club — 200 people easy. Even if half say yes, that's £50 in an hour. <strong>Some nights that's £100+.</strong> Save that for a few weeks and you've got a deposit and first month's rent. Not a handout — a business.</p>
+    <p style="margin-top:0.75rem">Same outside pubs — buskers with a guitar get pound coins all night from drunk people who love a song. One guy we saw just asked politely: <em>"You guys drinking tonight? Any chance of a pound for a drink?"</em> He was friendly, no pressure, had a laugh with us. We gave him £2. He went inside. No drama.</p>
+    <p style="margin-top:0.75rem">There's even a Facebook group where people are honest about needing money for booze or drugs — and instead of abuse, they get helped. Honesty works better than you'd think.</p>
+    <p style="margin-top:0.75rem">The point isn't "just hustle harder." It's that <strong>dignity + a bit of creativity goes a long way.</strong> People want to give money — they just need a reason that doesn't make them feel awkward. Give them one.</p>
+    <div class="card-badge badge-gold">🍫 Sell something. Ask nicely. People say yes more than you think.</div>
+  </div></section></body>
+</html>
